@@ -519,10 +519,42 @@ with tab_concept:
         </div>
         """, unsafe_allow_html=True)
 
+    reading_texts = data.get("reading_texts", [])
+    if reading_texts:
+        total_chars = data.get("_pdf_total_chars", 0)
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 0 4px 0;">
+            <span style="font-size:1.4rem;">📖</span>
+            <div>
+                <span style="font-weight:700; color:#0a1628; font-size:1.2rem;">SchweserNotes 원문</span>
+                <div style="color:#94a3b8; font-size:0.78rem; margin-top:2px;">{len(reading_texts)}개 Reading · {total_chars:,}자</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        for i, rt in enumerate(reading_texts):
+            rnum = rt.get("reading_num", "?")
+            title = rt.get("title", f"Reading {rnum}")
+            text = rt.get("text", "")
+            char_count = len(text)
+
+            # 첫 번째 Reading만 auto-expand
+            expanded = (i == 0)
+
+            with st.expander(f"📘 **Reading {rnum}**: {title} ({char_count:,}자)", expanded=expanded):
+                st.markdown(f"""
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px 20px;">
+                    <div style="color:#334155; line-height:1.8; font-size:0.92rem; white-space:pre-wrap;">
+{text}
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
     # ════════════════════════════════════════════════════════════════════════
-    # LOS — compact list
+    # LOS — compact (below readings)
     # ════════════════════════════════════════════════════════════════════════
     if los:
+        st.divider()
         st.markdown(f"""
         <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
             <span style="font-size:1.4rem;">🎯</span>
@@ -564,40 +596,6 @@ with tab_concept:
                         <span style="color:#94a3b8; font-size:0.78rem;">LOS #{i}</span>
                     </div>
                     <div style="color:#1e293b; font-size:0.95rem; line-height:1.7;">{lo}</div>
-                </div>
-                """, unsafe_allow_html=True)
-
-    # ════════════════════════════════════════════════════════════════════════
-    # NEW: SchweserNotes 원문 — full reading texts from PDF
-    # ════════════════════════════════════════════════════════════════════════
-    reading_texts = data.get("reading_texts", [])
-    if reading_texts:
-        total_chars = data.get("_pdf_total_chars", 0)
-        st.divider()
-        st.markdown(f"""
-        <div style="display:flex; align-items:center; gap:8px; margin:12px 0 4px 0;">
-            <span style="font-size:1.4rem;">📖</span>
-            <div>
-                <span style="font-weight:700; color:#0a1628; font-size:1.2rem;">SchweserNotes 원문</span>
-                <div style="color:#94a3b8; font-size:0.78rem; margin-top:2px;">{len(reading_texts)}개 Reading · {total_chars:,}자</div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # Group readings by reading number
-        for rt in reading_texts:
-            rnum = rt.get("reading_num", "?")
-            title = rt.get("title", f"Reading {rnum}")
-            text = rt.get("text", "")
-            char_count = len(text)
-            preview = text[:200].replace("\n", " ") + "..." if len(text) > 200 else text
-
-            with st.expander(f"📘 **Reading {rnum}**: {title} ({char_count:,}자)", expanded=False):
-                st.markdown(f"""
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px 20px;">
-                    <div style="color:#334155; line-height:1.8; font-size:0.92rem; white-space:pre-wrap;">
-{text}
-                    </div>
                 </div>
                 """, unsafe_allow_html=True)
 
