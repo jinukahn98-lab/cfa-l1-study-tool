@@ -1,6 +1,7 @@
 import sqlite3
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 DB_PATH = Path(__file__).parent / "cfa_l1_study.db"
 
@@ -45,6 +46,18 @@ def init_db():
                 duration_sec      INTEGER,
                 started_at        TIMESTAMP,
                 ended_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+
+            CREATE TABLE IF NOT EXISTS flashcard_cache (
+                module       TEXT UNIQUE,
+                cards        TEXT,
+                generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+
+            CREATE TABLE IF NOT EXISTS concept_cache (
+                module      TEXT PRIMARY KEY,
+                concepts    TEXT,
+                created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
 
             CREATE INDEX IF NOT EXISTS idx_attempts_module ON quiz_attempts(module);
@@ -116,3 +129,63 @@ def get_recent_attempts(limit=20):
 def clear_attempts():
     with get_conn() as conn:
         conn.execute("DELETE FROM quiz_attempts")
+
+
+def get_cached_flashcards(module: str) -> Optional[list]:
+    import json
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT cards FROM flashcard_cache WHERE module = ?", (module,)
+        ).fetchone()
+        if row:
+            try:
+                return json.loads(row["cards"])
+            except (ValueError, TypeError):
+                return None
+    return None
+
+
+def save_flashcards(module: str, cards: list) -> None:
+    import json
+    with get_conn() as conn:
+        conn.execute(
+            """INSERT INTO flashcard_cache (module, cards, generated_at)
+               VALUES (?, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(module) DO UPDATE SET cards=excluded.cards, generated_at=excluded.generated_at""",
+            (module, json.dumps(cards, ensure_ascii=False)),
+        )
+
+
+def delete_flashcard_cache(module: str) -> None:
+    with get_conn() as conn:
+        conn.execute("DELETE FROM flashcard_cache WHERE module = ?", (module,))
+
+
+def get_cached_concept(module: str) -> Optional[dict]:
+    import json
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT concepts FROM concept_cache WHERE module = ?", (module,)
+        ).fetchone()
+        if row:
+            try:
+                return json.loads(row["concepts"])
+            except (ValueError, TypeError):
+                return None
+    return None
+
+
+def save_concept_cache(module: str, concepts: dict) -> None:
+    import json
+    with get_conn() as conn:
+        conn.execute(
+            """INSERT INTO concept_cache (module, concepts, created_at)
+               VALUES (?, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(module) DO UPDATE SET concepts=excluded.concepts, created_at=excluded.created_at""",
+            (module, json.dumps(concepts, ensure_ascii=False)),
+        )
+
+
+def clear_concept_cache() -> None:
+    with get_conn() as conn:
+        conn.execute("DELETE FROM concept_cache")

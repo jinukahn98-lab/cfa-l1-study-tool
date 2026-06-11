@@ -123,6 +123,23 @@ MODULES = {
 }
 
 
+# Maps each module to its primary SchweserNotes book and reading range (PDF reading numbers).
+# Reading numbers here are the sequential PDF numbering (1-93 across all books),
+# NOT the quiz_data reading numbers.
+MODULE_BOOK_MAP = {
+    "Quantitative Methods":       {"book": 1, "readings": [1, 11]},
+    "Economics":                  {"book": 1, "readings": [12, 19]},
+    "Portfolio Management":       {"book": 2, "readings": [20, 21]},
+    "Corporate Issuers":          {"book": 2, "readings": [22, 28]},
+    "Financial Statement Analysis": {"book": 3, "readings": [29, 40]},
+    "Equity Investments":         {"book": 3, "readings": [41, 48]},
+    "Fixed Income":               {"book": 4, "readings": [49, 67]},
+    "Derivatives":                {"book": 4, "readings": [68, 77]},
+    "Alternative Investments":    {"book": 5, "readings": [78, 84]},
+    "Ethics":                     {"book": 5, "readings": [89, 93]},
+}
+
+
 def module_names() -> list[str]:
     return list(MODULES.keys())
 

@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 from quiz_loader import QuizLoader
 from modules_l1 import module_names, topics_for_module, module_color, MODULE_COLORS
+from concept_loader import ConceptLoader
+from flashcard_generator import FlashcardGenerator
 import db
 
 st.set_page_config(page_title="CFA Level 1 Study Tool", page_icon="📊", layout="wide")
@@ -25,7 +27,10 @@ st.title("📊 CFA Level 1 Study Tool")
 st.caption("2026 Curriculum 기반 | 문제은행 + 진도 추적")
 st.divider()
 
-tab1, tab2, tab3 = st.tabs(["📝 문제 풀이", "📈 진도 현황", "📕 오답 노트"])
+cl = ConceptLoader()
+fg = FlashcardGenerator()
+
+tab1, tab4, tab2, tab3 = st.tabs(["📝 문제 풀이", "📖 개념 정리", "📈 진도 현황", "📕 오답 노트"])
 
 # ════════════════════════════════════════════════════════════════════════════
 # TAB 1: 문제 풀이
@@ -191,6 +196,112 @@ with tab1:
                         q.get("book", 1), q.get("reading_num", 0), q.get("num", 0)
                     )
                     st.toast("📌 북마크에 추가됨!")
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# TAB 4: 개념 정리
+# ════════════════════════════════════════════════════════════════════════════
+with tab4:
+    col_nav, col_content = st.columns([1, 3])
+
+    with col_nav:
+        st.subheader("📚 모듈")
+        concept_modules = cl.available_modules()
+        selected_concept_module = st.selectbox(
+            "모듈 선택",
+            concept_modules,
+            key="concept_module",
+        )
+        view_mode = st.radio(
+            "보기 모드",
+            ["개념요약", "핵심공식", "시험팁", "LOS", "플래시카드"],
+            key="concept_view_mode",
+        )
+
+    with col_content:
+        sections = cl.get_sections(selected_concept_module)
+
+        if view_mode == "개념요약":
+            st.subheader(f"📖 {selected_concept_module} — 개념 요약")
+            st.markdown(sections["summary"])
+            if sections["key_concepts"]:
+                st.divider()
+                st.subheader("🔑 핵심 개념")
+                for concept in sections["key_concepts"]:
+                    st.markdown(f"- {concept}")
+
+        elif view_mode == "핵심공식":
+            st.subheader(f"🧮 {selected_concept_module} — 핵심 공식")
+            formulas = sections["formulas"]
+            if formulas:
+                for name, formula in formulas:
+                    with st.container():
+                        st.markdown(f"**{name}**")
+                        st.code(formula, language=None)
+            else:
+                st.info("이 모듈에는 공식이 없습니다.")
+
+        elif view_mode == "시험팁":
+            st.subheader(f"💡 {selected_concept_module} — 시험 팁")
+            tips = sections["exam_tips"]
+            if tips:
+                for i, tip in enumerate(tips, 1):
+                    st.info(f"**팁 {i}.** {tip}")
+            else:
+                st.info("이 모듈에는 시험 팁이 없습니다.")
+
+        elif view_mode == "LOS":
+            st.subheader(f"🎯 {selected_concept_module} — 학습 목표 (LOS)")
+            los_items = sections["los"]
+            if los_items:
+                for i, lo in enumerate(los_items, 1):
+                    st.markdown(f"**{i}.** {lo}")
+            else:
+                st.info("이 모듈에는 LOS 정보가 없습니다.")
+
+        elif view_mode == "플래시카드":
+            st.subheader(f"🃏 {selected_concept_module} — 플래시카드")
+
+            if not fg.enabled:
+                st.warning(
+                    "플래시카드 생성을 위해 `ANTHROPIC_API_KEY` 또는 `OPENAI_API_KEY` "
+                    "환경변수를 설정해 주세요."
+                )
+            else:
+                cached = db.get_cached_flashcards(selected_concept_module)
+
+                col_btn1, col_btn2 = st.columns([1, 1])
+                with col_btn1:
+                    gen_btn = st.button(
+                        "✨ 플래시카드 생성" if not cached else "🔄 재생성",
+                        type="primary",
+                        use_container_width=True,
+                    )
+                with col_btn2:
+                    if cached and st.button("🗑️ 캐시 삭제", use_container_width=True):
+                        db.delete_flashcard_cache(selected_concept_module)
+                        st.rerun()
+
+                if gen_btn:
+                    summary = sections["summary"]
+                    key_concepts = "\n".join(f"- {c}" for c in sections["key_concepts"])
+                    full_text = f"{summary}\n\n{key_concepts}"
+                    with st.spinner("플래시카드를 생성 중입니다..."):
+                        cards = fg.generate(full_text, count=7)
+                    if cards is False:
+                        st.error("플래시카드 생성에 실패했습니다. API 키를 확인해 주세요.")
+                    else:
+                        db.save_flashcards(selected_concept_module, cards)
+                        cached = cards
+                        st.rerun()
+
+                if cached:
+                    st.caption(f"총 {len(cached)}개의 플래시카드")
+                    for i, card in enumerate(cached, 1):
+                        with st.expander(f"Q{i}. {card['question']}"):
+                            st.markdown(f"**정답:** {card['answer']}")
+                else:
+                    st.info("'플래시카드 생성' 버튼을 눌러 AI 플래시카드를 만들어 보세요.")
 
 
 # ════════════════════════════════════════════════════════════════════════════
