@@ -4,6 +4,7 @@ SchweserNotes 2022 기반 개념 정리 + 문제은행 + 진도 추적
 """
 import streamlit as st
 import pandas as pd
+import re
 from quiz_loader import QuizLoader
 from modules_l1 import module_names, topics_for_module, module_color, MODULE_COLORS, MODULE_BOOK_MAP
 from concept_loader import ConceptLoader
@@ -470,7 +471,7 @@ with tab_concept:
         <div style="font-size:1.8rem;">📖</div>
         <div>
             <div style="font-size:1.5rem; font-weight:700; color:#0a1628;">개념 정리</div>
-            <div style="color:#64748b; font-size:0.9rem;">SchweserNotes 2024 기반 · LOS별 핵심 개념</div>
+            <div style="color:#64748b; font-size:0.9rem;">SchweserNotes 2024 기반 · Reading별 요약</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -498,42 +499,188 @@ with tab_concept:
     </div>
     """, unsafe_allow_html=True)
 
+    source = data.get("_source", "unknown")
+    reading_summaries = data.get("reading_summaries", [])
     summary = data.get("summary", "")
-    topics = data.get("topics", [])          # structured source: [{name, los_items}]
-    los_flat = data.get("los", [])           # enhanced source: flat list of LOS strings
+    topics = data.get("topics", [])
+    los_flat = data.get("los", [])
     formulas = data.get("formulas", [])
     exam_tips = data.get("exam_tips", [])
-    source = data.get("_source", "enhanced")
 
-    # ── Summary card ──
-    if summary:
+    # ════════════════════════════════════════════════════════════════════════
+    # READING SUMMARIES VIEW — Reading별 요약 (when reading_summaries.json exists)
+    # ════════════════════════════════════════════════════════════════════════
+    if source == "reading_summaries" and reading_summaries:
+        # Summary card (from enhanced source if available)
+        if summary:
+            st.markdown(f"""
+            <div style="background:linear-gradient(135deg, #f0f4ff 0%, #e8eef7 100%);
+                        border:1px solid #d0d9e8; border-radius:12px; padding:16px 20px; margin-bottom:20px;">
+                <div style="color:#334155; line-height:1.6; font-size:0.92rem;">{summary}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
         st.markdown(f"""
-        <div style="background:linear-gradient(135deg, #f0f4ff 0%, #e8eef7 100%);
-                    border:1px solid #d0d9e8; border-radius:12px; padding:16px 20px; margin-bottom:20px;">
-            <div style="color:#334155; line-height:1.6; font-size:0.92rem;">{summary}</div>
+        <div style="color:#94a3b8; font-size:0.8rem; margin-bottom:12px;">
+            {len(reading_summaries)}개 Reading
         </div>
         """, unsafe_allow_html=True)
+
+        # Render each reading as a card
+        for idx, reading in enumerate(reading_summaries):
+            rnum = reading.get("reading_num", idx + 1)
+            title = reading.get("title", f"Reading {rnum}")
+            summary_text = reading.get("summary", "")
+            key_points = reading.get("key_points", [])
+
+            is_expanded = idx == 0  # First reading auto-expanded
+            card_id = f"reading_{sel_module}_{rnum}"
+
+            # Clean title: remove "Module X.Y:" prefix for cleaner display
+            display_title = re.sub(r'\s*Module\s+\d+\.\d+:\s*', '', title)
+            display_title = re.sub(r'\s*Introduction\s*$', '', display_title)
+            # Also clean up the "READING N" prefix
+            display_title = re.sub(r'^READING\s+\d+\s+', '', display_title)
+            display_title = display_title.strip()
+
+            # Card container
+            st.markdown(f"""
+            <div style="background:white; border:1px solid #e2e8f0; border-radius:12px;
+                        padding:0; margin-bottom:12px; overflow:hidden;
+                        box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+                <div style="display:flex; align-items:center; gap:10px;
+                            background:linear-gradient(90deg, {mod_color}08 0%, {mod_color}02 100%);
+                            padding:12px 16px; border-bottom:1px solid #e2e8f0;
+                            cursor:pointer;"
+                     onclick="document.getElementById('{card_id}_body').style.display =
+                              document.getElementById('{card_id}_body').style.display === 'none' ? 'block' : 'none';
+                              this.querySelector('.toggle-icon').textContent =
+                              this.querySelector('.toggle-icon').textContent === '▶' ? '▼' : '▶';">
+                    <span style="background:{mod_color}; color:white; font-size:0.75rem; font-weight:700;
+                                 padding:2px 10px; border-radius:8px; flex-shrink:0;">R{rnum}</span>
+                    <span style="font-size:0.95rem; font-weight:600; color:#0a1628; flex:1;">{display_title}</span>
+                    <span class="toggle-icon" style="color:{mod_color}; font-size:0.8rem;">{'▼' if is_expanded else '▶'}</span>
+                </div>
+                <div id="{card_id}_body" style="padding:16px 20px; display:{'block' if is_expanded else 'none'};">
+            """, unsafe_allow_html=True)
+
+            # Summary paragraphs
+            if summary_text:
+                # Split into paragraphs
+                paragraphs = [p.strip() for p in summary_text.split('\n') if p.strip()]
+                for para in paragraphs:
+                    st.markdown(f"""
+                    <div style="color:#1e293b; font-size:0.9rem; line-height:1.7; margin-bottom:10px;">
+                        {para}
+                    </div>
+                    """, unsafe_allow_html=True)
+
+            # Key points
+            if key_points:
+                st.markdown("""
+                <div style="display:flex; align-items:center; gap:6px; margin:12px 0 8px 0;">
+                    <span style="font-size:0.85rem;">🔑</span>
+                    <span style="font-weight:700; color:#0a1628; font-size:0.88rem;">핵심 포인트</span>
+                </div>
+                """, unsafe_allow_html=True)
+
+                for pt in key_points:
+                    st.markdown(f"""
+                    <div style="display:flex; gap:8px; margin-bottom:4px; align-items:flex-start;">
+                        <span style="color:{mod_color}; font-size:0.75rem; margin-top:3px;">•</span>
+                        <span style="color:#334155; font-size:0.88rem; line-height:1.5;">{pt}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+            # Close card body
+            st.markdown("</div></div>", unsafe_allow_html=True)
+
+        # ── LOS (참고용) ──
+        if los_flat:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">🎯</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">LOS (참고)</span>
+                <span style="background:#0a162818; color:#0a1628; padding:2px 10px; border-radius:10px;
+                             font-size:0.75rem; font-weight:600;">{len(los_flat)}개</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            for i, lo in enumerate(los_flat, 1):
+                st.markdown(f"""
+                <div style="border-left:3px solid {mod_color}44; padding:6px 12px; margin-bottom:4px;
+                            background:#f8fafc; border-radius:0 6px 6px 0;">
+                    <span style="color:#64748b; font-size:0.78rem; font-weight:600;">LOS {i}</span>
+                    <span style="color:#475569; font-size:0.85rem; margin-left:6px;">{lo}</span>
+                </div>
+                """, unsafe_allow_html=True)
+
+        # ── Formulas ──
+        if formulas:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">📐</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">주요 공식</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            cols = st.columns(2)
+            for i, formula in enumerate(formulas, 1):
+                with cols[(i - 1) % 2]:
+                    if isinstance(formula, list) and len(formula) >= 2:
+                        st.markdown(f"""
+                        <div style="background:white; border:1px solid #e2e8f0; border-radius:8px;
+                                    padding:10px 14px; margin-bottom:8px;">
+                            <div style="font-size:0.72rem; color:#64748b; font-weight:600;
+                                        text-transform:uppercase; margin-bottom:2px;">{formula[0]}</div>
+                            <div style="color:#1e293b; font-size:0.88rem; font-family:monospace;
+                                        background:#f8fafc; border-radius:4px; padding:4px 8px;">{formula[1]}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+        # ── Exam Tips ──
+        if exam_tips:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">💡</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">시험 꿀팁</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            for tip in exam_tips:
+                tip_text = tip if isinstance(tip, str) else tip.get("tip", tip.get("content", ""))
+                if not tip_text:
+                    continue
+                st.markdown(f"""
+                <div style="background:#fffbeb; border:1px solid #fde68a; border-left:3px solid #f59e0b;
+                            border-radius:8px; padding:8px 14px; margin-bottom:6px;">
+                    <span style="color:#92400e; font-size:0.88rem;">{tip_text}</span>
+                </div>
+                """, unsafe_allow_html=True)
 
     # ════════════════════════════════════════════════════════════════════════
     # STRUCTURED VIEW — topics with per-LOS cards (when structured_concepts.json exists)
     # ════════════════════════════════════════════════════════════════════════
-    _LOS_ACTION_COLORS = {
-        "Calculate": ("#1e40af", "#dbeafe"),
-        "Describe":  ("#065f46", "#d1fae5"),
-        "Explain":   ("#6d28d9", "#ede9fe"),
-        "Compare":   ("#b45309", "#fef3c7"),
-        "Interpret": ("#1d4ed8", "#dbeafe"),
-        "Define":    ("#065f46", "#d1fae5"),
-        "Identify":  ("#1e40af", "#dbeafe"),
-        "Discuss":   ("#6d28d9", "#ede9fe"),
-        "Demonstrate": ("#6d28d9", "#ede9fe"),
-        "Evaluate":  ("#b45309", "#fef3c7"),
-        "Analyze":   ("#b45309", "#fef3c7"),
-        "Distinguish": ("#b45309", "#fef3c7"),
-        "Contrast":  ("#b45309", "#fef3c7"),
-    }
+    elif source == "structured" and topics:
+        _LOS_ACTION_COLORS = {
+            "Calculate": ("#1e40af", "#dbeafe"),
+            "Describe":  ("#065f46", "#d1fae5"),
+            "Explain":   ("#6d28d9", "#ede9fe"),
+            "Compare":   ("#b45309", "#fef3c7"),
+            "Interpret": ("#1d4ed8", "#dbeafe"),
+            "Define":    ("#065f46", "#d1fae5"),
+            "Identify":  ("#1e40af", "#dbeafe"),
+            "Discuss":   ("#6d28d9", "#ede9fe"),
+            "Demonstrate": ("#6d28d9", "#ede9fe"),
+            "Evaluate":  ("#b45309", "#fef3c7"),
+            "Analyze":   ("#b45309", "#fef3c7"),
+            "Distinguish": ("#b45309", "#fef3c7"),
+            "Contrast":  ("#b45309", "#fef3c7"),
+        }
 
-    if source == "structured" and topics:
         total_los = sum(len(t.get("los_items", [])) for t in topics)
         st.markdown(f"""
         <div style="color:#94a3b8; font-size:0.8rem; margin-bottom:12px;">
@@ -563,7 +710,6 @@ with tab_concept:
                 key_points = item.get("key_points", [])
 
                 # Derive action verb for color badge
-                # LOS format: "LOS 1a: Calculate ..." or "Calculate ..."
                 words = los_text.replace(":", " ").split()
                 action = ""
                 for w in words:
@@ -609,10 +755,71 @@ with tab_concept:
                         </ul>
                         """, unsafe_allow_html=True)
 
+        # ── Formulas ──
+        if formulas:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">📐</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">주요 공식</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            cols = st.columns(2)
+            for i, formula in enumerate(formulas, 1):
+                with cols[(i - 1) % 2]:
+                    if isinstance(formula, list) and len(formula) >= 2:
+                        st.markdown(f"""
+                        <div style="background:white; border:1px solid #e2e8f0; border-radius:8px;
+                                    padding:10px 14px; margin-bottom:8px;">
+                            <div style="font-size:0.72rem; color:#64748b; font-weight:600;
+                                        text-transform:uppercase; margin-bottom:2px;">{formula[0]}</div>
+                            <div style="color:#1e293b; font-size:0.88rem; font-family:monospace;
+                                        background:#f8fafc; border-radius:4px; padding:4px 8px;">{formula[1]}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+        # ── Exam Tips ──
+        if exam_tips:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">💡</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">시험 꿀팁</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            for tip in exam_tips:
+                tip_text = tip if isinstance(tip, str) else tip.get("tip", tip.get("content", ""))
+                if not tip_text:
+                    continue
+                st.markdown(f"""
+                <div style="background:#fffbeb; border:1px solid #fde68a; border-left:3px solid #f59e0b;
+                            border-radius:8px; padding:8px 14px; margin-bottom:6px;">
+                    <span style="color:#92400e; font-size:0.88rem;">{tip_text}</span>
+                </div>
+                """, unsafe_allow_html=True)
+
     # ════════════════════════════════════════════════════════════════════════
     # FALLBACK VIEW — flat LOS list (enhanced_concepts.json source)
     # ════════════════════════════════════════════════════════════════════════
     elif los_flat:
+        _LOS_ACTION_COLORS = {
+            "Calculate": ("#1e40af", "#dbeafe"),
+            "Describe":  ("#065f46", "#d1fae5"),
+            "Explain":   ("#6d28d9", "#ede9fe"),
+            "Compare":   ("#b45309", "#fef3c7"),
+            "Interpret": ("#1d4ed8", "#dbeafe"),
+            "Define":    ("#065f46", "#d1fae5"),
+            "Identify":  ("#1e40af", "#dbeafe"),
+            "Discuss":   ("#6d28d9", "#ede9fe"),
+            "Demonstrate": ("#6d28d9", "#ede9fe"),
+            "Evaluate":  ("#b45309", "#fef3c7"),
+            "Analyze":   ("#b45309", "#fef3c7"),
+            "Distinguish": ("#b45309", "#fef3c7"),
+            "Contrast":  ("#b45309", "#fef3c7"),
+        }
+
         st.markdown(f"""
         <div style="background:#fef9c3; border:1px solid #fde047; border-radius:8px;
                     padding:8px 14px; margin-bottom:16px; font-size:0.82rem; color:#713f12;">
@@ -643,54 +850,50 @@ with tab_concept:
                 </div>
                 """, unsafe_allow_html=True)
 
-    # ════════════════════════════════════════════════════════════════════════
-    # Formulas
-    # ════════════════════════════════════════════════════════════════════════
-    if formulas:
-        st.divider()
-        st.markdown("""
-        <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
-            <span style="font-size:1rem;">📐</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">주요 공식</span>
-        </div>
-        """, unsafe_allow_html=True)
-
-        cols = st.columns(2)
-        for i, formula in enumerate(formulas, 1):
-            with cols[(i - 1) % 2]:
-                if isinstance(formula, list) and len(formula) >= 2:
-                    st.markdown(f"""
-                    <div style="background:white; border:1px solid #e2e8f0; border-radius:8px;
-                                padding:10px 14px; margin-bottom:8px;">
-                        <div style="font-size:0.72rem; color:#64748b; font-weight:600;
-                                    text-transform:uppercase; margin-bottom:2px;">{formula[0]}</div>
-                        <div style="color:#1e293b; font-size:0.88rem; font-family:monospace;
-                                    background:#f8fafc; border-radius:4px; padding:4px 8px;">{formula[1]}</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-    # ════════════════════════════════════════════════════════════════════════
-    # Exam Tips
-    # ════════════════════════════════════════════════════════════════════════
-    if exam_tips:
-        st.divider()
-        st.markdown("""
-        <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
-            <span style="font-size:1rem;">💡</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">시험 꿀팁</span>
-        </div>
-        """, unsafe_allow_html=True)
-
-        for tip in exam_tips:
-            tip_text = tip if isinstance(tip, str) else tip.get("tip", tip.get("content", ""))
-            if not tip_text:
-                continue
-            st.markdown(f"""
-            <div style="background:#fffbeb; border:1px solid #fde68a; border-left:3px solid #f59e0b;
-                        border-radius:8px; padding:8px 14px; margin-bottom:6px;">
-                <span style="color:#92400e; font-size:0.88rem;">{tip_text}</span>
+        # ── Formulas ──
+        if formulas:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">📐</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">주요 공식</span>
             </div>
             """, unsafe_allow_html=True)
+
+            cols = st.columns(2)
+            for i, formula in enumerate(formulas, 1):
+                with cols[(i - 1) % 2]:
+                    if isinstance(formula, list) and len(formula) >= 2:
+                        st.markdown(f"""
+                        <div style="background:white; border:1px solid #e2e8f0; border-radius:8px;
+                                    padding:10px 14px; margin-bottom:8px;">
+                            <div style="font-size:0.72rem; color:#64748b; font-weight:600;
+                                        text-transform:uppercase; margin-bottom:2px;">{formula[0]}</div>
+                            <div style="color:#1e293b; font-size:0.88rem; font-family:monospace;
+                                        background:#f8fafc; border-radius:4px; padding:4px 8px;">{formula[1]}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+        # ── Exam Tips ──
+        if exam_tips:
+            st.divider()
+            st.markdown("""
+            <div style="display:flex; align-items:center; gap:8px; margin:4px 0 10px 0;">
+                <span style="font-size:1rem;">💡</span>
+                <span style="font-weight:700; color:#0a1628; font-size:1.05rem;">시험 꿀팁</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+            for tip in exam_tips:
+                tip_text = tip if isinstance(tip, str) else tip.get("tip", tip.get("content", ""))
+                if not tip_text:
+                    continue
+                st.markdown(f"""
+                <div style="background:#fffbeb; border:1px solid #fde68a; border-left:3px solid #f59e0b;
+                            border-radius:8px; padding:8px 14px; margin-bottom:6px;">
+                    <span style="color:#92400e; font-size:0.88rem;">{tip_text}</span>
+                </div>
+                """, unsafe_allow_html=True)
 
 
 # ════════════════════════════════════════════════════════════════════════════
