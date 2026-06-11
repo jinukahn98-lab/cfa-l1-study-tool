@@ -14,7 +14,22 @@ from concept_data import CONCEPT_DATA
 from modules_l1 import module_names
 
 ENHANCED_FILE = Path(__file__).parent / "data" / "enhanced_concepts.json"
+PDF_READING_FILE = Path(__file__).parent / "data" / "pdf_reading_texts.json"
 _FSA_ALIAS = {"Financial Statement Analysis": "FSA"}
+
+
+def _load_pdf_readings() -> dict:
+    """Load full reading texts extracted from SchweserNotes PDFs."""
+    try:
+        import json
+        if PDF_READING_FILE.exists():
+            return json.loads(PDF_READING_FILE.read_text("utf-8"))
+    except Exception:
+        pass
+    return {}
+
+
+PDF_READINGS = _load_pdf_readings()
 
 
 def _load_enhanced() -> dict:
@@ -81,7 +96,7 @@ class ConceptLoader:
 
     def get_sections(self, module: str) -> dict:
         data = self.load_for_module(module)
-        return {
+        result = {
             "summary": data.get("summary", ""),
             "key_concepts": data.get("key_concepts", []),
             "formulas": data.get("formulas", []),
@@ -89,6 +104,12 @@ class ConceptLoader:
             "los": data.get("los", []),
             "_pdf_readings": data.get("_pdf_readings", 0),
         }
+        # Add full PDF reading text for this module
+        pdf_data = PDF_READINGS.get(module, {})
+        if pdf_data.get("readings"):
+            result["reading_texts"] = pdf_data["readings"]
+            result["_pdf_total_chars"] = pdf_data.get("total_chars", 0)
+        return result
 
     def available_modules(self) -> list:
         return module_names()
