@@ -510,139 +510,229 @@ with tab_concept:
     exam_tips = data.get("exam_tips", [])
     los = data.get("los", [])
 
-    # ── SUMMARY ──
+    # ── Show summary briefly ──
     if summary:
-        st.markdown("""
-        <div style="background:linear-gradient(135deg, #f0f4ff 0%, #e8eef7 100%);
-                    border:1px solid #d0d9e8; border-radius:12px; padding:20px 24px; margin-bottom:20px;">
-            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
-                <span style="font-size:1.2rem;">📝</span>
-                <span style="font-weight:700; color:#1e3a5f; font-size:1rem;">개요</span>
-            </div>
-            <div style="color:#334155; line-height:1.7; font-size:0.95rem;">{summary}</div>
-        </div>
-        """.format(summary=summary), unsafe_allow_html=True)
-
-    # ── KEY CONCEPTS ──
-    if key_concepts:
         st.markdown(f"""
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
-            <span style="font-size:1.2rem;">🔑</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">핵심 개념</span>
-            <span style="background:#e2e8f0; color:#475569; padding:1px 10px; border-radius:10px; font-size:0.75rem; font-weight:600;">{len(key_concepts)}개</span>
+        <div style="background:linear-gradient(135deg, #f0f4ff 0%, #e8eef7 100%);
+                    border:1px solid #d0d9e8; border-radius:12px; padding:16px 20px; margin-bottom:20px;">
+            <div style="color:#334155; line-height:1.6; font-size:0.9rem;">{summary[:500]}{'...' if len(summary)>500 else ''}</div>
+        </div>
+        """.format(summary=summary[:500]), unsafe_allow_html=True)
+
+    # ════════════════════════════════════════════════════════════════════════
+    # LOS-BASED CONCEPT VIEW — PRIMARY ORGANIZATION
+    # ════════════════════════════════════════════════════════════════════════
+    if los:
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+            <span style="font-size:1.4rem;">🎯</span>
+            <span style="font-weight:700; color:#0a1628; font-size:1.2rem;">Learning Outcomes (LOS)</span>
+            <span style="background:linear-gradient(135deg, #0a1628, #1a3a6b); color:white; padding:2px 12px; border-radius:12px; font-size:0.75rem; font-weight:600;">{len(los)}개</span>
         </div>
         """, unsafe_allow_html=True)
 
-        for i, concept in enumerate(key_concepts, 1):
-            if isinstance(concept, dict):
-                title = concept.get("title", "")
-                desc = concept.get("description", concept.get("content", ""))
-                with st.expander(f"**{i}. {title}**", expanded=(i <= 2)):
-                    st.write(desc)
+        # Extract action verbs for categorization
+        los_actions = []
+        for lo in los:
+            first_word = lo.split(" ")[0] if lo else ""
+            los_actions.append(first_word)
+
+        # Group LOS by first few words to show reading groups
+        # Show each LOS as a full card
+        for i, lo in enumerate(los, 1):
+            # Extract the action verb (first word)
+            action = lo.split(" ")[0] if lo else ""
+            action_upper = action.upper()
+
+            # Determine color coding by action type
+            action_colors = {
+                "Calculate": ("#1e40af", "#dbeafe"),
+                "Describe": ("#065f46", "#d1fae5"),
+                "Explain": ("#6d28d9", "#ede9fe"),
+                "Compare": ("#b45309", "#fef3c7"),
+                "Distinguish": ("#b45309", "#fef3c7"),
+                "Interpret": ("#1d4ed8", "#dbeafe"),
+                "Define": ("#065f46", "#d1fae5"),
+                "Identify": ("#1e40af", "#dbeafe"),
+                "Discuss": ("#6d28d9", "#ede9fe"),
+                "Demonstrate": ("#6d28d9", "#ede9fe"),
+                "Evaluate": ("#b45309", "#fef3c7"),
+                "Analyze": ("#b45309", "#fef3c7"),
+                "Recommend": ("#b45309", "#fef3c7"),
+            }
+            bg_color, badge_color = action_colors.get(action, ("#475569", "#f1f5f9"))
+
+            # Truncate the description to show in the card
+            lo_desc = lo
+            # Split into action part and detail
+            # Try to extract the core LOS statement
+            lines = lo.split(". ")
+            if len(lines) > 1:
+                short_desc = lines[0][:80]
+                full_detail = ". ".join(lines[1:]) if len(lines) > 1 else ""
             else:
-                # String concept — display as a styled card
+                short_desc = lo[:80]
+                full_detail = ""
+
+            with st.expander(f"**LOS {i}** — {short_desc}", expanded=(i <= 3)):
                 st.markdown(f"""
-                <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
-                            padding:14px 18px; margin-bottom:8px;
-                            box-shadow:0 1px 3px rgba(0,0,0,0.03);
-                            border-left:3px solid {mod_color};">
-                    <div style="display:flex; align-items:flex-start; gap:10px;">
-                        <div style="background:{mod_color}15; color:{mod_color}; font-weight:700;
-                                    min-width:26px; height:26px; border-radius:8px;
-                                    display:flex; align-items:center; justify-content:center;
-                                    font-size:0.8rem;">{i}</div>
-                        <div style="color:#1e293b; font-size:0.95rem; line-height:1.6;">{concept}</div>
+                <div style="border-left:3px solid {bg_color}; padding-left:16px; margin-left:4px;">
+                    <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+                        <span style="background:{badge_color}; color:{bg_color}; font-weight:700; font-size:0.72rem;
+                                    padding:2px 10px; border-radius:8px;">{action_upper}</span>
+                        <span style="color:#94a3b8; font-size:0.78rem;">LOS #{i}</span>
                     </div>
+                    <div style="color:#1e293b; font-size:0.95rem; line-height:1.7;">{lo}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
-    # ── FORMULAS ──
-    if formulas:
-        st.markdown("""
-        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
-            <span style="font-size:1.2rem;">📐</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">주요 공식</span>
+                # ── Try to find related key concepts ──
+                # Simple keyword matching: check if any concept keywords appear in the LOS text
+                lo_lower = lo.lower()
+                related_concepts = []
+                for concept in key_concepts:
+                    if isinstance(concept, str):
+                        concept_lower = concept.lower()
+                        # Check for significant keyword overlap
+                        lo_words = set(lo_lower.split())
+                        concept_keywords = set(concept_lower.split())
+                        # Remove common words
+                        stopwords = {"the", "a", "an", "of", "in", "to", "and", "for", "is", "are", "be", "by", "on", "that", "with", "as", "at", "from", "or", "it", "its", "their", "this", "these", "those"}
+                        lo_words = lo_words - stopwords
+                        concept_keywords = concept_keywords - stopwords
+                        overlap = lo_words & concept_keywords
+                        if len(overlap) >= 2:
+                            related_concepts.append(concept)
+
+                if related_concepts:
+                    for rc in related_concepts[:3]:
+                        st.markdown(f"""
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:8px 12px; margin:4px 0;">
+                            <span style="font-size:0.78rem; color:#64748b; font-weight:600;">🔗 관련 개념</span>
+                            <div style="color:#334155; font-size:0.88rem;">{rc}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                # ── Find related formulas ──
+                related_formulas = []
+                for formula in formulas:
+                    if isinstance(formula, list) and len(formula) >= 2:
+                        name = formula[0].lower()
+                        if any(w in name for w in lo_lower.split() if len(w) > 4):
+                            related_formulas.append(formula)
+                    elif isinstance(formula, dict):
+                        name = formula.get("name", "").lower()
+                        if any(w in name for w in lo_lower.split() if len(w) > 4):
+                            related_formulas.append(formula)
+
+                if related_formulas:
+                    st.markdown(f"""
+                    <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:6px; padding:8px 12px; margin:4px 0;">
+                        <span style="font-size:0.78rem; color:#0369a1; font-weight:600;">📐 관련 공식</span>
+                    """, unsafe_allow_html=True)
+                    for rf in related_formulas[:2]:
+                        if isinstance(rf, list):
+                            st.markdown(f"<div style='font-size:0.85rem; color:#334155;'><b>{rf[0]}</b>: {rf[1][:80]}</div>", unsafe_allow_html=True)
+                        elif isinstance(rf, dict):
+                            st.markdown(f"<div style='font-size:0.85rem; color:#334155;'><b>{rf.get('name','')}</b>: {rf.get('formula','')[:80]}</div>", unsafe_allow_html=True)
+                    st.markdown("</div>", unsafe_allow_html=True)
+
+                # ── Find related exam tips ──
+                related_tips = []
+                for tip in exam_tips:
+                    tip_text = tip if isinstance(tip, str) else (tip.get("tip", tip.get("content", "")))
+                    tip_lower = tip_text.lower()
+                    if any(w in tip_lower for w in lo_lower.split() if len(w) > 4):
+                        related_tips.append(tip_text)
+
+                if related_tips:
+                    for rt in related_tips[:2]:
+                        st.markdown(f"""
+                        <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:6px; padding:8px 12px; margin:4px 0;">
+                            <span style="font-size:0.78rem; color:#92400e; font-weight:600;">💡 관련 팁</span>
+                            <div style="color:#92400e; font-size:0.85rem;">{rt[:120]}</div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+    # ════════════════════════════════════════════════════════════════════════
+    # SUPPLEMENTARY: Key Concepts, Formulas, Exam Tips
+    # ════════════════════════════════════════════════════════════════════════
+    st.divider()
+    st.markdown("""
+    <div style="display:flex; align-items:center; gap:8px; margin:12px 0 4px 0;">
+        <span style="font-size:1.2rem;">📋</span>
+        <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">모듈 요약 자료</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Key Concepts row
+    if key_concepts:
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 0 10px 0;">
+            <span style="font-size:1rem;">🔑</span>
+            <span style="font-weight:600; color:#0a1628;">핵심 개념</span>
+            <span style="background:#e2e8f0; color:#475569; padding:1px 10px; border-radius:10px; font-size:0.72rem; font-weight:600;">{len(key_concepts)}개</span>
         </div>
         """, unsafe_allow_html=True)
 
-        col_f1, col_f2 = st.columns(2)
+        cols = st.columns(2)
+        for i, concept in enumerate(key_concepts, 1):
+            col = cols[i % 2]
+            with col:
+                if isinstance(concept, str):
+                    st.markdown(f"""
+                    <div style="background:white; border:1px solid #e2e8f0; border-left:3px solid {mod_color};
+                                border-radius:8px; padding:10px 14px; margin-bottom:6px;">
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span style="background:{mod_color}15; color:{mod_color}; font-weight:700; font-size:0.7rem;
+                                        width:20px; height:20px; border-radius:6px; display:flex; align-items:center; justify-content:center;">{i}</span>
+                            <span style="color:#334155; font-size:0.88rem;">{concept}</span>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+    # Formulas row
+    if formulas:
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 0 10px 0;">
+            <span style="font-size:1rem;">📐</span>
+            <span style="font-weight:600; color:#0a1628;">주요 공식</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+        cols = st.columns(2)
         for i, formula in enumerate(formulas, 1):
-            col = col_f1 if i % 2 == 1 else col_f2
+            col = cols[i % 2]
             with col:
                 if isinstance(formula, list) and len(formula) >= 2:
-                    name = formula[0]
-                    expr = formula[1]
                     st.markdown(f"""
-                    <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
-                                padding:14px 16px; margin-bottom:10px; height:auto;
-                                box-shadow:0 1px 3px rgba(0,0,0,0.03);">
-                        <div style="font-size:0.8rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;">
-                            공식 #{i}
-                        </div>
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">{name}</div>
-                        <div style="color:#475569; font-size:0.88rem; font-family:'SF Mono', 'Fira Code', monospace;
-                                    background:#f8fafc; border:1px solid #eef2f7; border-radius:6px; padding:8px 10px; margin-top:6px;">
-                            {expr}
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                elif isinstance(formula, dict):
-                    name = formula.get("name", f"공식 {i}")
-                    expr = formula.get("formula", formula.get("expression", ""))
-                    desc = formula.get("description", "")
-                    st.markdown(f"""
-                    <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
-                                padding:14px 16px; margin-bottom:10px;
-                                box-shadow:0 1px 3px rgba(0,0,0,0.03);">
-                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:4px;">{name}</div>
-                        <div style="color:#475569; font-size:0.88rem; font-family:'SF Mono', monospace;
-                                    background:#f8fafc; border-radius:6px; padding:8px 10px;">{expr}</div>
-                        <div style="color:#94a3b8; font-size:0.82rem; margin-top:6px;">{desc}</div>
+                    <div style="background:white; border:1px solid #e2e8f0; border-radius:8px; padding:10px 14px; margin-bottom:6px;">
+                        <div style="font-size:0.72rem; color:#64748b; font-weight:600; text-transform:uppercase;">공식 #{i}</div>
+                        <div style="color:#1e293b; font-weight:600; font-size:0.88rem;">{formula[0]}</div>
+                        <div style="color:#475569; font-size:0.82rem; font-family:monospace; background:#f8fafc; border-radius:4px; padding:4px 8px; margin-top:4px;">{formula[1][:120]}</div>
                     </div>
                     """, unsafe_allow_html=True)
 
-    # ── EXAM TIPS ──
+    # Exam Tips row
     if exam_tips:
-        st.markdown("""
-        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
-            <span style="font-size:1.2rem;">💡</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">시험 꿀팁</span>
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin:16px 0 10px 0;">
+            <span style="font-size:1rem;">💡</span>
+            <span style="font-weight:600; color:#0a1628;">시험 꿀팁</span>
         </div>
         """, unsafe_allow_html=True)
 
-        for i, tip in enumerate(exam_tips, 1):
-            if isinstance(tip, dict):
-                text = tip.get("tip", tip.get("content", ""))
-            else:
-                text = tip
+        for tip in exam_tips[:5]:
+            text = tip if isinstance(tip, str) else tip.get("tip", tip.get("content", ""))
             st.markdown(f"""
-            <div style="background:#fffbeb; border:1px solid #fde68a; border-left:4px solid #f59e0b;
-                        border-radius:10px; padding:12px 16px; margin-bottom:8px;">
-                <div style="display:flex; align-items:flex-start; gap:8px;">
-                    <span style="font-size:1rem;">💡</span>
-                    <div style="color:#92400e; font-size:0.92rem; line-height:1.6;">{text}</div>
+            <div style="background:#fffbeb; border:1px solid #fde68a; border-left:3px solid #f59e0b;
+                        border-radius:8px; padding:8px 14px; margin-bottom:4px;">
+                <div style="display:flex; align-items:flex-start; gap:6px;">
+                    <span style="font-size:0.9rem;">💡</span>
+                    <span style="color:#92400e; font-size:0.85rem;">{text[:150]}</span>
                 </div>
             </div>
             """, unsafe_allow_html=True)
-
-    # ── LEARNING OUTCOMES ──
-    if los:
-        st.markdown(f"""
-        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
-            <span style="font-size:1.2rem;">🎯</span>
-            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">Learning Outcomes (LOS)</span>
-            <span style="background:#e2e8f0; color:#475569; padding:1px 10px; border-radius:10px; font-size:0.75rem; font-weight:600;">{len(los)}개</span>
-        </div>
-        """, unsafe_allow_html=True)
-
-        for i, lo in enumerate(los, 1):
-            short = lo[:100] + ("..." if len(lo) > 100 else "")
-            with st.expander(f"**LOS {i}:** {short}", expanded=False):
-                st.markdown(f"""
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 16px;">
-                    <div style="color:#1e293b; font-size:0.92rem; line-height:1.7;">{lo}</div>
-                </div>
-                """, unsafe_allow_html=True)
 
 
 # ════════════════════════════════════════════════════════════════════════════
