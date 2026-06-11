@@ -564,33 +564,53 @@ with tab_concept:
                 <div id="{card_id}_body" style="padding:16px 20px; display:{'block' if is_expanded else 'none'};">
             """, unsafe_allow_html=True)
 
-            # Summary paragraphs
-            if summary_text:
-                # Split into paragraphs
-                paragraphs = [p.strip() for p in summary_text.split('\n') if p.strip()]
-                for para in paragraphs:
-                    st.markdown(f"""
-                    <div style="color:#1e293b; font-size:0.9rem; line-height:1.7; margin-bottom:10px;">
-                        {para}
-                    </div>
-                    """, unsafe_allow_html=True)
-
-            # Key points
+            # Key points — 한글 문서 스타일 2단 그리드
             if key_points:
-                st.markdown("""
-                <div style="display:flex; align-items:center; gap:6px; margin:12px 0 8px 0;">
-                    <span style="font-size:0.85rem;">🔑</span>
-                    <span style="font-weight:700; color:#0a1628; font-size:0.88rem;">핵심 포인트</span>
+                st.markdown(f"""
+                <div style="margin:14px 0 8px 0; border-bottom:2px solid {mod_color}; padding-bottom:4px;">
+                    <span style="font-weight:700; color:#0a1628; font-size:0.95rem;">🔑 핵심 포인트</span>
                 </div>
                 """, unsafe_allow_html=True)
 
-                for pt in key_points:
-                    st.markdown(f"""
-                    <div style="display:flex; gap:8px; margin-bottom:4px; align-items:flex-start;">
-                        <span style="color:{mod_color}; font-size:0.75rem; margin-top:3px;">•</span>
-                        <span style="color:#334155; font-size:0.88rem; line-height:1.5;">{pt}</span>
-                    </div>
-                    """, unsafe_allow_html=True)
+                # 2-column grid
+                half = (len(key_points) + 1) // 2
+                for row_idx in range(half):
+                    cols = st.columns(2)
+                    for col_idx in range(2):
+                        pt_idx = row_idx * 2 + col_idx
+                        if pt_idx < len(key_points):
+                            pt = key_points[pt_idx]
+                            with cols[col_idx]:
+                                st.markdown(f"""
+                                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:3px solid {mod_color};
+                                            border-radius:6px; padding:8px 12px; margin-bottom:6px; min-height:48px;
+                                            display:flex; align-items:center;">
+                                    <span style="color:{mod_color}; font-size:0.78rem; font-weight:700; margin-right:6px;">•</span>
+                                    <span style="color:#334155; font-size:0.85rem; line-height:1.5;">{pt}</span>
+                                </div>
+                                """, unsafe_allow_html=True)
+
+            # Summary — markdown table 지원
+            if summary_text:
+                paragraphs = [p.strip() for p in summary_text.split('\n') if p.strip()]
+                st.markdown(f"""
+                <div style="margin:14px 0 8px 0; border-bottom:2px solid {mod_color}; padding-bottom:4px;">
+                    <span style="font-weight:700; color:#0a1628; font-size:0.95rem;">📝 상세 설명</span>
+                </div>
+                """, unsafe_allow_html=True)
+
+                # Detect markdown tables in summary and render accordingly
+                has_table = any('|' in p and p.strip().startswith('|') for p in paragraphs)
+                if has_table:
+                    # Render as raw markdown so tables work
+                    st.markdown(summary_text)
+                else:
+                    for i, para in enumerate(paragraphs):
+                        st.markdown(f"""
+                        <div style="color:#1e293b; font-size:0.9rem; line-height:1.8; margin-bottom:8px; padding-left:4px;">
+                            {para}
+                        </div>
+                        """, unsafe_allow_html=True)
 
             # Close card body
             st.markdown("</div></div>", unsafe_allow_html=True)
