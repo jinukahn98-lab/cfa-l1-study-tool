@@ -1,7 +1,11 @@
+"""
+CFA Level 1 Study Tool — Streamlit app
+SchweserNotes 2022 기반 개념 정리 + 문제은행 + 진도 추적
+"""
 import streamlit as st
 import pandas as pd
 from quiz_loader import QuizLoader
-from modules_l1 import module_names, topics_for_module, module_color, MODULE_COLORS
+from modules_l1 import module_names, topics_for_module, module_color, MODULE_COLORS, MODULE_BOOK_MAP
 from concept_loader import ConceptLoader
 from flashcard_generator import FlashcardGenerator
 import db
@@ -16,13 +20,11 @@ except FileNotFoundError as e:
     st.info("👉 Google Drive에서 quiz_data.json을 다운로드한 후 `data/` 폴더에 넣어주세요.")
     st.stop()
 
-# ── Session state init ──────────────────────────────────────────────────────
 if "questions" not in st.session_state:
     st.session_state.questions = []
     st.session_state.q_idx = 0
     st.session_state.answers = {}
 
-# ── Header ──────────────────────────────────────────────────────────────────
 st.title("📊 CFA Level 1 Study Tool")
 st.caption("SchweserNotes 2022 기반 | 5권 PDF + 한국어 개념 정리 | 문제은행 + 진도 추적")
 st.divider()
@@ -30,12 +32,12 @@ st.divider()
 cl = ConceptLoader()
 fg = FlashcardGenerator()
 
-tab1, tab4, tab2, tab3 = st.tabs(["📝 문제 풀이", "📖 개념 정리", "📈 진도 현황", "📕 오답 노트"])
+tab_quiz, tab_concept, tab_progress, tab_wrong = st.tabs(["📝 문제 풀이", "📖 개념 정리", "📈 진도 현황", "📕 오답 노트"])
 
 # ════════════════════════════════════════════════════════════════════════════
 # TAB 1: 문제 풀이
 # ════════════════════════════════════════════════════════════════════════════
-with tab1:
+with tab_quiz:
     col_setting, col_quiz = st.columns([1, 3])
 
     with col_setting:
@@ -63,269 +65,207 @@ with tab1:
     with col_quiz:
         if not st.session_state.questions:
             st.info("👈 설정을 선택하고 '새 문제 세트 시작'을 눌러주세요.")
-            st.stop()
 
-        qs = st.session_state.questions
-        idx = st.session_state.q_idx
-        total = len(qs)
+        if st.session_state.questions:
+            qs = st.session_state.questions
+            idx = st.session_state.q_idx
+            total = len(qs)
 
-        if idx >= total:
-            correct = sum(1 for a in st.session_state.answers.values() if a.get("is_correct"))
-            total_answered = len(st.session_state.answers)
-            pct = correct / max(total_answered, 1) * 100
+            if idx >= total:
+                correct = sum(1 for a in st.session_state.answers.values() if a.get("is_correct"))
+                total_answered = len(st.session_state.answers)
+                pct = correct / max(total_answered, 1) * 100
 
-            st.balloons()
-            st.success(f"## 🎉 세트 완료!")
-            st.metric("정답", f"{correct}/{total_answered}", f"{pct:.0f}%")
+                st.balloons()
+                st.success(f"## 🎉 세트 완료!")
+                st.metric("정답", f"{correct}/{total_answered}", f"{pct:.0f}%")
 
-            if total_answered > 0:
-                df = pd.DataFrame([
-                    {"모듈": a.get("module", "?"), "결과": "✅" if a["is_correct"] else "❌"}
-                    for a in st.session_state.answers.values()
-                ])
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.dataframe(df["모듈"].value_counts(), use_container_width=True)
+                if total_answered > 0:
+                    df = pd.DataFrame([
+                        {"모듈": a.get("module", "?"), "결과": "✅" if a["is_correct"] else "❌"}
+                        for a in st.session_state.answers.values()
+                    ])
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.dataframe(df["모듈"].value_counts(), use_container_width=True)
 
-            if st.button("🔄 다시 시작", use_container_width=True):
-                st.session_state.questions = []
-                st.session_state.q_idx = 0
-                st.session_state.answers = {}
-                st.rerun()
-            st.stop()
-
-        # ── Current question ────────────────────────────────────────────────
-        q = qs[idx]
-        st.progress((idx + 1) / total, text=f"**{idx + 1} / {total}**")
-
-        # Question header
-        mod = q.get("fallback_module", q.get("topic", "?"))
-        col_a, col_b = st.columns([3, 1])
-        with col_a:
-            st.markdown(f"### Q{idx + 1}")
-            st.markdown(q["text"])
-        with col_b:
-            st.markdown(
-                f"<span style='background:{MODULE_COLORS.get(mod, '#6B7280')}; "
-                f"padding:2px 8px; border-radius:10px; color:white; font-size:0.8em;'>"
-                f"{mod}</span>",
-                unsafe_allow_html=True
-            )
-            st.caption(f"Book {q.get('book', '?')} | #{q.get('num', '?')}")
-
-        st.divider()
-
-        # Options
-        options = list(q.get("options", {}).values())
-        opt_keys = list(q.get("options", {}).keys())
-
-        # Check if already answered
-        already_answered = idx in st.session_state.answers
-        disabled = already_answered
-
-        selected = st.radio(
-            "정답을 고르세요:",
-            options,
-            key=f"radio_{idx}",
-            index=None,
-            disabled=disabled,
-        )
-
-        col_submit, col_skip = st.columns([1, 1])
-
-        with col_submit:
-            if st.button("✅ 제출", type="primary", disabled=disabled or not selected, use_container_width=True):
-                if selected:
-                    correct_key = q.get("answer", "A")
-                    correct_text = q["options"].get(correct_key, options[0] if options else "")
-
-                    is_correct = selected == correct_text
-                    st.session_state.answers[idx] = {
-                        "selected": selected,
-                        "correct": correct_text,
-                        "correct_key": correct_key,
-                        "is_correct": is_correct,
-                        "module": mod,
-                        "topic": q.get("fallback_topic", q.get("topic", "?")),
-                    }
-
-                    db.save_attempt(
-                        q.get("book", 1), q.get("reading_num", 0),
-                        q.get("num", 0), q["text"],
-                        selected, correct_text,
-                        mod, q.get("topic", "?")
-                    )
+                if st.button("🔄 다시 시작", use_container_width=True):
+                    st.session_state.questions = []
+                    st.session_state.q_idx = 0
+                    st.session_state.answers = {}
                     st.rerun()
-
-        with col_skip:
-            if st.button("⏭️ 건너뛰기", use_container_width=True):
-                st.session_state.answers[idx] = {
-                    "selected": "skipped",
-                    "correct": "",
-                    "correct_key": "",
-                    "is_correct": False,
-                    "module": mod,
-                    "topic": q.get("fallback_topic", q.get("topic", "?")),
-                }
-                st.rerun()
-
-        # Show result after answering
-        if already_answered:
-            ans = st.session_state.answers[idx]
-            st.divider()
-
-            if ans["is_correct"]:
-                st.success(f"✅ **정답!** ({ans['correct_key']}) {ans['correct']}")
-            elif ans["selected"] == "skipped":
-                correct_key = q.get("answer", "A")
-                correct_text = q["options"].get(correct_key, "")
-                st.warning(f"⏭️ 건너뜀. 정답: **{correct_key}. {correct_text}**")
             else:
-                st.error(f"❌ **오답.**")
-                st.info(f"정답: **{ans['correct_key']}. {ans['correct']}**")
+                q = qs[idx]
+                st.progress((idx + 1) / total, text=f"**{idx + 1} / {total}**")
 
-            # Bookmark + next
-            col_next, col_bm = st.columns([1, 1])
-            with col_next:
-                if st.button("➡️ 다음 문제", type="primary", use_container_width=True):
-                    st.session_state.q_idx += 1
-                    st.rerun()
-            with col_bm:
-                if st.button("⭐ 북마크", use_container_width=True):
-                    db.add_bookmark(
-                        q.get("book", 1), q.get("reading_num", 0), q.get("num", 0)
+                mod = q.get("fallback_module", q.get("topic", "?"))
+                col_a, col_b = st.columns([3, 1])
+                with col_a:
+                    st.markdown(f"### Q{idx + 1}")
+                    st.markdown(q["text"])
+                with col_b:
+                    st.markdown(
+                        f"<span style='background:{MODULE_COLORS.get(mod, '#6B7280')}; "
+                        f"padding:2px 8px; border-radius:10px; color:white; font-size:0.8em;'>"
+                        f"{mod}</span>",
+                        unsafe_allow_html=True
                     )
-                    st.toast("📌 북마크에 추가됨!")
+                    st.caption(f"Book {q.get('book', '?')} | #{q.get('num', '?')}")
+
+                st.divider()
+
+                options = list(q.get("options", {}).values())
+                opt_keys = list(q.get("options", {}).keys())
+
+                already_answered = idx in st.session_state.answers
+                disabled = already_answered
+
+                selected = st.radio(
+                    "정답을 고르세요:",
+                    options,
+                    key=f"radio_{idx}",
+                    index=None,
+                    disabled=disabled,
+                )
+
+                col_submit, col_skip = st.columns([1, 1])
+
+                with col_submit:
+                    if st.button("✅ 제출", type="primary", disabled=disabled or not selected, use_container_width=True):
+                        if selected:
+                            correct_key = q.get("answer", "A")
+                            correct_text = q["options"].get(correct_key, options[0] if options else "")
+
+                            is_correct = selected == correct_text
+                            st.session_state.answers[idx] = {
+                                "selected": selected,
+                                "correct": correct_text,
+                                "correct_key": correct_key,
+                                "is_correct": is_correct,
+                                "module": mod,
+                                "topic": q.get("fallback_topic", q.get("topic", "?")),
+                            }
+
+                            db.save_attempt(
+                                q.get("book", 1), q.get("reading_num", 0),
+                                q.get("num", 0), q["text"],
+                                selected, correct_text,
+                                mod, q.get("topic", "?")
+                            )
+                            st.rerun()
+
+                with col_skip:
+                    if st.button("⏭️ 건너뛰기", use_container_width=True):
+                        st.session_state.answers[idx] = {
+                            "selected": "skipped",
+                            "correct": "",
+                            "correct_key": "",
+                            "is_correct": False,
+                            "module": mod,
+                            "topic": q.get("fallback_topic", q.get("topic", "?")),
+                        }
+                        st.rerun()
+
+                if already_answered:
+                    ans = st.session_state.answers[idx]
+                    st.divider()
+
+                    if ans["is_correct"]:
+                        st.success(f"✅ **정답!** ({ans['correct_key']}) {ans['correct']}")
+                    elif ans["selected"] == "skipped":
+                        correct_key = q.get("answer", "A")
+                        correct_text = q["options"].get(correct_key, "")
+                        st.warning(f"⏭️ 건너뜀. 정답: **{correct_key}. {correct_text}**")
+                    else:
+                        st.error(f"❌ **오답.**")
+                        st.info(f"정답: **{ans['correct_key']}. {ans['correct']}**")
+
+                    col_next, col_bm = st.columns([1, 1])
+                    with col_next:
+                        if st.button("➡️ 다음 문제", type="primary", use_container_width=True):
+                            st.session_state.q_idx += 1
+                            st.rerun()
+                    with col_bm:
+                        if st.button("⭐ 북마크", use_container_width=True):
+                            db.add_bookmark(
+                                q.get("book", 1), q.get("reading_num", 0), q.get("num", 0)
+                            )
+                            st.toast("📌 북마크에 추가됨!")
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # TAB 4: 개념 정리
 # ════════════════════════════════════════════════════════════════════════════
-with tab4:
-    col_nav, col_content = st.columns([1, 3])
+with tab_concept:
+    st.subheader("📖 개념 정리")
+    st.caption("SchweserNotes 2022 기반 모듈별 핵심 개념을 정리했습니다.")
 
-    with col_nav:
-        st.subheader("📚 모듈")
+    try:
         concept_modules = cl.available_modules()
-        selected_concept_module = st.selectbox(
-            "모듈 선택",
-            concept_modules,
-            key="concept_module",
-        )
-        view_mode = st.radio(
-            "보기 모드",
-            ["개념요약", "핵심공식", "시험팁", "LOS", "플래시카드"],
-            key="concept_view_mode",
-        )
+    except Exception as e:
+        concept_modules = module_names()
 
-    with col_content:
-        sections = cl.get_sections(selected_concept_module)
-        pdf_readings = sections.get("_pdf_readings", 0) or 0
+    sel_module = st.selectbox("📚 모듈 선택", concept_modules, key="concept_module")
 
-        # Book info badge
-        from modules_l1 import MODULE_BOOK_MAP
-        book_info = MODULE_BOOK_MAP.get(selected_concept_module)
-        if book_info:
-            book_label = f"📘 SchweserNotes Book {book_info['book']}"
-            st.caption(f"{book_label} | Reading {book_info['readings'][0]}–{book_info['readings'][1]} | PDF {pdf_readings}개 Reading 반영")
-        elif pdf_readings:
-            st.caption(f"📖 PDF {pdf_readings}개 Reading 반영")
-        else:
-            st.caption("📖 한국어 개념 정리 기반")
-        st.divider()
+    try:
+        data = cl.get_sections(sel_module)
+    except Exception as e:
+        st.error(f"개념 데이터를 불러오지 못했습니다: {e}")
+        data = {}
 
-        if view_mode == "개념요약":
-            st.subheader(f"📖 {selected_concept_module} — 개념 요약")
-            st.markdown(sections["summary"])
-            if sections["key_concepts"]:
-                st.divider()
-                st.subheader("🔑 핵심 개념")
-                for concept in sections["key_concepts"]:
-                    st.markdown(f"- {concept}")
+    summary = data.get("summary", "")
+    key_concepts = data.get("key_concepts", [])
+    formulas = data.get("formulas", [])
+    exam_tips = data.get("exam_tips", [])
 
-        elif view_mode == "핵심공식":
-            st.subheader(f"🧮 {selected_concept_module} — 핵심 공식")
-            formulas = sections["formulas"]
-            if formulas:
-                for name, formula in formulas:
-                    with st.container():
-                        st.markdown(f"**{name}**")
-                        st.code(formula, language=None)
+    if summary:
+        st.markdown("### 📝 개요")
+        st.write(summary)
+
+    if key_concepts:
+        st.markdown("### 🔑 핵심 개념")
+        for i, concept in enumerate(key_concepts, 1):
+            if isinstance(concept, dict):
+                title = concept.get("title", "")
+                desc = concept.get("description", concept.get("content", ""))
+                with st.expander(f"{i}. {title}"):
+                    st.write(desc)
             else:
-                st.info("이 모듈에는 공식이 없습니다.")
+                st.write(f"**{i}.** {concept}")
 
-        elif view_mode == "시험팁":
-            st.subheader(f"💡 {selected_concept_module} — 시험 팁")
-            tips = sections["exam_tips"]
-            if tips:
-                for i, tip in enumerate(tips, 1):
-                    st.info(f"**팁 {i}.** {tip}")
+    if formulas:
+        st.markdown("### 📐 주요 공식")
+        for i, formula in enumerate(formulas, 1):
+            if isinstance(formula, dict):
+                name = formula.get("name", f"공식 {i}")
+                expr = formula.get("formula", formula.get("expression", ""))
+                desc = formula.get("description", "")
+                st.markdown(f"**{name}**")
+                if expr:
+                    st.code(expr, language="text")
+                if desc:
+                    st.caption(desc)
             else:
-                st.info("이 모듈에는 시험 팁이 없습니다.")
+                st.code(formula, language="text")
 
-        elif view_mode == "LOS":
-            st.subheader(f"🎯 {selected_concept_module} — 학습 목표 (LOS)")
-            los_items = sections["los"]
-            if los_items:
-                for i, lo in enumerate(los_items, 1):
-                    st.markdown(f"**{i}.** {lo}")
+    if exam_tips:
+        st.markdown("### 💡 시험 꿀팁")
+        for i, tip in enumerate(exam_tips, 1):
+            if isinstance(tip, dict):
+                text = tip.get("tip", tip.get("content", ""))
+                st.info(f"{i}. {text}")
             else:
-                st.info("이 모듈에는 LOS 정보가 없습니다.")
-
-        elif view_mode == "플래시카드":
-            st.subheader(f"🃏 {selected_concept_module} — 플래시카드")
-
-            if not fg.enabled:
-                st.warning(
-                    "플래시카드 생성을 위해 `ANTHROPIC_API_KEY` 또는 `OPENAI_API_KEY` "
-                    "환경변수를 설정해 주세요."
-                )
-            else:
-                cached = db.get_cached_flashcards(selected_concept_module)
-
-                col_btn1, col_btn2 = st.columns([1, 1])
-                with col_btn1:
-                    gen_btn = st.button(
-                        "✨ 플래시카드 생성" if not cached else "🔄 재생성",
-                        type="primary",
-                        use_container_width=True,
-                    )
-                with col_btn2:
-                    if cached and st.button("🗑️ 캐시 삭제", use_container_width=True):
-                        db.delete_flashcard_cache(selected_concept_module)
-                        st.rerun()
-
-                if gen_btn:
-                    summary = sections["summary"]
-                    key_concepts = "\n".join(f"- {c}" for c in sections["key_concepts"])
-                    full_text = f"{summary}\n\n{key_concepts}"
-                    with st.spinner("플래시카드를 생성 중입니다..."):
-                        cards = fg.generate(full_text, count=7)
-                    if cards is False:
-                        st.error("플래시카드 생성에 실패했습니다. API 키를 확인해 주세요.")
-                    else:
-                        db.save_flashcards(selected_concept_module, cards)
-                        cached = cards
-                        st.rerun()
-
-                if cached:
-                    st.caption(f"총 {len(cached)}개의 플래시카드")
-                    for i, card in enumerate(cached, 1):
-                        with st.expander(f"Q{i}. {card['question']}"):
-                            st.markdown(f"**정답:** {card['answer']}")
-                else:
-                    st.info("'플래시카드 생성' 버튼을 눌러 AI 플래시카드를 만들어 보세요.")
+                st.info(f"{i}. {tip}")
 
 
 # ════════════════════════════════════════════════════════════════════════════
 # TAB 2: 진도 현황
 # ════════════════════════════════════════════════════════════════════════════
-with tab2:
+with tab_progress:
     st.subheader("📊 모듈별 진도 현황")
 
     progress = db.get_progress()
     if progress:
-        # Summary metrics
         total_attempts = sum(p["total"] for p in progress)
         total_correct = sum(p["correct"] for p in progress)
         overall_pct = round(total_correct / max(total_attempts, 1) * 100, 1)
@@ -337,24 +277,20 @@ with tab2:
 
         st.divider()
 
-        # Table
         df = pd.DataFrame(progress)
         df.columns = ["모듈", "시도", "정답 수", "정답률(%)"]
         st.dataframe(df, use_container_width=True, hide_index=True)
 
         st.divider()
 
-        # Progress bars with module colors
         st.subheader("📈 모듈별 정답률")
         for p in progress:
             color = MODULE_COLORS.get(p["module"], "#6B7280")
             st.markdown(f"**{p['module']}** — {p['pct']}% ({p['correct']}/{p['total']})")
             st.progress(p["pct"] / 100, text="")
-
     else:
         st.info("📊 아직 푼 문제가 없습니다. '문제 풀이' 탭에서 시작하세요!")
 
-    # Available questions stats
     st.divider()
     st.subheader("📚 문제은행 현황")
     stats = ql.stats()
@@ -373,11 +309,10 @@ with tab2:
 # ════════════════════════════════════════════════════════════════════════════
 # TAB 3: 오답 노트
 # ════════════════════════════════════════════════════════════════════════════
-with tab3:
+with tab_wrong:
     st.subheader("📕 오답 노트")
     st.caption("틀렸거나 건너뛴 문제들을 모아서 복습할 수 있습니다.")
 
-    # Module filter
     wrong_modules = ["전체"] + avail_modules
     selected_wrong_module = st.selectbox("모듈 필터", wrong_modules, key="wrong_mod")
 

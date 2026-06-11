@@ -2,6 +2,10 @@
 data/pdfs/
 data/summaries/
 
+# SQLite database (local only)
+cfa_l1_study.db
+*.db
+
 # Python cache
 __pycache__/
 *.pyc
