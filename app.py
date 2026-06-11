@@ -12,6 +12,252 @@ import db
 
 st.set_page_config(page_title="CFA Level 1 Study Tool", page_icon="📊", layout="wide")
 
+# ─── Custom CSS ──────────────
+st.markdown("""
+<style>
+/* ─── Global ─── */
+.stApp {
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+}
+.stApp > header {
+    background: linear-gradient(90deg, #0a1628 0%, #132044 50%, #1a2d5e 100%) !important;
+    border-bottom: 2px solid #c8a04e;
+}
+.stApp > header a, .stApp > header span {
+    color: #c8a04e !important;
+}
+
+/* ─── Title ─── */
+.main-title {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+}
+.title-sub {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ─── Tabs ─── */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 4px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    background: #f1f5f9;
+    color: #0a1628;
+}
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #0a1628, #1a3a6b) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(10,22,40,0.25);
+}
+
+/* ─── Sidebar / Columns ─── */
+[data-testid="column"] {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+}
+div[data-testid="stVerticalBlock"] > div[data-testid="column"]:first-child {
+    padding-top: 16px;
+}
+
+/* ─── Buttons ─── */
+.stButton > button {
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    padding: 8px 20px !important;
+}
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #0a1628, #1a3a6b) !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(10,22,40,0.2) !important;
+}
+.stButton > button[kind="primary"]:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(10,22,40,0.3) !important;
+}
+.stButton > button[kind="secondary"] {
+    background: #f1f5f9 !important;
+    color: #334155 !important;
+    border: 1px solid #e2e8f0 !important;
+}
+.stButton > button[kind="secondary"]:hover {
+    background: #e2e8f0 !important;
+}
+
+/* ─── Metrics ─── */
+[data-testid="stMetric"] {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+    text-align: center;
+}
+[data-testid="stMetric"] label {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+[data-testid="stMetric"] [data-testid="stMetricValue"] {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: #0a1628 !important;
+}
+
+/* ─── Progress Bar ─── */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #0a1628, #c8a04e) !important;
+    border-radius: 10px;
+}
+.stProgress > div > div {
+    background: #e2e8f0 !important;
+    border-radius: 10px;
+    height: 8px !important;
+}
+
+/* ─── Dividers ─── */
+.stDivider {
+    border-color: #e2e8f0 !important;
+    margin: 1.2rem 0 !important;
+}
+
+/* ─── Alert boxes ─── */
+.stAlert {
+    border-radius: 10px !important;
+    border-left: 4px solid !important;
+}
+div.stAlert {
+    padding: 12px 16px !important;
+}
+
+/* ─── Dataframe ─── */
+[data-testid="stDataFrame"] {
+    border: 1px solid #f1f5f9 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* ─── Module Badge helper class ─── */
+.module-badge {
+    display: inline-block !important;
+    padding: 3px 12px !important;
+    border-radius: 20px !important;
+    color: white !important;
+    font-size: 0.78em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+}
+
+/* ─── Expanders ─── */
+.streamlit-expanderHeader {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+.streamlit-expanderContent {
+    border-left: 2px solid #e2e8f0 !important;
+    padding-left: 1rem !important;
+}
+
+/* ─── Selectbox / Input ─── */
+.stSelectbox > div > div {
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* ─── Slider ─── */
+.stSlider [data-baseweb="slider"] {
+    margin-top: 0.5rem;
+}
+
+/* ─── Container padding ─── */
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 1200px;
+}
+
+/* ─── Radio buttons ─── */
+.row-widget.stRadio {
+    padding: 0.3rem 0;
+}
+.row-widget.stRadio > div {
+    gap: 0.3rem;
+}
+
+/* ─── Quiz result box (dark card) ─── */
+.quiz-result-box {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a6b 100%);
+    border-radius: 14px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    margin: 1rem 0;
+}
+.quiz-result-box h2 {
+    color: #c8a04e !important;
+    font-size: 1.8rem !important;
+}
+
+/* ─── Callout card ─── */
+.callout-card {
+    background: linear-gradient(135deg, #f8fafc, #eef2f7);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ─── Success, Error boxes inside quiz ─── */
+.quiz-feedback-correct {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 8px 0;
+}
+.quiz-feedback-wrong {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 8px 0;
+}
+.quiz-feedback-skip {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 8px 0;
+}
+</style>
+""", unsafe_allow_html=True)
+
 db.init_db()
 try:
     ql = QuizLoader()
@@ -25,8 +271,8 @@ if "questions" not in st.session_state:
     st.session_state.q_idx = 0
     st.session_state.answers = {}
 
-st.title("📊 CFA Level 1 Study Tool")
-st.caption("SchweserNotes 2022 기반 | 5권 PDF + 한국어 개념 정리 | 문제은행 + 진도 추적")
+st.markdown('<div class="main-title">📊 CFA Level 1 Study Tool</div>', unsafe_allow_html=True)
+st.markdown('<div class="title-sub">SchweserNotes 2022 기반 · 5권 PDF · 문제은행 · 진도 추적</div>', unsafe_allow_html=True)
 st.divider()
 
 cl = ConceptLoader()
@@ -64,7 +310,13 @@ with tab_quiz:
 
     with col_quiz:
         if not st.session_state.questions:
-            st.info("👈 설정을 선택하고 '새 문제 세트 시작'을 눌러주세요.")
+            st.markdown("""
+            <div class="callout-card">
+                <div style="font-size:3rem; margin-bottom:0.5rem;">📋</div>
+                <div style="font-size:1.1rem; font-weight:600; color:#334155;">왼쪽에서 설정을 선택하세요</div>
+                <div style="color:#94a3b8; margin-top:0.3rem;">모듈 · 토픽 · 문제 수를 고르고 시작 버튼을 눌러주세요</div>
+            </div>
+            """, unsafe_allow_html=True)
 
         if st.session_state.questions:
             qs = st.session_state.questions
@@ -77,8 +329,13 @@ with tab_quiz:
                 pct = correct / max(total_answered, 1) * 100
 
                 st.balloons()
-                st.success(f"## 🎉 세트 완료!")
-                st.metric("정답", f"{correct}/{total_answered}", f"{pct:.0f}%")
+                st.markdown("""
+                <div class="quiz-result-box">
+                    <h2>🎉 세트 완료!</h2>
+                    <div style="font-size:3rem; font-weight:800; margin:0.5rem 0;">{correct}/{total_answered}</div>
+                    <div style="font-size:1.2rem; opacity:0.9;">{pct:.0f}% 정답률</div>
+                </div>
+                """.format(correct=correct, total_answered=total_answered, pct=pct), unsafe_allow_html=True)
 
                 if total_answered > 0:
                     df = pd.DataFrame([
@@ -105,8 +362,7 @@ with tab_quiz:
                     st.markdown(q["text"])
                 with col_b:
                     st.markdown(
-                        f"<span style='background:{MODULE_COLORS.get(mod, '#6B7280')}; "
-                        f"padding:2px 8px; border-radius:10px; color:white; font-size:0.8em;'>"
+                        f"<span class='module-badge' style='background:{MODULE_COLORS.get(mod, '#6B7280')};'>"
                         f"{mod}</span>",
                         unsafe_allow_html=True
                     )
@@ -171,14 +427,26 @@ with tab_quiz:
                     st.divider()
 
                     if ans["is_correct"]:
-                        st.success(f"✅ **정답!** ({ans['correct_key']}) {ans['correct']}")
+                        st.markdown(f"""
+                        <div class="quiz-feedback-correct">
+                            <strong>✅ 정답!</strong> ({ans['correct_key']}) {ans['correct']}
+                        </div>
+                        """, unsafe_allow_html=True)
                     elif ans["selected"] == "skipped":
                         correct_key = q.get("answer", "A")
                         correct_text = q["options"].get(correct_key, "")
-                        st.warning(f"⏭️ 건너뜀. 정답: **{correct_key}. {correct_text}**")
+                        st.markdown(f"""
+                        <div class="quiz-feedback-skip">
+                            <strong>⏭️ 건너뜀</strong> · 정답: <strong>{correct_key}. {correct_text}</strong>
+                        </div>
+                        """, unsafe_allow_html=True)
                     else:
-                        st.error(f"❌ **오답.**")
-                        st.info(f"정답: **{ans['correct_key']}. {ans['correct']}**")
+                        st.markdown(f"""
+                        <div class="quiz-feedback-wrong">
+                            <strong>❌ 오답</strong><br>
+                            정답: <strong>{ans['correct_key']}. {ans['correct']}</strong>
+                        </div>
+                        """, unsafe_allow_html=True)
 
                     col_next, col_bm = st.columns([1, 1])
                     with col_next:
