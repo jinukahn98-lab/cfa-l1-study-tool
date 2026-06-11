@@ -538,8 +538,8 @@ with tab_concept:
             text = rt.get("text", "")
             char_count = len(text)
 
-            # 첫 번째 Reading만 auto-expand
-            expanded = (i == 0)
+            # 모든 Reading auto-expand — 모든 개념이 보이게
+            expanded = True
 
             with st.expander(f"📘 **Reading {rnum}**: {title} ({char_count:,}자)", expanded=expanded):
                 st.markdown(f"""
