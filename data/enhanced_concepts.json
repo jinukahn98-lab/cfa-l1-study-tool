@@ -1,0 +1,1016 @@
+{
+  "Quantitative Methods": {
+    "summary": "FINANCE PROFESSOR’S NOTE The examples we use in this reading are meant to show how the time value of money appears throughout finance. Don’t worry if you are not yet familiar with the securities we describe in this reading. We will see these examples again when we cover bonds and forward interest rates in Fixed Income, stocks in Equity Investments, foreign exchange in Economics, and options in Derivatives. WARM-UP: USING A FINANCIAL CALCULATOR For the exam, you must be able to use a financial calculator when working time value of money problems. You simply do not have the time to solve these problems any other way. CFA Institute allows only two types of calculators to be used for the exam: (1) the Texas Instruments® TI BA II Plus™ (including the BA II Plus Professional™) and (2) the HP® 12",
+    "key_concepts": [
+      "화폐의 시간가치(TVM): PV, FV, PMT, N, I/Y",
+      "수익률 측정: HPR, 산술평균, 기하평균(CAGR), 조화평균",
+      "기술통계: 평균, 중앙값, 최빈값, 분산, 표준편차, 왜도, 첨도",
+      "확률: 조건부 확률, 베이즈 정리, 독립 이벤트",
+      "확률분포: 정규분포, t-분포, 이항분포, 로그정규분포",
+      "표본이론: 중심극한정리, 표준오차, 신뢰구간",
+      "가설검정: 귀무가설, 대립가설, Type I/II 오류, p-값",
+      "단순·다중 회귀분석: 결정계수(R²), F-검정, t-검정",
+      "기술적 분석 기초: 이동평균, 상대강도지수(RSI)"
+    ],
+    "formulas": [
+      [
+        "(1 + nominal risk-free rate)",
+        "(1 + nominal risk-free rate) = (1 + real risk-free rate)(1 + expected inflation rate)"
+      ],
+      [
+        "HPR",
+        "HPR = (22 + 1) / 20 − 1 = 0.15 = 15%"
+      ],
+      [
+        "arithmetic mean × harmonic mean",
+        "arithmetic mean × harmonic mean = (geometric mean)2"
+      ],
+      [
+        "With semiannual compounding, m",
+        "With semiannual compounding, m = 2:"
+      ],
+      [
+        "With quarterly compounding, m",
+        "With quarterly compounding, m = 4:"
+      ],
+      [
+        "With monthly compounding, m",
+        "With monthly compounding, m = 12:"
+      ],
+      [
+        "With daily compounding, m",
+        "With daily compounding, m = 365:"
+      ],
+      [
+        "ln (1 + 0.20)",
+        "ln (1 + 0.20) = 18.232%"
+      ],
+      [
+        "continuously compounded return from t",
+        "continuously compounded return from t = 1 to t = 2."
+      ],
+      [
+        "1.07 / 1.02 − 1",
+        "1.07 / 1.02 − 1 = 0.049 = 4.9%."
+      ],
+      [
+        "2. B ln (23/20)",
+        "2. B ln (23/20) = 0.1398"
+      ],
+      [
+        "N",
+        "N = 10; PMT = 100; FV = 1,000; I/Y = 8; CPT PV = −1,134.20"
+      ],
+      [
+        "N",
+        "N = 13; I/Y = 6; PV = −2,000; FV = 0; CPT → PMT = $225.92"
+      ],
+      [
+        "N",
+        "N = 10; PMT = 100; FV = 1,000; PV = −1,085; CPT I/Y = 8.6934"
+      ],
+      [
+        "illustrated as follows",
+        "illustrated as follows: (1 + S3)3 = (1 + S1)(1 + 1y1y)(1 + 2y1y)."
+      ]
+    ],
+    "exam_tips": [
+      "BA II Plus 계산기 TVM 기능을 완벽히 숙지하세요 (N, I/Y, PV, PMT, FV).",
+      "기하평균은 '복리 수익률' 계산에, 산술평균은 '기대값' 계산에 사용합니다.",
+      "정규분포: 1σ = 68%, 2σ = 95%, 3σ = 99.7% 암기 필수.",
+      "Type I 오류(α) = 귀무가설이 참인데 기각, Type II 오류(β) = 거짓인데 채택.",
+      "p-값 < 유의수준(α)이면 귀무가설 기각.",
+      "회귀에서 R²는 0~1, 높을수록 설명력 ↑. 하지만 인과관계≠상관관계.",
+      "연속복리: FV = PV × e^(r×t)"
+    ],
+    "los": [
+      "Interpret interest rates as required rates of return, discount rates, or opportunity costs and explain an interest rate as the sum of a real risk-free rate and premiums that compensate investors for b",
+      "Calculate and interpret different approaches to return measurement over time and describe their appropriate uses. Holding period return (HPR) is simply the percentage increase in the value of an inves",
+      "Compare the money-weighted and time-weighted rates of return and evaluate the performance of portfolios based on these measures. The money-weighted return applies the concept of the internal rate of r",
+      "Calculate and interpret annualized return measures and continuously compounded returns, and describe their appropriate uses. Interest rates and market returns are typically stated as annualized return",
+      "Calculate and interpret major return measures and describe their appropriate uses. Gross return refers to the total return on a security portfolio before deducting fees for the management and administ",
+      "Calculate and interpret the present value (PV) of fixed- income and equity instruments based on expected future cash flows. In our Rates and Returns reading, we gave examples of the relationship betwe",
+      "Calculate and interpret the implied return of fixed- income instruments and required return and implied growth of equity instruments given the present value (PV) and cash flows. The examples we have s",
+      "Explain the cash flow additivity principle, its importance for the no- arbitrage condition, and its use in calculating implied forward interest rates, forward exchange rates, and option values. The ca",
+      "Calculate, interpret, and evaluate measures of central tendency and location to address an investment problem. Measures of Central Tendency Measures of central tendency identify the center, or average",
+      "Calculate, interpret, and evaluate measures of dispersion to address an investment problem. Dispersion is defined as the variability around the central tendency. The common theme in finance and invest",
+      "Interpret and evaluate measures of skewness and kurtosis to address an investment problem. A distribution is symmetrical if it is shaped identically on both sides of its mean. Distributional symmetry ",
+      "Interpret correlation between two variables to address an investment problem. Scatter plots are a method for displaying the relationship between two variables. With one variable on the vertical axis a",
+      "Calculate expected values, variances, and standard deviations and demonstrate their application to investment problems. The expected value of a random variable is the weighted average of the possible ",
+      "Formulate an investment problem as a probability tree and explain the use of conditional expectations in investment application. You may wonder where the returns and probabilities used in calculating ",
+      "Calculate and interpret an updated probability in an investment setting using Bayes’ formula. Bayes’ formula is used to update a given set of prior probabilities for a given event in response to the a",
+      "Calculate and interpret the expected value, variance, standard deviation, covariances, and correlations of portfolio returns. The expected return of a portfolio composed of n assets with weights, wi, ",
+      "Calculate and interpret the covariance and correlation of portfolio returns using a joint probability function for returns. EXAMPLE: Covariance of returns from a joint probability function Assume that",
+      "Define shortfall risk, calculate the safety-first ratio, and identify an optimal portfolio using Roy’s safety-first criterion. Shortfall risk is the probability that a portfolio value or return will f",
+      "Explain the relationship between normal and lognormal distributions and why the lognormal distribution is used to model asset prices when using continuously compounded asset returns. The lognormal dis",
+      "Describe Monte Carlo simulation and explain how it can be used in investment applications. Monte Carlo simulation is a technique based on the repeated generation of one or more risk factors that affec",
+      "Describe the use of bootstrap resampling in conducting a simulation based on observed data in investment applications. Resampling is another method for generating data inputs to use in a simulation. O",
+      "Compare and contrast simple random, stratified random, cluster, convenience, and judgmental sampling and their implications for sampling error in an investment problem. Probability sampling refers to ",
+      "Explain the central limit theorem and its importance for the distribution and standard error of the sample mean. The central limit theorem states that for simple random samples of size n from a popula",
+      "Describe the use of resampling (bootstrap, jackknife) to estimate the sampling distribution of a statistic. Previously, we used the sample variance to calculate the standard error of our estimate of t",
+      "Explain hypothesis testing and its components, including statistical significance, Type I and Type II errors, and the power of a test. A hypothesis is a statement about the value of a population param",
+      "Construct hypothesis tests and determine their statistical significance, the associated Type I and Type II errors, and power of the test given a significance level. Here, we will show examples of hypo",
+      "Compare and contrast parametric and nonparametric tests, and describe situations where each is the more appropriate type of test. Parametric tests rely on assumptions regarding the distribution of the",
+      "Explain parametric and nonparametric tests of the hypothesis that the population correlation coefficient equals zero, and determine whether the hypothesis is rejected at a given level of significance.",
+      "Explain tests of independence based on contingency table data. A contingency or two-way table shows the number of observations from a sample that have a combination of two characteristics. Figure 9.1 ",
+      "Describe a simple linear regression model, how the least squares criterion is used to estimate regression coefficients, and the interpretation of these coefficients. The purpose of simple linear regre"
+    ],
+    "_pdf_readings": 11,
+    "_pdf_text_len": 208515
+  },
+  "Economics": {
+    "summary": "CYCLES MODULE 13.1: BUSINESS CYCLES LOS 13.a: Describe the business cycle and its phases. The business cycle is characterized by fluctuations in economic activity. The business cycle has four phases: expansion (real GDP is increasing), peak (real GDP stops increasing and begins decreasing), contraction or recession (real GDP is decreasing), and trough (real GDP stops decreasing and begins increasing). The phases are illustrated in Figure 13.1. Figure 13.1: Business Cycle There are alternative ways to show business cycles. The curve in the figure illustrates the classical cycle, which is based on real GDP relative to a beginning value. The growth cycle refers to changes in the percentage difference between real GDP and its longer-term trend or potential value (shown as the “average” line in",
+    "key_concepts": [
+      "수요·공급 곡선: 이동 vs 움직임, 균형가격",
+      "가격탄력성: 수요의 가격탄력성(PED), 교차탄력성, 소득탄력성",
+      "기업이론: 총비용, 한계비용, 평균비용, 이윤극대화(MR=MC)",
+      "시장구조: 완전경쟁, 독점, 독점적 경쟁, 과점",
+      "GDP: 지출접근법, 소득접근법, 생산접근법",
+      "경기순환: 확장·정점·수축·저점, 선행·동행·후행 지표",
+      "통화정책: 테일러 규칙, 공개시장조작, 지급준비율",
+      "재정정책: 자동안정장치, 재량적 정책, 승수효과",
+      "환율: 명목환율, 실질환율, PPP, 이자율 평가(IRP)",
+      "국제수지: 경상수지, 자본수지"
+    ],
+    "formulas": [
+      [
+        "Price > marginal revenue",
+        "Price > marginal revenue = marginal cost (in equilibrium)"
+      ],
+      [
+        "incomes by $60 × 0.75",
+        "incomes by $60 × 0.75 = $45, from which they will spend $45 × 0.8 = $36."
+      ],
+      [
+        "2. B fiscal multiplier",
+        "2. B fiscal multiplier = 1 / [1 − MPC (1 − T)] = 1 / [1 − 0.80(1 − 0.3)] = 2.27"
+      ],
+      [
+        "change in government spending",
+        "change in government spending = −$50 million"
+      ],
+      [
+        "change in aggregate demand",
+        "change in aggregate demand = −(50 × 2.27) = −$113.64 million"
+      ],
+      [
+        "3. B 1 / 1.311",
+        "3. B 1 / 1.311 = 0.7628 GBP/USD"
+      ],
+      [
+        "USD/EUR spot",
+        "USD/EUR spot = $1.312"
+      ],
+      [
+        "USD/EUR 90-day forward",
+        "USD/EUR 90-day forward = $1.320"
+      ]
+    ],
+    "exam_tips": [
+      "GDP = GNP − 해외순소득. 국내총생산 vs 국민총소득 구분 필수.",
+      "MR=MC에서 이윤극대화. 완전경쟁은 P=MC, 독점은 P>MC.",
+      "경기선행지표: 주가, 신규주택착공, 장단기금리차, ISM 제조업지수.",
+      "통화정책 도구: 기준금리(가장 중요), 공개시장조작, 지급준비율.",
+      "PPP는 장기 환율 이론, IRP는 단기 무재정거래 조건.",
+      "인플레이션 타입: 수요견인(Demand-pull) vs 비용상승(Cost-push).",
+      "경상수지 적자 = 국내 저축 < 투자, 자본수지로 상쇄."
+    ],
+    "los": [
+      "Determine and interpret breakeven and shutdown points of production, as well as how economies and diseconomies of scale affect costs under perfect and imperfect competition. In economics, we define th",
+      "Describe characteristics of perfect competition, monopolistic competition, oligopoly, and pure monopoly. Recall from the prerequisite readings that perfect competition results in firm demand that is h",
+      "Explain supply and demand relationships under monopolistic competition, including the optimal price and output for firms as well as pricing strategy. Monopolistic competition has the following market ",
+      "Explain supply and demand relationships under oligopoly, including the optimal price and output for firms as well as pricing strategy. Compared to monopolistic competition, an oligopoly market has hig",
+      "Identify the type of market structure within which a firm operates and describe the use and limitations of concentration measures. We can use the characteristics we outlined earlier to identify the ty",
+      "Describe the business cycle and its phases. The business cycle is characterized by fluctuations in economic activity. The business cycle has four phases: expansion (real GDP is increasing), peak (real",
+      "Describe credit cycles. Credit cycles refer to cyclical fluctuations in interest rates and the availability of loans (credit). Typically, lenders are more willing to lend, and tend to offer lower inte",
+      "Describe how resource use, consumer and business activity, housing sector activity, and external trade sector activity vary over the business cycle and describe their measurement using economic indica",
+      "Compare monetary and fiscal policy. Fiscal policy refers to a government’s use of spending and taxation to influence economic activity. The budget is said to be balanced when tax revenues equal govern",
+      "Describe roles and objectives of fiscal policy as well as arguments as to whether the size of a national debt relative to GDP matters. Objectives of fiscal policy may include the following: Influencin",
+      "Describe tools of fiscal policy, including their advantages and disadvantages. Fiscal policy tools include spending tools and revenue tools. Spending Tools Transfer payments, also known as entitlement",
+      "Explain the implementation of fiscal policy and difficulties of implementation as well as whether a fiscal policy is expansionary or contractionary. Fiscal policy is implemented through changes in tax",
+      "Describe the roles and objectives of central banks. There are several key roles of central banks: 1. Sole supplier of currency. Central banks have the sole authority to supply money. Traditionally, su",
+      "Describe tools used to implement monetary policy tools and the monetary transmission mechanism, and explain the relationships between monetary policy and economic growth, inflation, interest, and exch",
+      "Describe qualities of effective central banks; contrast their use of inflation, interest rate, and exchange rate targeting in expansionary or contractionary monetary policy; and describe the limitatio",
+      "Explain the interaction of monetary and fiscal policy. Monetary policy and fiscal policy may each be either expansionary or contractionary, so there are four possible scenarios: 1. Expansionary fiscal",
+      "Describe geopolitics from a cooperation versus competition perspective. Geopolitics refers to interactions among nations, including the actions of state actors (national governments) and nonstate acto",
+      "Describe geopolitics and its relationship with globalization. Globalization refers to the long-term trend toward worldwide integration of economic activity and cultures. Data from the World Bank sugge",
+      "Describe functions and objectives of the international organizations that facilitate trade, including the World Bank, the International Monetary Fund, and the World Trade Organization. Perhaps the bes",
+      "Describe geopolitical risk. Geopolitical risk is the possibility of events that interrupt peaceful international relations. We can classify geopolitical risk into three types: 1. Event risk refers to ",
+      "Describe tools of geopolitics and their impact on regions and economies. We can consider tools of geopolitics, the means by which (primarily) state actors advance their interests in the world, as fall",
+      "Describe the impact of geopolitical risk on investments. Because analyzing geopolitical risks requires effort, time, and resources, investors should consider whether the impact of geopolitical risk is",
+      "Describe the benefits and costs of international trade. Historically, economic models of trade have focused on the gains that result when countries with lower relative cost of (a comparative advantage",
+      "Compare types of trade restrictions, such as tariffs, quotas, and export subsidies, and their economic implications. There are many reasons (at least stated reasons) given by governments that impose t",
+      "Explain motivations for and advantages of trading blocs, common markets, and economic unions. There are various types of agreements among countries with respect to trade policy. The essence of all of ",
+      "Describe the foreign exchange market, including its functions and participants, distinguish between nominal and real exchange rates, and calculate and interpret the percentage change in a currency rel",
+      "Describe exchange rate regimes and explain the effects of exchange rates on countries’ international trade and capital flows. The IMF categorizes exchange rate regimes into the following types, which ",
+      "Describe common objectives of capital restrictions imposed by governments. Governments sometimes place restrictions on the flow of investment capital into their country, out of their country, or both.",
+      "Calculate and interpret currency cross-rates. A cross rate is the exchange rate between two currencies implied by their exchange rates with a common third currency. Cross-rates are necessary when ther",
+      "Explain the arbitrage relationship between spot and forward exchange rates and interest rates, calculate a forward rate using points or in percentage terms, and interpret a forward discount or premium"
+    ],
+    "_pdf_readings": 8,
+    "_pdf_text_len": 210350
+  },
+  "Corporate Issuers": {
+    "summary": "STAKEHOLDERS MODULE 23.1: STAKEHOLDERS AND ESG FACTORS LOS 23.a: Compare the financial claims and motivations of lenders and shareholders. A company's lenders (debtholders) have a legal, contractual claim to the interest and principal payments the company has promised to make. Owners (equity holders) have a residual claim to the company's net assets (i.e., what remains after all other claims have been paid). That is, lenders have a higher priority of claims than equity owners. Because debt is less risky than equity, it is a less costly form of capital. Both debtholders and equity holders can potentially lose their entire investment if a company fails, but their losses cannot exceed the amounts they have invested. A key difference between debt and equity investments is their upside potentia",
+    "key_concepts": [
+      "자본예산: NPV, IRR, MIRR, Payback Period, 자본배분",
+      "자본비용: WACC, CAPM, 부채비용, 우선주비용",
+      "자본구조: MM 정리(세금 없음/있음), 트레이드오프 이론, 신호이론",
+      "레버리지: 영업레버리지(DOL), 재무레버리지(DFL), 결합레버리지(DTL)",
+      "배당정책: 배당무관련성, 잉여현금흐름, 자사주매입 vs 배당",
+      "기업지배구조: 이사회, 주주권리, 대리인 문제",
+      "ESG 투자: 환경·사회·지배구조 요소",
+      "M&A: 인수 동기, 시너지, 인수 방어전략"
+    ],
+    "formulas": [
+      [
+        "Dividends",
+        "Dividends = after-tax profit = $90. Tax on dividends @ 15% = 0.15 × 90 =\n$13.50."
+      ],
+      [
+        "Current ratio",
+        "Current ratio = current assets / current liabilities"
+      ],
+      [
+        "Current ratio (20X1)",
+        "Current ratio (20X1) = (98 + 120 + 190 + 24) / (85 + 34 + 98) = 1.99"
+      ],
+      [
+        "Current ratio (20X2)",
+        "Current ratio (20X2) = (54 + 110 + 310 + 18) / (100 + 39 + 145) = 1.73"
+      ],
+      [
+        "Quick ratio (20X1)",
+        "Quick ratio (20X1) = (98 + 120) / (85 + 34 + 98) = 1.00"
+      ],
+      [
+        "Quick ratio (20X1)",
+        "Quick ratio (20X1) = (54 + 110) / (100 + 39 + 145) = 0.58"
+      ],
+      [
+        "Cash ratio (20X1)",
+        "Cash ratio (20X1) = 98 / (85 + 34 + 98) = 0.45"
+      ],
+      [
+        "Cash ratio (20X2)",
+        "Cash ratio (20X2) = 54 / (100 + 39 + 145) = 0.19"
+      ],
+      [
+        "Cash ratio",
+        "Cash ratio = (cash + marketable securities) / current liabilities."
+      ],
+      [
+        "PV inflows",
+        "PV inflows = PV outflows"
+      ],
+      [
+        "3. B CF0",
+        "3. B CF0 = −5,000; CF1 = 3,000; CF2 = 2,000; CF3 = 2,000; I / Y = 10; NPV = $883."
+      ]
+    ],
+    "exam_tips": [
+      "NPV > 0이면 투자 가치 있음. IRR > WACC이면 채택.",
+      "NPV와 IRR 충돌 시 NPV 기준 우선 (재투자 가정 때문).",
+      "MM 세금 없음: 자본구조 무관련. 세금 있음: 부채↑ → 기업가치↑.",
+      "트레이드오프 이론: 세금절감 vs 재무곤경비용의 균형.",
+      "DOL 높음 = 고정비 비중 높음 = 매출 변화에 EPS 민감.",
+      "자사주매입 = 배당과 동등한 효과 (완전자본시장 가정).",
+      "CAPM β > 1: 시장보다 변동성 크고 위험 높음."
+    ],
+    "los": [
+      "Compare the organizational forms of businesses. Organizational forms refer to how businesses are set up from a legal and organizational point of view. Key features of organizational forms include the ",
+      "Describe key features of corporate issuers. A corporation's legal identity is separate from that of its owners and is formed by filing an articles of incorporation with a regulatory body. As a legal e",
+      "Compare publicly and privately owned corporate issuers. Most public limited companies are listed companies, which means their shares are listed on an exchange, allowing investors to trade shares. A st",
+      "Compare the financial claims and motivations of lenders and shareholders. A company's lenders (debtholders) have a legal, contractual claim to the interest and principal payments the company has promi",
+      "Describe a company's stakeholder groups and compare their interests. Under shareholder theory, the primary focus of corporate governance is the interests of the firm's shareholders, which is to maximi",
+      "Describe environmental, social, and governance factors of corporate issuers considered by investors. Some debt and equity investors who take a stakeholder perspective are interested in evaluating comp",
+      "Describe the principal-agent relationship and conflicts that may arise between stakeholder groups. When one party hires another to carry out a task, the two parties are said to have a principal-agent ",
+      "Describe corporate governance and mechanisms to manage stakeholder relationships and mitigate associated risks. Corporate governance is the system of internal controls and procedures by which individu",
+      "Describe potential risks of poor corporate governance and stakeholder management and benefits of effective corporate governance and stakeholder management. Risks of Poor Governance and Stakeholder Man",
+      "Explain the cash conversion cycle and compare issuers' cash conversion cycles. The cash conversion cycle (CCC) measures the efficiency of a company's cash flow management. It represents the time it ta",
+      "Explain liquidity and compare issuers' liquidity levels. For an asset, liquidity refers to its nearness to cash. For a liability, liquidity refers to its nearness to settlement. Assets that can be qui",
+      "Describe issuers' objectives and compare methods for managing working capital and liquidity. Working capital management seeks to maximize firm profits while ensuring that sufficient liquidity is avail",
+      "Describe types of capital investments. The four types of capital investments include going concern projects, regulatory/compliance projects, expansion projects, and other projects. Going concern proje",
+      "Describe the capital allocation process, calculate net present value (NPV), internal rate of return (IRR), and return on invested capital (ROIC), and contrast their use in capital allocation. The capi",
+      "Describe principles of capital allocation and common capital allocation pitfalls. Principles of Capital Allocation The capital allocation process involves the following key principles: Decisions are b",
+      "Describe types of real options relevant to capital investments. Real options are future actions that a firm can take, given that they invest in a project today. Real options are similar to financial o",
+      "Calculate and interpret the weighted-average cost of capital for a company. An issuer's weighted-average cost of capital (WACC) is a blended rate that includes its cost of debt and equity: WACC = [wei",
+      "Explain factors affecting capital structure and the weighted-average cost of capital. Capital structures vary considerably among companies. Typically a company will target a capital structure that min",
+      "Explain the Modigliani–Miller propositions regarding capital structure. MM Proposition I (No Taxes): Capital Structure Irrelevance In 1958, Nobel laureates Franco Modigliani and Merton Miller (we will",
+      "Describe optimal and target capital structures. Static Tradeoff Theory The static tradeoff theory seeks to balance the costs of financial distress with the tax shield benefits from using debt. There i",
+      "Describe key features of business models. A successful firm must provide a product or service, find customers, deliver the product or service, and make a profit. A business model explains how a firm e",
+      "Describe various types of business models. Conventional business models tend to be industry-specific. Examples include those followed by natural resource producers, manufacturers, distributors, retail"
+    ],
+    "_pdf_readings": 7,
+    "_pdf_text_len": 135210
+  },
+  "Financial Statement Analysis": {
+    "summary": "CASH FLOWS I MODULE 32.1: CASH FLOW INTRODUCTION AND DIRECT METHOD CFO LOS 32.a: Describe how the cash flow statement is linked to the income statement and the balance sheet. The cash flow statement provides information for a reporting period beyond that available from the income statement, which is based on accrual, rather than cash, accounting. Analysts use cash flow statements to understand: A company’s cash receipts and cash payments during an accounting period A company’s operating, investing, and financing activities The impact of accrual accounting events on cash flows A company’s quality of earnings An analyst can use the statement of cash flows to assess a firm’s liquidity, solvency, and financial flexibility, including: Whether regular operations generate enough cash to sustain t",
+    "key_concepts": [
+      "재무제표 구성: 손익계산서, 재무상태표, 현금흐름표, 자본변동표, 주석",
+      "수익인식: IFRS 15 5단계 모델",
+      "재고자산: FIFO, LIFO(US GAAP만), 가중평균법",
+      "감가상각: 정액법, 정률법, 생산량비례법",
+      "리스회계: 사용권자산, 리스부채 (IFRS 16)",
+      "연금회계: 확정급여형 vs 확정기여형",
+      "현금흐름: 영업(CFO), 투자(CFI), 재무(CFF) 활동",
+      "재무비율: 유동성, 수익성, 레버리지, 효율성, 시장가치",
+      "DuPont 분석: ROE 분해",
+      "IFRS vs US GAAP 주요 차이점"
+    ],
+    "formulas": [
+      [
+        "increase in income",
+        "increase in income = [(2,000)($1,000)(0.05)] (1 − 0.30) = $70,000"
+      ],
+      [
+        "+ 30)",
+        "+ 30) = €210 million."
+      ],
+      [
+        "공식",
+        "By rearranging this relationship, we can say that cash = sales - ending accounts"
+      ],
+      [
+        "receivable. Cash",
+        "receivable. Cash = €68,000 - (€15,000 - €10,000) = €63,000."
+      ],
+      [
+        "CFO",
+        "CFO = 39,000 + 4,000 - (-7,000) = $50,000"
+      ],
+      [
+        "beginning PP&E + acquisitions - ending gross PP&E",
+        "beginning PP&E + acquisitions - ending gross PP&E = disposals gross cost"
+      ],
+      [
+        "disposals gross cost",
+        "disposals gross cost = $60,000 + $25,000 - $69,000 = $16,000"
+      ],
+      [
+        "Accumulated depreciation on disposed PP&E",
+        "Accumulated depreciation on disposed PP&E = beginning accumulated"
+      ],
+      [
+        "공식",
+        "depreciation expense + additions to PP&E - ending carrying value\n= -$51,000 - $7,000 + $25,000 - $57,000 = $12,000"
+      ],
+      [
+        "CFI",
+        "CFI = -$25,000 + $10,000 + $15,000 = $0"
+      ],
+      [
+        "net principal flow",
+        "net principal flow = ending bonds payable − beginning bonds payable =\n$15,000 − $10,000 = $5,000 (inflow)"
+      ],
+      [
+        "dividends declared",
+        "dividends declared = beginning retained earnings + net income − ending"
+      ],
+      [
+        "retained earnings",
+        "retained earnings\n= $30,500 + $39,000 − $61,000 = $8,500"
+      ],
+      [
+        "coupon + amortized discount - amortized premium",
+        "coupon + amortized discount - amortized premium = interest expense"
+      ],
+      [
+        "공식",
+        "1. B $150,000 sales + $10,000 decrease in accounts receivable = $160,000 cash"
+      ]
+    ],
+    "exam_tips": [
+      "FIFO: 인플레이션 시 이익↑, 세금↑, 재고자산↑. LIFO: 반대.",
+      "CFO: 영업활동. 직접법·간접법 모두 같은 CFO 결과.",
+      "IFRS: 이자수취/배당수취 = CFO 또는 CFI. US GAAP: CFO만.",
+      "리스: IFRS 16에서 모든 리스 자산화. US GAAP는 운용·금융 구분.",
+      "DuPont 5단계: 세금부담률 × 이자부담률 × EBIT마진 × 자산회전율 × 레버리지.",
+      "수익인식 5단계: ①계약 식별 ②수행의무 식별 ③거래가격 결정 ④배분 ⑤인식.",
+      "감가상각은 비현금 비용 → CFO 간접법에서 다시 더함."
+    ],
+    "los": [
+      "Describe general principles of revenue recognition, specific revenue recognition applications, and implications of revenue recognition choices for financial analysis. In a sale of goods where the good",
+      "Describe general principles of expense recognition, specific expense recognition applications, implications of expense recognition choices for financial analysis and contrast costs that are capitalize",
+      "Describe the financial reporting treatment and analysis of non-recurring items (including discontinued operations, unusual or infrequent items) and changes in accounting policies. The definition of un",
+      "Describe how earnings per share is calculated and calculate and interpret a company’s basic and diluted earnings per share for companies with simple and complex capital structures including those with",
+      "Evaluate a company’s financial performance using common-size income statements and financial ratios based on the income statement. Common-Size Income Statements A vertical common-size income statement",
+      "Explain the financial reporting and disclosures related to intangible assets. Intangible assets are nonmonetary assets that lack physical substance. Securities are not considered intangible assets. In",
+      "Explain the financial reporting and disclosures related to goodwill. Balance sheet goodwill results from acquiring another business. Goodwill is the amount by which the purchase price is greater than ",
+      "Explain the financial reporting and disclosures related to financial instruments. Financial instruments are contracts that give rise to both a financial asset of one entity and a financial liability o",
+      "Explain the financial reporting and disclosures related to non- current liabilities. Long-term financial liabilities include bank loans, notes payable, bonds payable, and some derivatives. If the fina",
+      "Calculate and interpret common-size balance sheets and related financial ratios. A vertical common-size balance sheet expresses each item of the balance sheet as a percentage of total assets. The comm",
+      "Describe how the cash flow statement is linked to the income statement and the balance sheet. The cash flow statement provides information for a reporting period beyond that available from the income ",
+      "Describe the steps in the preparation of direct and indirect cash flow statements, including how cash flows can be computed using income statement and balance sheet data. PROFESSOR’S NOTE Throughout t",
+      "Demonstrate the conversion of cash flows from the indirect to direct method. The only difference between the indirect and direct methods of presentation is in the cash flow from operations (CFO) secti",
+      "Contrast cash flow statements prepared under International Financial Reporting Standards (IFRS) and US generally accepted accounting principles (US GAAP). Recall that under U.S. GAAP, dividends paid t",
+      "Analyze and interpret both reported and common- size cash flow statements. The cash flow statement provides information to assess the firm’s liquidity, solvency, and financial flexibility. An analyst ",
+      "Calculate and interpret free cash flow to the firm, free cash flow to equity, and performance and coverage cash flow ratios. Free cash flow is a measure of cash available for discretionary use, after ",
+      "Describe the measurement of inventory at the lower of cost and net realisable value and its implications for financial statements and ratios. Under IFRS, inventory is reported on the balance sheet at ",
+      "Calculate and explain how inflation and deflation of inventory costs affect the financial statements and ratios of companies that use different inventory valuation methods. During inflationary periods",
+      "Describe the presentation and disclosures relating to inventories and explain issues that analysts should consider when examining a company’s inventory disclosures and other sources of information. In",
+      "Compare the financial reporting of the following types of intangible assets: purchased, internally developed, and acquired in a business combination. Intangible assets are long-term assets that lack p",
+      "Explain and evaluate how impairment and derecognition of property, plant, and equipment and intangible assets affect the financial statements and ratios. Depreciation and amortization represent the sp",
+      "Analyze and interpret financial statement disclosures regarding property, plant, and equipment and intangible assets. IFRS Disclosures Under IFRS, the firm must disclose the following for each class o",
+      "Explain the financial reporting of leases from the perspectives of lessors and lessees. Instead of purchasing an asset, a firm may choose to lease the asset. With a lease, a firm (the lessee) essentia",
+      "Explain the financial reporting of defined contribution, defined benefit, and stock-based compensation plans. Pension plans and stock-based awards are examples of deferred compensation, where employee",
+      "Describe the financial statement presentation of and disclosures relating to long-term liabilities and share-based compensation. Lease Disclosures The objective of lease disclosures is to provide user",
+      "Contrast accounting profit, taxable income, taxes payable, and income tax expense and temporary versus permanent differences between accounting profit and taxable income. Financial accounting standard",
+      "Explain how deferred tax liabilities and assets are created and the factors that determine how a company’s Video covering this content is available online. deferred tax liabilities and assets should b",
+      "Calculate, interpret, and contrast an issuer’s effective tax rate, statutory tax rate, and cash tax rate. Some firms’ reported income tax expense differs from the amount that would result from multipl",
+      "Analyze disclosures relating to deferred tax items and the effective tax rate reconciliation and explain how information included in these disclosures affects a company’s financial statements and fina",
+      "Compare financial reporting quality with the quality of reported results (including quality of earnings, cash flow, and balance sheet items). Financial reporting quality refers to the characteristics "
+    ],
+    "_pdf_readings": 11,
+    "_pdf_text_len": 410881
+  },
+  "Equity Investments": {
+    "summary": "STRUCTURE MODULE 41.1: MARKETS, ASSETS, AND INTERMEDIARIES LOS 41.a: Explain the main functions of the financial system. The three main functions of the financial system are to: 1. Allow entities to save and borrow money, raise equity capital, manage risks, trade assets currently or in the future, and trade based on their estimates of asset values. 2. Determine the returns (i.e., interest rates) that equate the total supply of savings with the total demand for borrowing. 3. Allocate capital to its most efficient uses. The financial system allows the transfer of assets and risks from one entity to another as well as across time. Entities who utilize the financial system include individuals, firms, governments, charities, and others. Achievement of Purposes in the Financial System The financ",
+    "key_concepts": [
+      "주식시장 구조: 1차·2차 시장, 시장참여자, 주문 유형",
+      "주가지수: 가격가중, 시가총액가중, 동일가중",
+      "효율적 시장가설: 약형, 반강형, 강형 EMH",
+      "DDM: 고든성장모델, 다단계 DDM",
+      "DCF: FCFF, FCFE 평가모델",
+      "상대가치: P/E, P/B, P/S, EV/EBITDA",
+      "산업분석: Porter's 5 Forces, 산업 수명주기",
+      "경쟁우위: 원가우위, 차별화, 경제적 해자(Economic Moat)"
+    ],
+    "formulas": [
+      [
+        "CF0",
+        "CF0 = -40,050; CF1 = 49,550; CPT IRR = 23.72%."
+      ],
+      [
+        "+ $300 − $900 − $10",
+        "+ $300 − $900 − $10 = $25,390."
+      ],
+      [
+        "(118.75 / 100) − 1",
+        "(118.75 / 100) − 1 = 18.75%"
+      ],
+      [
+        "22(1,500) + 40(10,000) + 34(3,000)",
+        "22(1,500) + 40(10,000) + 34(3,000) = $535,000"
+      ],
+      [
+        "$16.80 × 3,710",
+        "$16.80 × 3,710 = $62,328"
+      ],
+      [
+        "EBITDA",
+        "EBITDA = gross profit - operating expenses"
+      ],
+      [
+        "Operating profit",
+        "Operating profit = [Q × (P - VC)] - FC"
+      ],
+      [
+        "Contribution margin per unit",
+        "Contribution margin per unit = (P - VC)"
+      ],
+      [
+        "1. C Market share",
+        "1. C Market share = revenue / market size = 0.10 = $500 million / market size. So,"
+      ],
+      [
+        "2. C DOL",
+        "2. C DOL = [10,000 (5 - 3)] / [10,000(5 - 3) - 8,000] = 1.67"
+      ],
+      [
+        "DFL",
+        "DFL = 12,000 / (12,000 - 2,000) = 1.20"
+      ],
+      [
+        "forecast accounts receivable",
+        "forecast accounts receivable = DSO / (forecast revenues / 365)"
+      ],
+      [
+        "forecast inventory",
+        "forecast inventory = DOH / (forecast COGS / 365)"
+      ],
+      [
+        "forecast accounts payable",
+        "forecast accounts payable = DPO / (forecast COGS / 365)"
+      ],
+      [
+        "3. A Forecast average selling price",
+        "3. A Forecast average selling price = $10 × 1.12 = $11.20"
+      ]
+    ],
+    "exam_tips": [
+      "DDM: ke > g 조건 필수. g ≥ ke이면 고든 모델 적용 불가.",
+      "약형 EMH: 기술적 분석 무효. 반강형: 기본적 분석도 무효. 강형: 내부정보도 무효.",
+      "P/E 높다 = 성장 기대 높거나 과대평가. 산업 내 비교 중요.",
+      "FCFF는 부채 전 잉여현금흐름(자본조달 무관). FCFE는 주주에 귀속.",
+      "경제적 해자: 브랜드, 특허, 네트워크 효과, 규모의 경제, 전환비용.",
+      "Porter's 5 Forces: 신규진입위협, 대체재, 공급자, 구매자, 기존경쟁",
+      "시가총액가중지수: 대형주 영향 크다 (S&P 500 방식)."
+    ],
+    "los": [
+      "Explain the main functions of the financial system. The three main functions of the financial system are to: 1. Allow entities to save and borrow money, raise equity capital, manage risks, trade asset",
+      "Describe classifications of assets and markets. Financial assets include securities (stocks and bonds), derivative contracts, and currencies. Real assets include real estate, equipment, commodities, a",
+      "Describe the major types of securities, currencies, contracts, commodities, and real assets that trade in organized markets, including their distinguishing characteristics and major subtypes. Assets c",
+      "Describe types of financial intermediaries and services that they provide. Financial intermediaries stand between buyers and sellers, facilitating the exchange of assets, capital, and risk. Their serv",
+      "Compare positions an investor can take in an asset. An investor who owns an asset, or has the right or obligation under a contract to purchase an asset, is said to have a long position. A short positi",
+      "Calculate and interpret the leverage ratio, the rate of return on a margin transaction, and the security price at which the investor would receive a margin call. The leverage ratio of a margin investm",
+      "Compare execution, validity, and clearing instructions.",
+      "Compare market orders with limit orders. Securities dealers provide prices at which they will buy and sell shares. The bid price is the price at which a dealer will buy a security. The ask or offer pr",
+      "Define primary and secondary markets and explain how secondary markets support primary markets. Primary capital markets refer to the sale of newly issued securities. New equity issues involve either: ",
+      "Describe how securities, contracts, and currencies are traded in quote-driven, order-driven, and brokered markets. The trading of securities in the secondary market has encouraged the development of m",
+      "Describe characteristics of a well-functioning financial system. A well-functioning financial system allows entities to achieve their purposes. More specifically, complete markets fulfill the followin",
+      "Describe objectives of market regulation. Without market regulation, many problems could persist in financial markets: Fraud and theft: In complex financial markets, the potential for theft and fraud ",
+      "Describe a security market index. A security market index is used to represent the performance of an asset class, security market, or segment of a market. They are usually created as portfolios of ind",
+      "Calculate and interpret the value, price return, and total return of an index. An index return may be calculated using a price index or a return index. A price index uses only the prices of the consti",
+      "Describe the choices and issues in index construction and management. Index providers must make several decisions: What is the target market the index is intended to measure? Which securities from the",
+      "Compare the different weighting methods used in index construction. Weighting schemes for stock indexes include price weighting, equal weighting, market capitalization weighting, float-adjusted market",
+      "Calculate and analyze the value and return of an index given its weighting method. Price Weighting A price-weighted index adds the market prices of each stock in the index and divides this total by th",
+      "Describe rebalancing and reconstitution of an index. Rebalancing refers to adjusting the weights of securities in a portfolio to their target weights after price changes have affected the weights. For",
+      "Describe uses of security market indexes. Security market indexes have several uses: Reflection of market sentiment. Indexes provide a representative market return and thus reflect investor confidence",
+      "Describe types of equity indexes. Investors can use a variety of equity market indexes. These equity indexes can be classified as follows: Broad market index. Provides a measure of a market’s overall ",
+      "Compare types of security market indexes. The following table summarizes some of the noteworthy characteristics of various global indexes. Notice from the table that most security market indexes are m",
+      "Describe types of fixed-income indexes. Fixed-income securities vary widely with respect to their coupon rates, ratings, maturities, and embedded options such as convertibility to common stock. Conseq",
+      "Describe indexes representing alternative investments. Alternative assets are of interest to investors because of their potential diversification benefits. Three of the most widely held alternative as",
+      "Describe market efficiency and related concepts, including their importance to investment practitioners. An informationally efficient capital market is one in which the current price of a security ful",
+      "Contrast market value and intrinsic value. The market value of an asset is its current price. The intrinsic value or fundamental value of an asset is the value that a rational investor with full knowl",
+      "Explain factors that affect a market’s efficiency. Markets are generally neither perfectly efficient nor completely inefficient. The degree of informational efficiency varies across countries, time, a",
+      "Contrast weak-form, semi-strong-form, and strong-form market efficiency. Professor Eugene Fama originally developed the concept of market efficiency and identified three forms of market efficiency. Th",
+      "Explain the implications of each form of market efficiency for fundamental analysis, technical analysis, and the choice between active and passive portfolio management. Abnormal profit (or risk-adjust",
+      "Describe market anomalies. An anomaly is something that deviates from the common rule. Tests of the EMH are frequently called anomaly studies, so in the efficient markets literature, a market anomaly ",
+      "Describe behavioral finance and its potential relevance to understanding market anomalies. Behavioral finance examines the actual decision-making processes of investors. Many observers have concluded "
+    ],
+    "_pdf_readings": 8,
+    "_pdf_text_len": 308980
+  },
+  "Fixed Income": {
+    "summary": "MEASURES FOR FIXED-RATE BONDS MODULE 55.1: YIELD AND YIELD SPREAD MEASURES FOR FIXED-RATE BONDS LOS 55.a: Calculate annual yield on a bond for varying compounding periods in a year. Given a bond’s price in the market, we can say that the yield to maturity (YTM) is the discount rate that makes the present value of a bond’s cash flows equal to its price. For a 5-year, annual-pay 7% bond that is priced in the market at 102.078, the YTM will satisfy the following equation: We can calculate the YTM (discount rate) that satisfies this equality as follows: N = 5; PMT = 7; FV = 100; PV = -102.078; CPT → I/Y = 6.5% By convention, the YTM on a semiannual coupon bond is stated as two times the semiannual discount rate. For a 5-year, semiannual-pay 7% coupon bond, we can calculate the semiannual disco",
+    "key_concepts": [
+      "채권 기본: 액면가, 쿠폰, 만기, YTM, 발행/유통 시장",
+      "채권가격·수익률 관계: 역방향 관계, 쿠폰/만기 효과",
+      "수익률 측정: YTM, YTC, 현물이자율, 선도이자율",
+      "기간구조: 수익률곡선(정상, 역전, 평탄), 기대이론, 유동성선호이론",
+      "듀레이션: Macaulay, Modified, Effective Duration",
+      "컨벡시티: 듀레이션의 볼록성 보정",
+      "신용분석: 신용등급, 신용스프레드, 디폴트확률",
+      "구조화채권: MBS, ABS, CDO, 선순위/후순위 구조",
+      "내재옵션: 콜옵션, 풋옵션이 있는 채권"
+    ],
+    "formulas": [
+      [
+        "N",
+        "N = 5; I/Y = 5; PV = 1,000; FV = 0; CPT → PMT = −230.97"
+      ],
+      [
+        "N",
+        "N = 5; I/Y = 5; PV = 1,000; FV = −200; CPT → PMT = −194.78"
+      ],
+      [
+        "$1,010 × 1.5%",
+        "$1,010 × 1.5% = $15.15)."
+      ],
+      [
+        "repurchase price",
+        "repurchase price = $970,874 × [1 + (0.02 × (90 / 360)] = $975,728"
+      ],
+      [
+        "margin",
+        "margin\n= $100,000,000 / 1.01 = $99,009,901"
+      ],
+      [
+        "Repo interest",
+        "Repo interest = $99,009,901 × 0.04 × (1 / 360) = $11,001.10"
+      ],
+      [
+        "N",
+        "N = 5; PMT = 10; FV = 100; I/Y = 8; CPT → PV = −107.99"
+      ],
+      [
+        "N",
+        "N = 5; PMT = 10; FV = 100; I/Y = 12; CPT → PV = −92.79"
+      ],
+      [
+        "N",
+        "N = 10; PMT = 5; FV = 100; I/Y = 4; CPT → PV = −108.11"
+      ],
+      [
+        "N",
+        "N = 10; PMT = 5; FV = 100; PV = −105; CPT → I/Y = 4.37%"
+      ],
+      [
+        "flat price",
+        "flat price = full price - accrued interest"
+      ],
+      [
+        "N",
+        "N = 4; PMT = 2.5; FV = 100; I/Y = 2; CPT → PV = −101.904"
+      ],
+      [
+        "full price",
+        "full price = 101.904 × (1.02)67/183 = 102.645"
+      ],
+      [
+        "$2.5 × (67 / 183)",
+        "$2.5 × (67 / 183) = $0.915"
+      ],
+      [
+        "Flat price",
+        "Flat price = 102.645 − 0.915 = 101.73."
+      ]
+    ],
+    "exam_tips": [
+      "채권가격과 YTM은 역방향. YTM↑ → 가격↓.",
+      "만기가 길수록, 쿠폰이 낮을수록 듀레이션 크다 = 금리위험 크다.",
+      "컨벡시티는 항상 양수 → 금리변화 시 듀레이션만 사용하면 과소평가.",
+      "콜옵션부 채권: YTM > YTC 시 조기상환. Duration 짧아짐.",
+      "수익률 곡선 역전 = 경기침체 신호로 자주 해석.",
+      "신용스프레드 확대 = 경기 침체·신용위험 상승.",
+      "MBS: 선불위험(금리 하락 시 조기상환) 주의."
+    ],
+    "los": [
+      "Describe the features of a fixed-income security. Major types of fixed-income instruments include loans, which are private (nontradable) agreements between a borrower and lender, and bonds (or fixed-i",
+      "Describe the contents of a bond indenture and contrast affirmative and negative covenants. The legal contract between the bond issuer (borrower) and bondholders (lenders) is called the bond indenture.",
+      "Describe common cash flow structures of fixed- income instruments and contrast cash flow contingency provisions that benefit issuers and investors. A typical bond has a bullet structure, where princip",
+      "Describe how legal, regulatory, and tax considerations affect the issuance and trading of fixed-income securities. Bonds are subject to different legal and regulatory requirements that depend on where",
+      "Describe fixed-income market segments and their issuer and investor participants. Global bond markets are primarily segmented by the type of issuer (or sector), credit quality, and time to maturity. O",
+      "Describe types of fixed-income indexes. Fixed-income indexes differ from equity indexes in the following three ways: 1. Corporate bond issuers can, and often do, have many different bonds outstanding,",
+      "Compare primary and secondary fixed-income markets to equity markets. Primary Markets Sales of newly issued bonds are referred to as primary market transactions, whereby the issuer sells new securitie",
+      "Compare short-term funding alternatives available to corporations and financial institutions. Short-Term Funding for Nonfinancial Corporations A nonfinancial company usually raises external funds for ",
+      "Describe repurchase agreements (repos), their uses, and their benefits and risks. A repurchase agreement (repo) is an arrangement by which one party sells a security to a counterparty with a commitmen",
+      "Contrast the long-term funding of investment-grade versus high- yield corporate issuers. Recall that in a normal yield curve environment, bond yields are higher for longer- dated maturities, reflectin",
+      "Describe funding choices by sovereign and non- sovereign governments, quasi-government entities, and supranational agencies. Sovereign Debt National governments issue bonds to raise funds for spending",
+      "Contrast the issuance and trading of government and corporate fixed-income instruments. While corporate issuers of debt raise debt finance as required, sovereign issuers use regular public auctions to",
+      "Calculate a bond’s price given a yield-to-maturity on or between coupon dates. Calculating the Value of an Annual Coupon Bond The value of a coupon bond can be calculated by summing the present values",
+      "Identify the relationships among a bond’s price, coupon rate, maturity, and yield-to-maturity. We can summarize the relationships between price and specific bond features as follows: 1. At a point in ",
+      "Describe matrix pricing. Matrix pricing is a method of estimating the required YTM (or price) of bonds that are currently not traded, or infrequently traded. The procedure is to use the YTMs of traded",
+      "Calculate annual yield on a bond for varying compounding periods in a year. Given a bond’s price in the market, we can say that the yield to maturity (YTM) is the discount rate that makes the present ",
+      "Compare, calculate, and interpret yield and yield spread measures for fixed-rate bonds. A yield spread, or benchmark spread, is the difference between the yields of a bond and a benchmark security. Fo",
+      "Calculate and interpret yield spread measures for floating-rate instruments. Floating-Rate Note Yields The values of floating-rate notes (FRNs) are more stable than those of fixed-rate debt of similar",
+      "Calculate and interpret yield measures for money market instruments. For money market securities (debt securities maturing in a year or less), yields are quoted using various conventions. Some yield q",
+      "Define spot rates and the spot curve, and calculate the price of a bond using spot rates. The yield to maturity of a bond is calculated as if the discount rate for every bond cash flow is the same. In",
+      "Define par and forward rates, and calculate par rates, forward rates from spot rates, spot rates from forward rates, and the price of a bond using forward rates. Par Yields Par yields reflect the coup",
+      "Compare the spot curve, par curve, and forward curve. The spot rate yield curve (spot curve) for U.S. Treasury bonds, also referred to as the zero curve or the strip curve (because zero-coupon U.S. Tr",
+      "Calculate and interpret the sources of return from investing in a fixed-rate bond. There are three sources of returns from investing in a fixed-rate bond: 1. Coupon and principal payments 2. Interest ",
+      "Describe the relationships among a bond’s holding period return, its Macaulay duration, and the investment horizon.",
+      "Define, calculate, and interpret Macaulay duration. Is there an investment horizon where price risk and reinvestment risk are in balance? There is, as demonstrated by the following example. EXAMPLE: I",
+      "Define, calculate, and interpret modified duration, money duration, and the price value of a basis point (PVBP). Modified duration (ModDur) is calculated as Macaulay duration (MacDur) divided by one p",
+      "Explain how a bond’s maturity, coupon, and yield level affect its interest rate risk. Other things equal, bonds with longer maturity will (usually) have higher interest rate risk. The present values o",
+      "Calculate and interpret convexity and describe the convexity adjustment. In our reading on Yield-Based Bond Duration Measures and Properties, we showed that modified duration is a linear approximation",
+      "Calculate the percentage price change of a bond for a specified change in yield, given the bond’s duration and convexity. By taking account of both a bond’s duration (first-order effects) and convexit",
+      "Calculate portfolio duration and convexity and explain the limitations of these measures. There are two approaches to estimating the duration and convexity of a portfolio. The first is to base a singl"
+    ],
+    "_pdf_readings": 18,
+    "_pdf_text_len": 310812
+  },
+  "Derivatives": {
+    "summary": "DERIVATIVE MARKET FEATURES MODULE 68.1: DERIVATIVES MARKETS LOS 68.a: Define a derivative and describe basic features of a derivative instrument. A derivative is a security that derives its value from the value of another security or a variable (such as an interest rate or stock index value) at some specific future date. The security or variable that determines the value of a derivative security is referred to as the underlying for the derivative. The value of a derivative at a point in time is derived from the value of the underlying (asset or variable) on which the derivative contract is based. A relatively simple example of a derivative is a forward contract that specifies the price at which one party agrees to buy or sell an underlying security at a specified future date. Consider a fo",
+    "key_concepts": [
+      "선도(Forward): OTC 계약, 인도 의무, 가격결정",
+      "선물(Futures): 거래소 상장, 일일정산, 마진",
+      "옵션(Options): 콜/풋, 유럽형/미국형, 내재/시간가치",
+      "스왑(Swaps): 이자율 스왑, 통화 스왑",
+      "무재정거래 가격결정: 보유비용 모델",
+      "옵션 가격결정: BSM 모델, 이항모델",
+      "옵션 그릭스: Delta, Gamma, Vega, Theta, Rho",
+      "헤징 전략: 커버드콜, 보호적 풋",
+      "Put-Call Parity"
+    ],
+    "formulas": [
+      [
+        "premium (at S",
+        "premium (at S = $55)."
+      ],
+      [
+        "option premium ($50 - $5",
+        "option premium ($50 - $5 = $45)."
+      ],
+      [
+        "forward price as F0(1)",
+        "forward price as F0(1) = 30(1.05) = 31.50."
+      ],
+      [
+        "same solution by 1.10 × (1.02/1.03)",
+        "same solution by 1.10 × (1.02/1.03) = 1.0893."
+      ],
+      [
+        "In this case we can say",
+        "In this case we can say: forward exchange rate = 1.10 × e (0.0198-0.0296) = 1.0893."
+      ],
+      [
+        "Vt(T)",
+        "Vt(T) = [St+ PVt (costs) - PVt(benefit)] - F0(T) (1 + Rf)-(T-t)"
+      ],
+      [
+        "futures price",
+        "futures price = 100 – (100 × MRRA, B–A)"
+      ],
+      [
+        "MRR6m, 6m",
+        "MRR6m, 6m = 3%."
+      ],
+      [
+        "futures price",
+        "futures price = 100 - (100 × MRRA, B–A)"
+      ],
+      [
+        "because X − S",
+        "because X − S = $3.00."
+      ],
+      [
+        "option premium",
+        "option premium = exercise value + time value"
+      ],
+      [
+        "following portfolio at time t",
+        "following portfolio at time t = 0:"
+      ],
+      [
+        "+ (X − S)",
+        "+ (X − S) = X."
+      ],
+      [
+        "c + X(1 + Rf )-T",
+        "c + X(1 + Rf )-T = S + p"
+      ],
+      [
+        "X(1 + Rf )−T",
+        "X(1 + Rf )−T = S + p − c"
+      ]
+    ],
+    "exam_tips": [
+      "선물 vs 선도: 선물은 거래소·표준화·일일정산. 선도는 OTC·맞춤형.",
+      "콜옵션 매수: 상승 기대. 풋옵션 매수: 하락 헤지.",
+      "Put-Call Parity로 하나의 옵션 가격을 다른 것으로부터 도출 가능.",
+      "Delta = 옵션가격 / 기초자산가격 변화비율. 콜: 0~1, 풋: -1~0.",
+      "Gamma = Delta의 변화율. ATM에서 최대.",
+      "Vega = 변동성 증가 → 옵션가치 증가 (콜·풋 모두).",
+      "이자율 스왑: 고정금리 지급자 = 변동금리 수취자."
+    ],
+    "los": [
+      "Define a derivative and describe basic features of a derivative instrument. A derivative is a security that derives its value from the value of another security or a variable (such as an interest rate",
+      "Describe the basic features of derivative markets, and contrast over-the-counter and exchange-traded derivative markets. Exchange-Traded Derivatives Centralized physical exchanges provide markets for ",
+      "Define forward contracts, futures contracts, swaps, options (calls and puts), and credit derivatives and compare their basic characteristics. Forward Contracts In a forward contract between two partie",
+      "Determine the value at expiration and profit from a long or a short position in a call or put option. Unlike forwards, futures, and swaps, options are sold at a price (they do not have zero value at i",
+      "Contrast forward commitments with contingent claims. A forward commitment is a legally binding promise to perform some action in the future. Forward commitments include forward contracts, futures cont",
+      "Describe benefits and risks of derivative instruments. Advantages of Derivatives Derivative instruments offer several potential advantages over cash market transactions, including the following: Abili",
+      "Compare the use of derivatives among issuers and investors. Derivatives Use by Issuers Corporate users of derivative instruments are considered issuers of derivatives. A non-financial corporation may ",
+      "Explain how the concepts of arbitrage and replication are used in pricing derivatives. In contrast to valuing risky assets as the (risk-adjusted) present value of expected future cash flows, the valua",
+      "Explain the difference between the spot and expected future price of an underlying and the cost of carry associated with holding the underlying asset. When we derived the no-arbitrage forward price fo",
+      "Explain how the value and price of a forward contract are determined at initiation, during the life of the contract, and at expiration. Consider a forward contract that is initially priced at its no-a",
+      "Explain how forward rates are determined for interest rate forward contracts and describe the uses of these forward rates. Forward rates are yields for future periods. The rate of interest on a 1-year",
+      "Compare the value and price of forward and futures contracts. While the price of a forward contract is constant over its life when no mark-to-market gains or losses are paid, its value will fluctuate ",
+      "Explain why forward and futures prices differ. For pricing, the most important distinction between futures and forwards is that with futures, mark-to market gains and losses are paid each day. Gains a",
+      "Describe how swap contracts are similar to but different from a series of forward contracts. In a simple interest-rate swap, one party pays a floating rate and the other pays a fixed rate on a notiona",
+      "Contrast the value and price of swaps. As with FRAs, the price of a swap is the fixed rate of interest specified in the swap contract (the par swap rate) and the value depends on how expected future f",
+      "Explain the exercise value, moneyness, and time value of an option. Moneyness refers to whether an option is in the money or out of the money. If immediate exercise of the option would generate a posi",
+      "Contrast the use of arbitrage and replication concepts in pricing forward commitments and contingent claims. To model forward commitments, we used no-arbitrage pricing based on an initial value of zer",
+      "Identify the factors that determine the value of an option and describe how each factor affects the value of an option. There are six factors that determine option prices. 1. Price of the underlying a",
+      "Explain put–call parity for European options. Our derivation of put-call parity for European options is based on the payoffs of two portfolio combinations: a fiduciary call and a protective put. A fid",
+      "Explain put–call forward parity for European options. Put-call-forward parity is derived with a forward contract rather than the underlying asset itself. Consider a forward contract on an asset at tim",
+      "Explain how to value a derivative using a one-period binomial model. Recall from Quantitative Methods that a binomial model is based on the idea that, over the next period, some value will change to o",
+      "Describe the concept of risk neutrality in derivatives pricing. Another approach to constructing a one-period binomial model involves risk- neutral probabilities of an up-move or a down-move. Consider"
+    ],
+    "_pdf_readings": 10,
+    "_pdf_text_len": 144879
+  },
+  "Alternative Investments": {
+    "summary": "PERFORMANCE AND RETURNS MODULE 79.1: PERFORMANCE APPRAISAL AND RETURN CALCULATIONS LOS 79.a: Describe the performance appraisal of alternative investments. Alternative investments are typically exposed to greater risks than unleveraged long-only traditional investments. These additional risks arise from the following: Timing of cash flows over an investment’s life cycle Use of leverage by fund managers Valuation of investments that may or may not have observable market prices Complexity of fees, taxes, and accounting Ideally, returns on alternative investments should be adjusted for these risks, although that may be difficult in practice. It is clear, however, that evaluating alternative investment returns (or expected returns) without considering these additional risks would be naïve and ",
+    "key_concepts": [
+      "헤지펀드: 절대수익 추구, 다양한 전략, 락업기간, 2/20 수수료",
+      "사모펀드: 벤처캐피탈, 바이아웃, 성장자본, J-커브 효과",
+      "부동산: 직접투자, REIT, 수익접근법(NOI/Cap rate)",
+      "원자재: 현물가격, 선물가격, Backwardation vs Contango",
+      "인프라: 장기 안정적 현금흐름, 규제 자산",
+      "대체투자 특성: 낮은 유동성, 높은 최소투자금, 복잡한 구조"
+    ],
+    "formulas": [
+      [
+        "110.0 million × 2%",
+        "110.0 million × 2% = $2.2 million"
+      ],
+      [
+        "100.2 million − $2.2 million",
+        "100.2 million − $2.2 million = $98.0 million"
+      ],
+      [
+        "$119.0 − $1.96",
+        "$119.0 − $1.96 = $117.04 million"
+      ],
+      [
+        "117.04 million − 110.0 million",
+        "117.04 million − 110.0 million = $7.04 million"
+      ],
+      [
+        "7.04 × 0.20",
+        "7.04 × 0.20 = $1.41 million"
+      ],
+      [
+        "$1.96 million + $1.41 million",
+        "$1.96 million + $1.41 million = $3.37 million"
+      ],
+      [
+        "119.0 − 3.37",
+        "119.0 − 3.37 = $115.63 million"
+      ],
+      [
+        "Year-end gross value",
+        "Year-end gross value = 100 × 1.30 = 130"
+      ],
+      [
+        "Management fee",
+        "Management fee = 1.5% × 130 = 1.95"
+      ],
+      [
+        "Hurdle gains",
+        "Hurdle gains = 8% × 100 = 8"
+      ],
+      [
+        "Incentive fee",
+        "Incentive fee = 15% × (30 − 1.95 – 8) = 3.0075"
+      ],
+      [
+        "Total fees",
+        "Total fees = 1.95 + 3.0075 = 4.9575"
+      ],
+      [
+        "Ending value after fees",
+        "Ending value after fees = 130 − 4.9575 = 125.0425"
+      ],
+      [
+        "Return after fees",
+        "Return after fees = 125.0425 / 100 − 1 = 25.0425%"
+      ]
+    ],
+    "exam_tips": [
+      "J-커브: 사모펀드 초기 마이너스 수익 후 회수 단계에서 급상승.",
+      "Cap Rate 상승 → 부동산 가치 하락 (역방향).",
+      "Contango: 선물 > 현물 (정상 시장). Backwardation: 선물 < 현물.",
+      "헤지펀드 전략: Long/Short Equity, Global Macro, Event-Driven, Relative Value.",
+      "REIT: 배당가능이익의 90% 이상 분배 의무 (미국 기준).",
+      "대체투자 성과평가: TWRR보다 IRR/MOIC 사용이 일반적.",
+      "유동성 프리미엄: 비유동 자산은 추가 수익 기대."
+    ],
+    "los": [
+      "Describe the performance appraisal of alternative investments. Alternative investments are typically exposed to greater risks than unleveraged long-only traditional investments. These additional risks",
+      "Calculate and interpret alternative investment returns both before and after fees. We have seen how margin calls may require a leveraged fund to exit investments at unfavorable prices and unintended t",
+      "Explain features of private equity and its investment characteristics. Private capital is the funding provided to companies that is not raised from the public markets. Private capital includes private",
+      "Explain features of private debt and its investment characteristics. Private debt refers to various forms of debt provided by investors directly to private entities. Categories of private debt include",
+      "Describe the diversification benefits that private capital can provide. Private capital investments can provide some diversification benefit to a portfolio of traditional investments. Empirical eviden",
+      "Explain features and characteristics of real estate. Real estate can provide income in the form of rent, as well as the potential for price appreciation. Investment in real estate can be made directly",
+      "Explain the investment characteristics of real estate investments. Among real estate investments, first mortgages or investment-grade CMBSs are the least risky and are similar to investing in bonds. C",
+      "Explain features and characteristics of infrastructure. Infrastructure investments include transportation assets (e.g., roads, airports, ports, railways), utility assets (e.g., gas distribution facili",
+      "Explain the investment characteristics infrastructure investments. In general, investing in brownfield investments provides stable cash flows and relatively high current yields, but offers little pote",
+      "Explain features of raw land, timberland, and farmland and their investment characteristics. Natural resources comprise raw land, land used for growing crops or timber, and commodities. Investment in ",
+      "Describe features of commodities and their investment characteristics. We can divide commodities into three major sectors: metals (including base or industrial metals and precious metals), agricultura",
+      "Analyze sources of risk, return, and diversification among natural resource investments. Commodity Prices and Investments Spot prices for commodities are a function of supply and demand. Demand is aff",
+      "Explain investment features of hedge funds and contrast them with other asset classes. Hedge funds are private pooled investment vehicles that are generally available only to qualified or accredited i",
+      "Describe investment forms and vehicles used in hedge fund investments. Hedge funds can be structured as commingled funds, whereby capital from many investors is pooled together, or as a separately man",
+      "Analyze sources of risk, return, and diversification among hedge fund investments. Hedge fund returns come from three sources: 1. Market beta. This is the return attributable to the broad market index",
+      "Describe financial applications of distributed ledger technology. Digital assets are assets that can be electronically created, stored, and transferred. This relatively new alternative asset class inc",
+      "Explain investment features of digital assets and contrast them with other asset classes. Investing in digital assets is becoming more commonplace in the financial industry. In 2013, approximately 70 ",
+      "Describe investment forms and vehicles used in digital asset investments. Investing in digital assets can be done directly on the blockchain, or indirectly through exchange-traded products and hedge f",
+      "Analyze sources of risk, return, and diversification among digital asset investments. Cryptocurrency values depend largely on asset appreciation, and a significant driver of prices is their limited su"
+    ],
+    "_pdf_readings": 6,
+    "_pdf_text_len": 110185
+  },
+  "Portfolio Management": {
+    "summary": "AND CONSTRUCTION MODULE 86.1: PORTFOLIO PLANNING AND CONSTRUCTION LOS 86.a: Describe the reasons for a written investment policy statement (IPS). An investment manager is very unlikely to produce a good result for a client without understanding that client’s needs, circumstances, and constraints. A written investment policy statement will typically begin with the investor’s goals in terms of risk and return. These should be determined jointly, as the goals of high returns and low risk (while quite popular) are likely to be mutually exclusive in practice. Investor expectations in terms of returns must be compatible with investor’s tolerance for risk (uncertainty about portfolio performance). LOS 86.b: Describe the major components of an IPS. The major components of an IPS typically address ",
+    "key_concepts": [
+      "현대 포트폴리오 이론(MPT): 분산투자, 효율적 프런티어",
+      "CAPM: 체계적·비체계적 위험, 베타, 증권시장선(SML)",
+      "리스크 측정: 표준편차, 분산, 베타, VaR, CVaR",
+      "포트폴리오 성과평가: 샤프, 트레이너, 젠센 알파, 정보비율",
+      "투자정책서(IPS): 수익목표, 위험허용도, 제약조건",
+      "자산배분: 전략적(SAA), 전술적(TAA)",
+      "행동재무학: 인지편향, 감정편향",
+      "ESG 통합 투자"
+    ],
+    "formulas": [
+      [
+        "포트폴리오 기대수익률",
+        "E(Rp) = w₁E(R₁) + w₂E(R₂)"
+      ],
+      [
+        "2자산 포트폴리오 분산",
+        "σ²p = w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ₁₂"
+      ],
+      [
+        "CAPM",
+        "E(Ri) = Rf + βi[E(Rm) − Rf]"
+      ],
+      [
+        "베타 (β)",
+        "β = Cov(Ri, Rm) / σ²m"
+      ],
+      [
+        "샤프 비율",
+        "Sharpe = (Rp − Rf) / σp"
+      ],
+      [
+        "트레이너 비율",
+        "Treynor = (Rp − Rf) / βp"
+      ],
+      [
+        "젠센 알파",
+        "α = Rp − [Rf + β(Rm − Rf)]"
+      ],
+      [
+        "정보비율 (IR)",
+        "IR = 알파 / 추적오차"
+      ]
+    ],
+    "exam_tips": [
+      "분산투자: 비체계적위험(고유위험)은 제거 가능. 체계적위험(시장위험)은 불가.",
+      "효율적 프런티어 위의 최적 포트폴리오 = 자본시장선(CML) 접점.",
+      "CAPM: β = 1은 시장 수익률과 동일. β > 1은 고위험·고수익 기대.",
+      "SML vs CML: SML은 개별 자산 포함 (베타 기준). CML은 효율 포트폴리오만.",
+      "샤프 비율: 총위험(σ) 기준. 트레이너: 체계적위험(β) 기준.",
+      "알파 > 0 = 시장 대비 초과성과 (젠센 알파).",
+      "IPS 먼저 작성 후 자산배분 결정. 수익목표·위험허용도·유동성·세금·기간·법규 등."
+    ],
+    "los": [
+      "Describe the portfolio approach to investing. The portfolio perspective refers evaluating individual investments by their contribution to the risk and return of an investor’s portfolio. The alternativ",
+      "Describe the steps in the portfolio management process. There are three major steps in the portfolio management process: Step 1: The planning step begins with an analysis of the investor’s risk tolera",
+      "Describe types of investors and distinctive characteristics and needs of each. Individual investors save and invest for a variety of reasons, including purchasing a house or educating their children. ",
+      "Describe defined contribution and defined benefit pension plans. A defined contribution pension plan is a retirement plan in which the firm contributes a sum each period to the employee’s retirement a",
+      "Describe aspects of the asset management industry. The asset management industry comprises firms that manage investments for clients. Asset management firms include both independent managers and divis",
+      "Describe mutual funds and compare them with other pooled investment products. Mutual funds are one form of pooled investments (i.e., a single portfolio that contains investment funds from multiple inv",
+      "Describe the reasons for a written investment policy statement (IPS). An investment manager is very unlikely to produce a good result for a client without understanding that client’s needs, circumstan",
+      "Describe the major components of an IPS. The major components of an IPS typically address the following: Description of Client circumstances, situation, and investment objectives. Statement of the Pur",
+      "Describe risk and return objectives and how they may be developed for a client. The risk objectives in an IPS may take several forms. An absolute risk objective might be to “have no decrease in portfo",
+      "Explain the difference between the willingness and the ability (capacity) to take risk in analyzing an investor’s financial risk tolerance. An investor’s ability to bear risk depends on financial circ",
+      "Describe the investment constraints of liquidity, time horizon, tax concerns, legal and regulatory factors, and unique circumstances and their implications for the choice of portfolio assets. PROFESSO",
+      "Explain the specification of asset classes in relation to asset allocation. After having determined the investor objectives and constraints through the exercise of creating an IPS, a strategic asset a",
+      "Describe the principles of portfolio construction and the role of asset allocation in relation to the IPS. Once the portfolio manager has identified the investable asset classes for the portfolio and ",
+      "Describe how environmental, social, and governance (ESG) considerations may be integrated into portfolio planning and construction. Approaches to ESG investing include: Negative screening, excluding s",
+      "Compare and contrast cognitive errors and emotional biases. Individuals, when facing complex decision-making, often lack the time or ability to derive the optimal course of action prescribed by tradit",
+      "Discuss commonly recognized behavioral biases and their implications for financial decision making. Cognitive errors can be divided into belief perseverance biases that reflect an irrational reluctanc",
+      "Describe how behavioral biases of investors can lead to market characteristics that may not be explained by traditional finance. In our Equity Investments reading on Market Efficiency, we developed th",
+      "Define risk management. The risk management process seeks to (1) identify the risk tolerance of the organization, (2) identify and measure the risks that the organization faces, and (3) modify and mon",
+      "Describe features of a risk management framework. An overall risk management framework encompasses several activities, including: Establishing processes and policies for risk governance. Determining t",
+      "Define risk governance and describe elements of effective risk governance. Risk governance refers to senior management’s determination of the risk tolerance of the organization, the elements of its op",
+      "Explain how risk tolerance affects risk management. Determining an organization’s risk tolerance involves setting the overall risk exposure the organization will take by identifying the risks the firm",
+      "Describe risk budgeting and its role in risk governance. Risk budgeting is the process of allocating firm resources to assets (or investments) by considering their various risk characteristics and how",
+      "Identify financial and non-financial sources of risk and describe how they may interact. Financial risks are those that arise from exposure to financial markets. Examples are: Credit risk. This is the",
+      "Describe methods for measuring and modifying risk exposures and factors to consider in choosing among the methods. Measures of risk for specific asset types include standard deviation, beta, and durat"
+    ],
+    "_pdf_readings": 4,
+    "_pdf_text_len": 118597
+  },
+  "Ethics": {
+    "summary": "INVESTMENT PROFESSION MODULE 89.1: ETHICS AND TRUST LOS 89.a: Explain ethics. Ethics can be described as a set of shared beliefs about what is good or acceptable behavior and what is bad or unacceptable behavior. Ethical conduct has been described as behavior that follows moral principles and is consistent with society’s ethical expectations. Ethical conduct has also been described as conduct that improves outcomes for stakeholders, who are people directly or indirectly affected by the conduct. Examples of stakeholders in the case of investment professionals include their clients, coworkers, employers, and the investment profession as a whole. Some decisions may bring positive results for you, but negative consequences for a stakeholder, such as a coworker. Ethical conduct is behavior that",
+    "key_concepts": [
+      "Code of Ethics: 6가지 원칙",
+      "Standards of Professional Conduct: I~VII 7개 영역",
+      "Standard I: 직업윤리 (A.지식 B.독립성 C.오해금지 D.비위행위)",
+      "Standard II: 자본시장의 무결성 (A.중요비공개정보 B.시장조작)",
+      "Standard III: 고객에 대한 의무 (A~F: 충성, 합리적배려, 공정거래 등)",
+      "Standard IV: 고용주에 대한 의무 (A.충성 B.감독)",
+      "Standard V: 투자분석·권고·행동 (A.합리성 B.기록보관 C.적합성)",
+      "Standard VI: 이해충돌 (A.공시 B.우선순위 C.리베이트)",
+      "Standard VII: 자격증 관련 의무",
+      "GIPS: 글로벌 투자성과기준"
+    ],
+    "formulas": [
+      [
+        "없음",
+        "윤리는 계산 공식보다 적용과 판단이 핵심입니다."
+      ]
+    ],
+    "exam_tips": [
+      "중요비공개정보(MNPI): 받으면 방화벽 설치, 거래 중지.",
+      "적합성: 투자 전 반드시 고객 프로필(위험허용도, 목표, 기간) 파악.",
+      "공정거래: 모든 고객에게 동시·동등하게 정보 제공 (순차 불가).",
+      "독립성·객관성: 애널리스트는 투자은행 압력으로부터 독립 유지.",
+      "이해충돌 공시: 고객, 고용주, 시장 순서로 충성 우선순위.",
+      "GIPS: 성과 조작 방지. 복합계정(Composite) 단위 보고.",
+      "\"합리적 근거\" 기준: 단순 추천이 아닌 분석·조사 기반이어야 함.",
+      "Standard V(C) 적합성: 단순 고객 요구가 아닌 전체 포트폴리오 맥락에서 판단."
+    ],
+    "los": [
+      "Explain ethics. Ethics can be described as a set of shared beliefs about what is good or acceptable behavior and what is bad or unacceptable behavior. Ethical conduct has been described as behavior th",
+      "Describe the role of a code of ethics in defining a profession. A code of ethics is a written set of moral principles that can guide behavior by describing what is considered acceptable behavior. Havi",
+      "Describe professions and how they establish trust. A profession is an occupational group (e.g., doctors or lawyers) that has requirements of specialized expert knowledge, and often a focus on ethical ",
+      "Describe the need for high ethical standards in investment management. Investment professionals have a special responsibility because they are entrusted with their clients’ wealth. The responsibility ",
+      "Explain professionalism in investment management. Because clients of investment professionals rely on their expertise, judgment, and ethical principles, many of the characteristics of a profession we ",
+      "Identify challenges to ethical behavior. One challenge to ethical behavior is that individuals tend to overrate the ethical quality of their behavior on a relative basis and overemphasize the importan",
+      "Compare and contrast ethical standards with legal standards. Not all unethical actions are illegal, and not all illegal actions are unethical. In some places it may be illegal to report one’s employer",
+      "Describe a framework for ethical decision making. Ethical decisions will be improved when ethics are integrated into a firm’s decision- making process. This will allow decision makers and teams to con",
+      "Describe the structure of the CFA Institute Professional Conduct Program and the process for the enforcement of the Code and Standards. The CFA Institute Professional Conduct Program is covered by the",
+      "Identify the six components of the Code of Ethics and the seven Standards of Professional Conduct. Code of Ethics Members of CFA Institute [including Chartered Financial Analyst® (CFA®) charterholders",
+      "Explain the ethical responsibilities required by the Code and Standards, including the sub-sections of each Standard. Standards of Professional Conduct2 I. PROFESSIONALISM A. Knowledge of the Law. Mem",
+      "Demonstrate the application of the Code of Ethics and Standards of Professional Conduct to situations involving issues of professional integrity.",
+      "Recommend practices and procedures designed to prevent violations of the Code of Ethics and Standards of Professional Conduct.",
+      "Identify conduct that conforms to the Code and Standards and conduct that violates the Code and Standards. The Standards of Professional Conduct comprise seven Standards (I–VII) and a total of 22 subs",
+      "Explain why the GIPS standards were created, who can claim compliance, and who benefits from compliance. When firms choose their own methodologies for reporting investment performance, the results are",
+      "Describe the key concepts of the GIPS Standards for Firms. The GIPS standards for firms consist of eight sections: 1. Fundamentals of Compliance. The fundamental issues involved in complying with GIPS",
+      "Explain the purpose of composites in performance reporting. A composite is a grouping of individual discretionary portfolios representing a similar investment strategy, objective, or mandate. Examples",
+      "Describe the fundamentals of compliance, including the recommendations of the GIPS standards with respect to the definition of the firm and the firm’s definition of discretion. The definition of the f",
+      "Describe the concept of independent verification. Firms are encouraged to pursue independent verification of their compliance with GIPS. Verification applies to the entire firm’s performance measureme",
+      "Evaluate practices, policies, and conduct relative to the CFA Institute Code of Ethics and Standards of Professional Conduct.",
+      "Explain how the practices, policies, and conduct do or do not violate the CFA Institute Code of Ethics and Standards of Professional Conduct. Standard I: Professionalism Standard I(A) Knowledge of the"
+    ],
+    "_pdf_readings": 5,
+    "_pdf_text_len": 148991
+  }
+}

@@ -24,7 +24,7 @@ if "questions" not in st.session_state:
 
 # ── Header ──────────────────────────────────────────────────────────────────
 st.title("📊 CFA Level 1 Study Tool")
-st.caption("2026 Curriculum 기반 | 문제은행 + 진도 추적")
+st.caption("SchweserNotes 2022 기반 | 5권 PDF + 한국어 개념 정리 | 문제은행 + 진도 추적")
 st.divider()
 
 cl = ConceptLoader()
@@ -220,6 +220,19 @@ with tab4:
 
     with col_content:
         sections = cl.get_sections(selected_concept_module)
+        pdf_readings = sections.get("_pdf_readings", 0) or 0
+
+        # Book info badge
+        from modules_l1 import MODULE_BOOK_MAP
+        book_info = MODULE_BOOK_MAP.get(selected_concept_module)
+        if book_info:
+            book_label = f"📘 SchweserNotes Book {book_info['book']}"
+            st.caption(f"{book_label} | Reading {book_info['readings'][0]}–{book_info['readings'][1]} | PDF {pdf_readings}개 Reading 반영")
+        elif pdf_readings:
+            st.caption(f"📖 PDF {pdf_readings}개 Reading 반영")
+        else:
+            st.caption("📖 한국어 개념 정리 기반")
+        st.divider()
 
         if view_mode == "개념요약":
             st.subheader(f"📖 {selected_concept_module} — 개념 요약")

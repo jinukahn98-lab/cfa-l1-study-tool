@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+from typing import Union, List, Dict
 
 
 class FlashcardGenerator:
@@ -9,7 +10,7 @@ class FlashcardGenerator:
         self.openai_key = os.environ.get("OPENAI_API_KEY")
         self.enabled = bool(self.anthropic_key or self.openai_key)
 
-    def generate(self, summary_text: str, count: int = 5) -> list[dict] | bool:
+    def generate(self, summary_text: str, count: int = 5):
         if not self.enabled:
             return False
 
@@ -24,7 +25,7 @@ class FlashcardGenerator:
             return self._call_anthropic(prompt)
         return self._call_openai(prompt)
 
-    def _call_anthropic(self, prompt: str) -> list[dict] | bool:
+    def _call_anthropic(self, prompt: str) -> Union[List[Dict], bool]:
         try:
             resp = requests.post(
                 "https://api.anthropic.com/v1/messages",
@@ -46,7 +47,7 @@ class FlashcardGenerator:
         except Exception:
             return False
 
-    def _call_openai(self, prompt: str) -> list[dict] | bool:
+    def _call_openai(self, prompt: str) -> Union[List[Dict], bool]:
         try:
             resp = requests.post(
                 "https://api.openai.com/v1/chat/completions",
@@ -67,7 +68,7 @@ class FlashcardGenerator:
         except Exception:
             return False
 
-    def _parse_cards(self, text: str) -> list[dict] | bool:
+    def _parse_cards(self, text: str) -> Union[List[Dict], bool]:
         text = text.strip()
         start = text.find("[")
         end = text.rfind("]") + 1

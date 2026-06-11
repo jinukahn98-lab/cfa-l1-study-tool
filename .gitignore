@@ -1,6 +1,11 @@
+# SchweserNotes PDFs (large) - only JSON readings needed on server
+data/pdfs/
+data/summaries/
+
+# Python cache
 __pycache__/
 *.pyc
-.venv/
-*.db
-.env
-.DS_Store
+*.pyo
+
+# Hermes
+.hermes/
