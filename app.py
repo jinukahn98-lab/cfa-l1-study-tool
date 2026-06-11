@@ -465,15 +465,25 @@ with tab_quiz:
 # TAB 4: 개념 정리
 # ════════════════════════════════════════════════════════════════════════════
 with tab_concept:
-    st.subheader("📖 개념 정리")
-    st.caption("SchweserNotes 2022 기반 모듈별 핵심 개념을 정리했습니다.")
+    st.markdown("""
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:4px;">
+        <div style="font-size:1.8rem;">📖</div>
+        <div>
+            <div style="font-size:1.5rem; font-weight:700; color:#0a1628;">개념 정리</div>
+            <div style="color:#64748b; font-size:0.9rem;">SchweserNotes 2022 기반 · 모듈별 핵심 개념</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     try:
         concept_modules = cl.available_modules()
     except Exception as e:
         concept_modules = module_names()
 
-    sel_module = st.selectbox("📚 모듈 선택", concept_modules, key="concept_module")
+    # ── Module selector ──
+    col_sel, col_info = st.columns([2, 1])
+    with col_sel:
+        sel_module = st.selectbox("📚 모듈 선택", concept_modules, key="concept_module")
 
     try:
         data = cl.get_sections(sel_module)
@@ -481,49 +491,158 @@ with tab_concept:
         st.error(f"개념 데이터를 불러오지 못했습니다: {e}")
         data = {}
 
+    mod_color = MODULE_COLORS.get(sel_module, "#6B7280")
+
+    # ── Module header badge ──
+    st.markdown(f"""
+    <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px 0;">
+        <div style="background:{mod_color}; width:4px; height:32px; border-radius:2px;"></div>
+        <div style="font-size:1.2rem; font-weight:700; color:{mod_color};">{sel_module}</div>
+        <div style="background:{mod_color}20; color:{mod_color}; padding:2px 12px; border-radius:12px; font-size:0.8rem; font-weight:600;">
+            Module
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     summary = data.get("summary", "")
     key_concepts = data.get("key_concepts", [])
     formulas = data.get("formulas", [])
     exam_tips = data.get("exam_tips", [])
+    los = data.get("los", [])
 
+    # ── SUMMARY ──
     if summary:
-        st.markdown("### 📝 개요")
-        st.write(summary)
+        st.markdown("""
+        <div style="background:linear-gradient(135deg, #f0f4ff 0%, #e8eef7 100%);
+                    border:1px solid #d0d9e8; border-radius:12px; padding:20px 24px; margin-bottom:20px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                <span style="font-size:1.2rem;">📝</span>
+                <span style="font-weight:700; color:#1e3a5f; font-size:1rem;">개요</span>
+            </div>
+            <div style="color:#334155; line-height:1.7; font-size:0.95rem;">{summary}</div>
+        </div>
+        """.format(summary=summary), unsafe_allow_html=True)
 
+    # ── KEY CONCEPTS ──
     if key_concepts:
-        st.markdown("### 🔑 핵심 개념")
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span style="font-size:1.2rem;">🔑</span>
+            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">핵심 개념</span>
+            <span style="background:#e2e8f0; color:#475569; padding:1px 10px; border-radius:10px; font-size:0.75rem; font-weight:600;">{len(key_concepts)}개</span>
+        </div>
+        """, unsafe_allow_html=True)
+
         for i, concept in enumerate(key_concepts, 1):
             if isinstance(concept, dict):
                 title = concept.get("title", "")
                 desc = concept.get("description", concept.get("content", ""))
-                with st.expander(f"{i}. {title}"):
+                with st.expander(f"**{i}. {title}**", expanded=(i <= 2)):
                     st.write(desc)
             else:
-                st.write(f"**{i}.** {concept}")
+                # String concept — display as a styled card
+                st.markdown(f"""
+                <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
+                            padding:14px 18px; margin-bottom:8px;
+                            box-shadow:0 1px 3px rgba(0,0,0,0.03);
+                            border-left:3px solid {mod_color};">
+                    <div style="display:flex; align-items:flex-start; gap:10px;">
+                        <div style="background:{mod_color}15; color:{mod_color}; font-weight:700;
+                                    min-width:26px; height:26px; border-radius:8px;
+                                    display:flex; align-items:center; justify-content:center;
+                                    font-size:0.8rem;">{i}</div>
+                        <div style="color:#1e293b; font-size:0.95rem; line-height:1.6;">{concept}</div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
 
+    # ── FORMULAS ──
     if formulas:
-        st.markdown("### 📐 주요 공식")
-        for i, formula in enumerate(formulas, 1):
-            if isinstance(formula, dict):
-                name = formula.get("name", f"공식 {i}")
-                expr = formula.get("formula", formula.get("expression", ""))
-                desc = formula.get("description", "")
-                st.markdown(f"**{name}**")
-                if expr:
-                    st.code(expr, language="text")
-                if desc:
-                    st.caption(desc)
-            else:
-                st.code(formula, language="text")
+        st.markdown("""
+        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
+            <span style="font-size:1.2rem;">📐</span>
+            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">주요 공식</span>
+        </div>
+        """, unsafe_allow_html=True)
 
+        col_f1, col_f2 = st.columns(2)
+        for i, formula in enumerate(formulas, 1):
+            col = col_f1 if i % 2 == 1 else col_f2
+            with col:
+                if isinstance(formula, list) and len(formula) >= 2:
+                    name = formula[0]
+                    expr = formula[1]
+                    st.markdown(f"""
+                    <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
+                                padding:14px 16px; margin-bottom:10px; height:auto;
+                                box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+                        <div style="font-size:0.8rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;">
+                            공식 #{i}
+                        </div>
+                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:2px;">{name}</div>
+                        <div style="color:#475569; font-size:0.88rem; font-family:'SF Mono', 'Fira Code', monospace;
+                                    background:#f8fafc; border:1px solid #eef2f7; border-radius:6px; padding:8px 10px; margin-top:6px;">
+                            {expr}
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                elif isinstance(formula, dict):
+                    name = formula.get("name", f"공식 {i}")
+                    expr = formula.get("formula", formula.get("expression", ""))
+                    desc = formula.get("description", "")
+                    st.markdown(f"""
+                    <div style="background:white; border:1px solid #e2e8f0; border-radius:10px;
+                                padding:14px 16px; margin-bottom:10px;
+                                box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+                        <div style="color:#1e293b; font-weight:700; font-size:0.95rem; margin-bottom:4px;">{name}</div>
+                        <div style="color:#475569; font-size:0.88rem; font-family:'SF Mono', monospace;
+                                    background:#f8fafc; border-radius:6px; padding:8px 10px;">{expr}</div>
+                        <div style="color:#94a3b8; font-size:0.82rem; margin-top:6px;">{desc}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+    # ── EXAM TIPS ──
     if exam_tips:
-        st.markdown("### 💡 시험 꿀팁")
+        st.markdown("""
+        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
+            <span style="font-size:1.2rem;">💡</span>
+            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">시험 꿀팁</span>
+        </div>
+        """, unsafe_allow_html=True)
+
         for i, tip in enumerate(exam_tips, 1):
             if isinstance(tip, dict):
                 text = tip.get("tip", tip.get("content", ""))
-                st.info(f"{i}. {text}")
             else:
-                st.info(f"{i}. {tip}")
+                text = tip
+            st.markdown(f"""
+            <div style="background:#fffbeb; border:1px solid #fde68a; border-left:4px solid #f59e0b;
+                        border-radius:10px; padding:12px 16px; margin-bottom:8px;">
+                <div style="display:flex; align-items:flex-start; gap:8px;">
+                    <span style="font-size:1rem;">💡</span>
+                    <div style="color:#92400e; font-size:0.92rem; line-height:1.6;">{text}</div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # ── LEARNING OUTCOMES ──
+    if los:
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:8px; margin:20px 0 12px 0;">
+            <span style="font-size:1.2rem;">🎯</span>
+            <span style="font-weight:700; color:#0a1628; font-size:1.1rem;">Learning Outcomes (LOS)</span>
+            <span style="background:#e2e8f0; color:#475569; padding:1px 10px; border-radius:10px; font-size:0.75rem; font-weight:600;">{len(los)}개</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+        for i, lo in enumerate(los, 1):
+            short = lo[:100] + ("..." if len(lo) > 100 else "")
+            with st.expander(f"**LOS {i}:** {short}", expanded=False):
+                st.markdown(f"""
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 16px;">
+                    <div style="color:#1e293b; font-size:0.92rem; line-height:1.7;">{lo}</div>
+                </div>
+                """, unsafe_allow_html=True)
 
 
 # ════════════════════════════════════════════════════════════════════════════
