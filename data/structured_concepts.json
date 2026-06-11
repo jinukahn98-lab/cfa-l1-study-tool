@@ -1,0 +1,1837 @@
+{
+ "Ethics": {
+  "topics": [
+   {
+    "name": "Code of Ethics & Standards",
+    "los_items": [
+     {
+      "los": "LOS 58a: Describe the six components of the Code of Ethics",
+      "explanation": "The CFA Institute Code of Ethics establishes the ethical foundation for all CFA members and candidates. The six components require members to act with integrity, competence, diligence, and respect; place client interests before their own; practice in an ethical manner; promote the integrity of capital markets; maintain and develop professional competence; and uphold the rules governing the CFA Program. These principles define the spirit behind the more specific Standards of Professional Conduct.",
+      "key_points": [
+       "Six components: integrity/competence, client priority, ethical practice, market integrity, professional development, CFA Program rules",
+       "Code of Ethics is aspirational and broad; Standards are specific and prescriptive",
+       "Both the Code and Standards are testable — know them separately",
+       "Violations of Standards are also violations of the Code",
+       "Applies to all CFA members and candidates globally"
+      ]
+     },
+     {
+      "los": "LOS 58b: List the seven Standards of Professional Conduct",
+      "explanation": "The seven Standards of Professional Conduct provide specific rules that operationalize the Code of Ethics. They are organized as: Standard I (Professionalism), Standard II (Integrity of Capital Markets), Standard III (Duties to Clients), Standard IV (Duties to Employers), Standard V (Investment Analysis, Recommendations, and Actions), Standard VI (Conflicts of Interest), and Standard VII (Responsibilities as a CFA Institute Member or Candidate). Each standard contains sub-standards that address distinct situations.",
+      "key_points": [
+       "I: Professionalism — law, independence, misrepresentation, misconduct",
+       "II: Integrity of Capital Markets — material nonpublic info, market manipulation",
+       "III: Duties to Clients — loyalty, fair dealing, suitability, performance presentation, confidentiality",
+       "IV: Duties to Employers — loyalty, additional compensation, supervisory responsibilities",
+       "V: Investment Analysis — diligence, communication, record retention",
+       "VI: Conflicts of Interest — disclosure, priority of transactions, referral fees",
+       "VII: Responsibilities as Member/Candidate — conduct, reference to CFA designation"
+      ]
+     },
+     {
+      "los": "LOS 59a (Standard I): Describe knowledge of the law and the obligations under Standard I(A)",
+      "explanation": "Standard I(A) requires members to understand and comply with all applicable laws, rules, and regulations — including the CFA Institute Code and Standards — that govern their professional activities. When there is a conflict between local law and the Code and Standards, members must follow the stricter of the two. Members are not required to report violations but must dissociate from any ongoing violations.",
+      "key_points": [
+       "Follow the stricter of local law vs. CFA Standards — never the more lenient",
+       "Dissociation is required when violations are discovered and cannot be stopped",
+       "No affirmative duty to report violations to authorities (but may be required by local law)",
+       "Ignorance of the law is not a defense — members must stay informed",
+       "Compliance procedures must be maintained to prevent violations"
+      ]
+     },
+     {
+      "los": "LOS 59b (Standard I): Describe the requirements of Standards I(B) through I(D) regarding independence, misrepresentation, and misconduct",
+      "explanation": "Standard I(B) requires members to maintain independence and objectivity, avoiding any pressures that could compromise their professional judgment, including gifts or compensation that could influence their work. Standard I(C) prohibits misrepresentation — members must not make false statements about investment analysis, qualifications, or services. Standard I(D) prohibits conduct involving dishonesty, fraud, or deceit, as well as any act that reflects adversely on professional reputation.",
+      "key_points": [
+       "I(B): Modest gifts acceptable; gifts that could compromise independence must be refused or disclosed",
+       "I(B): Research analysts must protect independence from investment banking pressure",
+       "I(C): Misrepresentation includes plagiarism and false claims about the CFA designation",
+       "I(C): Performance data must not be misrepresented — cherry-picking results is a violation",
+       "I(D): Personal conduct outside work can violate I(D) if it reflects on professional character"
+      ]
+     },
+     {
+      "los": "LOS 60a (Standard II): Describe the requirements of Standard II(A) regarding material nonpublic information",
+      "explanation": "Standard II(A) prohibits members from trading or inducing others to trade on material nonpublic information (MNPI). Information is material if a reasonable investor would consider it important in an investment decision, and nonpublic if it has not been disseminated to the marketplace. Members who possess MNPI must not act on it until it becomes public through proper channels.",
+      "key_points": [
+       "Material = reasonable investor would consider it significant to an investment decision",
+       "Nonpublic = not yet disseminated to the general market",
+       "Both trading and tipping on MNPI are prohibited",
+       "Firewall procedures between departments help prevent MNPI from crossing",
+       "Selective disclosure by companies to analysts does not make information public"
+      ]
+     },
+     {
+      "los": "LOS 60b (Standard II): Explain the mosaic theory and its application",
+      "explanation": "The mosaic theory holds that an analyst can legally combine material public information with nonmaterial nonpublic information to reach an investment conclusion, even if that conclusion would have been material if disclosed directly. This is not a violation of Standard II(A) because neither input piece alone is both material and nonpublic. Analysts should document their research process to demonstrate that conclusions were reached through legitimate mosaic analysis.",
+      "key_points": [
+       "Mosaic = material public info + nonmaterial nonpublic info = legal and permissible",
+       "The resulting conclusion can be material and acted upon — no violation",
+       "Key distinction: nonmaterial nonpublic + public info is allowed; material nonpublic is not",
+       "Document the research process to support a mosaic defense",
+       "Expert networks are acceptable under mosaic theory if information is nonmaterial"
+      ]
+     },
+     {
+      "los": "LOS 61a (Standard III): Describe the fiduciary duties under Standard III: duties to clients",
+      "explanation": "Standard III establishes that members must always act in the best interest of their clients, placing client interests above their own or their employer's. Key sub-standards cover loyalty and prudence (III(A)), fair dealing (III(B)), suitability (III(C)), performance presentation (III(D)), and preservation of confidentiality (III(E)). The overarching fiduciary duty means client interests come first in all dealings.",
+      "key_points": [
+       "III(A): Loyalty and prudence — act in client's best interest, not employer's or member's own",
+       "III(B): Fair dealing — treat all clients fairly, not necessarily equally; time-sensitive info goes to all simultaneously",
+       "III(D): Performance presentation — must not misrepresent performance; GIPS compliance is recommended",
+       "III(E): Client information is confidential unless disclosure is required by law or client consents",
+       "Soft dollar arrangements must benefit the client and be fully disclosed"
+      ]
+     },
+     {
+      "los": "LOS 61b (Standard III): Distinguish between discretionary and non-discretionary accounts and suitability requirements",
+      "explanation": "Standard III(C) requires that before making any investment recommendation or taking action, members must determine that it is suitable for the client based on their investment profile. In discretionary accounts, the member has authority to make investment decisions, so suitability must be evaluated for each trade. In non-discretionary accounts, the client makes final decisions, but the member still must ensure recommendations are suitable.",
+      "key_points": [
+       "Discretionary: member decides — suitability must be assessed for every action taken",
+       "Non-discretionary: client decides — member still must recommend only suitable investments",
+       "Suitability factors: risk tolerance, return objectives, time horizon, liquidity needs, tax situation, legal constraints",
+       "Suitability is assessed at the portfolio level, not just per security in isolation",
+       "Must update the investment policy statement (IPS) when client circumstances change"
+      ]
+     },
+     {
+      "los": "LOS 62a (Standard IV): Describe duties to employers under Standards IV(A) through IV(C)",
+      "explanation": "Standard IV governs members' obligations to their employers. IV(A) requires loyalty — members must not act against their employer's interest, though this does not prevent them from seeking new employment. IV(B) requires disclosure and written consent before accepting additional compensation that could create a conflict of interest. IV(C) requires that supervisors take reasonable steps to detect and prevent violations by those under their supervision.",
+      "key_points": [
+       "IV(A): Loyalty — cannot take clients or records when leaving; may prepare to compete while still employed",
+       "IV(B): Additional compensation must be disclosed in writing and approved by employer",
+       "IV(C): Supervisors must establish compliance procedures; cannot delegate supervisory responsibility",
+       "If a supervisor learns of violations, they must respond promptly and adequately",
+       "Having a compliance system is not enough — it must be effective and enforced"
+      ]
+     },
+     {
+      "los": "LOS 63a (Standard V): Describe the components of investment analysis, recommendations, and actions under Standard V",
+      "explanation": "Standard V requires members to exercise diligence and thoroughness in all investment analysis and recommendations (V(A)), maintain a reasonable and adequate basis supported by research (V(A)), communicate clearly and distinguish between fact and opinion (V(B)), and keep records to support investment decisions (V(C)). Members must clearly communicate risk and limitations of their analysis.",
+      "key_points": [
+       "V(A): Reasonable basis — analysis must be thorough; relying on third-party research requires due diligence",
+       "V(B): Communication — distinguish clearly between facts and opinions in client reports",
+       "V(B): Disclose risks, limitations, and key assumptions underlying recommendations",
+       "V(C): Record retention — maintain records for a minimum of seven years",
+       "Using quantitative models requires understanding their limitations and assumptions"
+      ]
+     },
+     {
+      "los": "LOS 64a (Standard VI): Describe the disclosure requirements under Standard VI regarding conflicts of interest",
+      "explanation": "Standard VI requires members to disclose all actual and potential conflicts of interest to clients and employers so they can assess the objectivity of advice. VI(A) covers disclosure of conflicts (e.g., ownership of analyzed securities); VI(B) requires client transactions to take priority over member's personal transactions; and VI(C) requires disclosure of referral fees. Full and timely disclosure enables informed consent.",
+      "key_points": [
+       "VI(A): Disclose beneficial ownership in recommended securities and other material conflicts",
+       "VI(B): Priority of transactions — client accounts first, then employer proprietary accounts, then personal",
+       "VI(B): Blackout periods before and after client trades help prevent front-running",
+       "VI(C): Referral fees must be disclosed before entering an agreement — enables clients to assess bias",
+       "Disclosure must be prominent and timely — buried footnotes may not suffice"
+      ]
+     },
+     {
+      "los": "LOS 65a (Standard VII): Describe the requirements of Standard VII regarding conduct as a member and GIPS",
+      "explanation": "Standard VII governs members' conduct in their roles as CFA Institute members or candidates. VII(A) prohibits conduct that compromises the integrity of the CFA examination or the CFA Program. VII(B) addresses the proper use of the CFA designation — it must not be used in a misleading way, and candidates who have not passed all exams must not imply they hold the charter. GIPS compliance is referenced as a recommended standard under this framework.",
+      "key_points": [
+       "VII(A): Do not cheat, share exam questions, or misrepresent the exam process",
+       "VII(B): CFA designation is an adjective, not a noun — 'CFA charterholder,' not 'a CFA'",
+       "Cannot say 'CFA Level II candidate' after failing — must accurately represent status",
+       "Expressing confidence in passing is acceptable; implying the charter has been earned is not",
+       "GIPS compliance is encouraged and referenced in Standard VII context"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "GIPS",
+    "los_items": [
+     {
+      "los": "LOS 66a: Describe the key features of the Global Investment Performance Standards (GIPS)",
+      "explanation": "GIPS are a set of voluntary, ethical standards for calculating and presenting investment performance, established by CFA Institute to ensure consistency and comparability across investment managers globally. Key features include the requirement to define composites (groupings of all fee-paying discretionary portfolios with similar strategies), use of time-weighted returns, mandatory inclusion of all actual, fee-paying discretionary portfolios in at least one composite, and presentation of at least 5 years of GIPS-compliant history (building to 10 years).",
+      "key_points": [
+       "Composites must include ALL fee-paying discretionary portfolios with similar strategies — no cherry-picking",
+       "Time-weighted return (TWR) is required to eliminate the effect of external cash flows",
+       "Minimum 5 years of compliant history required initially; build to 10 years over time",
+       "Returns must be calculated after actual trading expenses (i.e., gross of management fees or net of trading costs)",
+       "GIPS apply to investment management firms, not to individual funds or portfolios"
+      ]
+     },
+     {
+      "los": "LOS 66b: Explain why GIPS are important and how they are administered",
+      "explanation": "GIPS are important because they provide a standardized framework that allows prospective clients to compare investment managers' performance on a consistent, apples-to-apples basis, reducing the risk of misleading performance presentations. They build trust by ensuring that historical returns are not cherry-picked or manipulated. GIPS are administered by CFA Institute and are voluntary — firms self-declare compliance, though third-party verification is strongly encouraged.",
+      "key_points": [
+       "Primary purpose: allow fair comparison of manager performance across firms and geographies",
+       "Compliance is voluntary but self-declared — no government mandate",
+       "Third-party verification is recommended but not required for compliance claims",
+       "Firms must claim compliance on a firm-wide basis, not just for selected products",
+       "GIPS reduce information asymmetry between managers and prospective clients"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Quantitative Methods": {
+  "topics": [
+   {
+    "name": "Time Value of Money",
+    "los_items": [
+     {
+      "los": "LOS 1a: Interpret interest rates as required rates of return, discount rates, or opportunity costs",
+      "explanation": "An interest rate can be viewed from three perspectives depending on context. As a required rate of return, it is the minimum return an investor demands for a given level of risk. As a discount rate, it converts future cash flows into present value terms. As an opportunity cost, it represents the return foregone by choosing one investment over another.",
+      "key_points": [
+       "Interest rates serve three equivalent interpretive roles: required return, discount rate, opportunity cost",
+       "Higher risk investments demand higher required rates of return",
+       "The opportunity cost concept underlies all TVM calculations",
+       "Discount rates are used to find present value of future cash flows",
+       "All three interpretations yield the same numerical rate — context determines the label"
+      ]
+     },
+     {
+      "los": "LOS 1b: Explain an interest rate as the sum of a real risk-free rate and premiums for inflation, default, liquidity, and maturity risk",
+      "explanation": "The nominal interest rate on any security can be decomposed into additive components that compensate investors for different types of risk and erosion of purchasing power. The real risk-free rate is the base return in the absence of risk and inflation. Each premium — inflation, default, liquidity, and maturity — adds to this base to reflect additional compensation required by investors.",
+      "key_points": [
+       "Nominal rate ≈ real risk-free rate + inflation premium + default risk premium + liquidity premium + maturity risk premium",
+       "T-bills approximate the nominal risk-free rate; TIPS approximate the real risk-free rate",
+       "Default risk premium compensates for the chance the borrower will not repay",
+       "Liquidity premium compensates for difficulty converting an asset to cash quickly",
+       "Maturity risk premium reflects greater price sensitivity of longer-duration instruments to interest rate changes"
+      ]
+     },
+     {
+      "los": "LOS 1c: Calculate and interpret the effective annual rate, given the stated annual interest rate and the frequency of compounding",
+      "explanation": "The stated annual interest rate (also called the nominal rate or APR) does not account for intra-year compounding, so it understates the true annual return. The effective annual rate (EAR) converts any compounding frequency into an equivalent annual rate, allowing valid comparison across instruments with different compounding periods. As compounding frequency increases, EAR rises and approaches continuous compounding in the limit.",
+      "key_points": [
+       "EAR = (1 + periodic rate)^m − 1, where m is the number of compounding periods per year",
+       "EAR > stated rate whenever compounding occurs more than once per year",
+       "For continuous compounding: EAR = e^r − 1",
+       "Use EAR to compare instruments with different compounding frequencies on equal footing",
+       "Periodic rate = stated annual rate / m"
+      ]
+     },
+     {
+      "los": "LOS 1d: Calculate the solution for time value of money problems with different compounding periods",
+      "explanation": "When compounding periods differ from annual, both the interest rate and number of periods must be adjusted to match the compounding frequency. The periodic rate equals the annual rate divided by the number of compounding periods, and n is expressed in total compounding periods rather than years. Mastery of these adjustments is essential for solving mortgage, bond, and savings problems on the exam.",
+      "key_points": [
+       "Adjust: i/Y = annual rate ÷ m; N = years × m",
+       "Never mix annual rates with non-annual periods — always convert consistently",
+       "Monthly compounding is the most common adjustment (mortgages, consumer loans)",
+       "Calculator inputs must match the compounding basis of the problem",
+       "Continuous compounding uses FV = PV × e^(r×n)"
+      ]
+     },
+     {
+      "los": "LOS 2a: Calculate and interpret the future value (FV) and present value (PV) of a single sum of money, an annuity, and a series of unequal cash flows",
+      "explanation": "FV and PV calculations are the core of all TVM problems. A single sum grows by compounding or shrinks by discounting. Annuities — either ordinary (end-of-period) or annuity due (beginning-of-period) — are valued with dedicated formulas or calculator functions. Unequal cash flow series require discounting each cash flow individually and summing the results.",
+      "key_points": [
+       "FV = PV × (1 + r)^n; PV = FV / (1 + r)^n",
+       "Ordinary annuity: payments at end of period; annuity due: payments at beginning (multiply ordinary result by (1+r))",
+       "Perpetuity PV = PMT / r",
+       "For unequal cash flows, use the CF and NPV functions on a financial calculator",
+       "Annuity due always produces a higher PV and FV than an ordinary annuity for the same inputs"
+      ]
+     },
+     {
+      "los": "LOS 2b: Demonstrate the use of a timeline in modeling and solving time value of money problems",
+      "explanation": "A timeline is a visual representation that places cash flows at their correct points in time, making complex TVM problems tractable and reducing errors. Each period is marked on a horizontal axis, with inflows shown as positive values and outflows as negative values at the appropriate time node. Drawing a timeline before solving forces clarity about the timing and sign of every cash flow.",
+      "key_points": [
+       "Time 0 = today; cash flows are placed at the end of each period by convention for ordinary annuities",
+       "Positive cash flows are inflows; negative cash flows are outflows",
+       "Timelines prevent sign and timing errors — always draw one for multi-period problems",
+       "Mixed streams (lump sums + annuities) are easily decomposed using a timeline",
+       "Aligning compounding periods with cash flow periods is visually confirmed on the timeline"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Discounted Cash Flow",
+    "los_items": [
+     {
+      "los": "LOS 7a: Calculate and interpret the net present value (NPV) and the internal rate of return (IRR) of an investment",
+      "explanation": "NPV measures the total value created by an investment by summing all discounted cash flows and subtracting the initial cost; a positive NPV means the project adds value. IRR is the discount rate at which NPV equals zero — the rate of return the project earns on invested capital. Both methods rely on discounting all cash flows back to the present at an appropriate rate.",
+      "key_points": [
+       "NPV = Σ CFt/(1+r)^t − Initial Investment; accept if NPV > 0",
+       "IRR is found by setting NPV = 0 and solving for r (use calculator CF/IRR functions)",
+       "NPV decision rule: accept all independent projects with NPV ≥ 0",
+       "IRR decision rule: accept if IRR ≥ required rate of return (hurdle rate)",
+       "NPV and IRR usually agree on accept/reject for independent projects but can conflict for mutually exclusive projects"
+      ]
+     },
+     {
+      "los": "LOS 7b: Contrast the NPV rule to the IRR rule and identify problems with the IRR rule",
+      "explanation": "While NPV and IRR often yield the same accept/reject decision for independent projects, they can conflict for mutually exclusive projects because IRR ignores the scale of investment. The IRR method also has mathematical problems: it can produce multiple IRRs when cash flows change sign more than once, and it implicitly assumes reinvestment at the IRR rather than the cost of capital. NPV is theoretically superior because it directly measures value creation.",
+      "key_points": [
+       "IRR problem 1 — scale: a smaller project can have higher IRR but lower NPV than a larger project",
+       "IRR problem 2 — multiple IRRs: each sign change in cash flows can produce an additional IRR",
+       "IRR problem 3 — reinvestment assumption: IRR assumes cash flows are reinvested at IRR; NPV assumes reinvestment at cost of capital (more realistic)",
+       "For mutually exclusive projects, always rely on NPV to maximize firm value",
+       "Modified IRR (MIRR) addresses the reinvestment rate problem but is less commonly tested at Level 1"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Statistical Concepts",
+    "los_items": [
+     {
+      "los": "LOS 3a: Describe the characteristics of and differences among nominal, ordinal, interval, and ratio scales",
+      "explanation": "Measurement scales classify data by the mathematical operations that are meaningful for each type. Nominal scales simply categorize with no ordering; ordinal scales rank but differences are not meaningful; interval scales have meaningful differences but no true zero; ratio scales have all properties including a true zero, making ratios meaningful. The scale type determines which statistical measures are appropriate.",
+      "key_points": [
+       "Nominal: categories only (e.g., asset class labels); no ranking, no arithmetic",
+       "Ordinal: ranked order (e.g., credit ratings); differences between ranks are not equal",
+       "Interval: equal differences meaningful, no true zero (e.g., temperature in Celsius); ratios not meaningful",
+       "Ratio: true zero, all arithmetic valid (e.g., returns, prices, weights)",
+       "Most financial data is ratio scale — this permits mean, variance, and ratio calculations"
+      ]
+     },
+     {
+      "los": "LOS 3b: Calculate and interpret measures of central tendency, including mean, median, and mode",
+      "explanation": "Central tendency measures describe the center of a data distribution. The arithmetic mean is the sum divided by the count and is sensitive to outliers. The median is the middle value when sorted and is robust to extreme values. The mode is the most frequently occurring value and may not be unique. For skewed distributions, these three measures diverge in a predictable way.",
+      "key_points": [
+       "Arithmetic mean: simple average; used for single-period returns and most averaging tasks",
+       "Geometric mean: used for multi-period compound returns; always ≤ arithmetic mean",
+       "Median is preferred over mean when the distribution is skewed or contains outliers",
+       "Positively skewed: mean > median > mode; negatively skewed: mean < median < mode",
+       "Weighted mean is used for portfolio returns: Rp = Σ wi × Ri"
+      ]
+     },
+     {
+      "los": "LOS 3c: Calculate and interpret measures of dispersion, including range, variance, and standard deviation",
+      "explanation": "Dispersion measures quantify the spread of data around its center. Range is the simplest measure but uses only two data points. Variance averages squared deviations from the mean and is always non-negative, while standard deviation is its square root, expressed in the same units as the data. The sample variance uses n−1 in the denominator (Bessel's correction) to produce an unbiased estimate of population variance.",
+      "key_points": [
+       "Range = Maximum − Minimum; simple but ignores all interior data",
+       "Population variance: σ² = Σ(xi − μ)² / N; sample variance: s² = Σ(xi − x̄)² / (n−1)",
+       "Standard deviation is the square root of variance and is more interpretable (same units as data)",
+       "Mean absolute deviation (MAD) = Σ|xi − x̄| / n; always less than or equal to standard deviation",
+       "A higher standard deviation indicates greater dispersion and risk in a financial context"
+      ]
+     },
+     {
+      "los": "LOS 3d: Calculate and interpret the coefficient of variation and Sharpe ratio",
+      "explanation": "Both the coefficient of variation (CV) and Sharpe ratio are standardized risk measures that allow comparison across assets or portfolios with different means and units. CV expresses risk per unit of return and is useful when comparing investments with different mean returns. The Sharpe ratio adjusts excess return (above the risk-free rate) by standard deviation, making it the most widely used risk-adjusted performance measure.",
+      "key_points": [
+       "CV = Standard Deviation / Mean; lower CV = better risk per unit of return",
+       "CV is unitless and allows comparison across assets with different return levels",
+       "Sharpe Ratio = (Rp − Rf) / σp; higher is better",
+       "Sharpe ratio penalizes total volatility (both upside and downside), which is a known limitation",
+       "Roy's Safety-First Ratio = (E[Rp] − RL) / σp, where RL is the minimum acceptable return threshold"
+      ]
+     },
+     {
+      "los": "LOS 5a: Describe a normal distribution and the empirical rule",
+      "explanation": "The normal distribution is a continuous, symmetric, bell-shaped distribution fully described by its mean and variance. The empirical rule states that approximately 68%, 95%, and 99.7% of observations fall within one, two, and three standard deviations of the mean, respectively. Its symmetry means skewness equals zero and the mean, median, and mode are all equal.",
+      "key_points": [
+       "Normal distribution: symmetric, mean = median = mode, skewness = 0, excess kurtosis = 0",
+       "Empirical rule: ±1σ ≈ 68%; ±1.65σ ≈ 90%; ±1.96σ ≈ 95%; ±2.58σ ≈ 99%; ±3σ ≈ 99.7%",
+       "A normal distribution is completely described by μ and σ²",
+       "Lognormal distributions (prices) are right-skewed; their logarithms are normally distributed",
+       "Standard normal (Z) distribution has μ = 0, σ = 1; Z = (X − μ) / σ"
+      ]
+     },
+     {
+      "los": "LOS 5b: Calculate probabilities for normally distributed random variables",
+      "explanation": "To find probabilities for a normal random variable, it is standardized to a Z-score using Z = (X − μ) / σ, then the standard normal table (or calculator) is used to find the cumulative probability. The symmetry of the normal distribution allows calculation of tail probabilities and interval probabilities using complementary relationships. Confidence intervals for population parameters use critical Z-values.",
+      "key_points": [
+       "Standardize: Z = (X − μ) / σ; this converts any normal variable to the standard normal",
+       "P(X ≤ x) = Φ(Z); P(X > x) = 1 − Φ(Z)",
+       "Key critical values: Z = 1.645 (90% CI), 1.960 (95% CI), 2.576 (99% CI)",
+       "Interval probability: P(a ≤ X ≤ b) = Φ(Z_b) − Φ(Z_a)",
+       "Confidence interval: x̄ ± Z_(α/2) × (σ / √n)"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Probability",
+    "los_items": [
+     {
+      "los": "LOS 4a: Define a random variable, an outcome, and an event",
+      "explanation": "A random variable is a variable whose value is determined by a chance process, such as the return on a stock. An outcome is a single possible realization of a random variable — one specific value from the sample space. An event is a set of one or more outcomes, and probabilities are assigned to events. This vocabulary is foundational to all probability calculations on the exam.",
+      "key_points": [
+       "Random variable: quantity whose value is uncertain and governed by a probability distribution",
+       "Outcome: a single possible result of one trial (e.g., a specific portfolio return)",
+       "Event: a collection of outcomes; may be simple (one outcome) or compound (multiple outcomes)",
+       "Sample space: the complete set of all possible outcomes",
+       "Exhaustive and mutually exclusive events partition the sample space completely"
+      ]
+     },
+     {
+      "los": "LOS 4b: Identify the two defining properties of probability, and distinguish among empirical, subjective, and a priori probabilities",
+      "explanation": "Any valid probability measure must satisfy two properties: each probability must be between 0 and 1 inclusive, and the probabilities of all mutually exclusive and exhaustive events must sum to 1. Probabilities can be estimated from historical frequency (empirical), assigned based on personal judgment (subjective), or derived from logical analysis of equally likely outcomes (a priori). All three approaches produce numbers that obey the same mathematical rules.",
+      "key_points": [
+       "Property 1: 0 ≤ P(E) ≤ 1 for any event E",
+       "Property 2: Σ P(Ei) = 1 for all mutually exclusive, exhaustive events",
+       "Empirical probability: relative frequency from historical data (e.g., stock market crash frequency)",
+       "A priori probability: derived from logic/symmetry (e.g., coin flip = 0.5)",
+       "Subjective probability: personal belief/judgment; not reproducible, but must still obey the two properties"
+      ]
+     },
+     {
+      "los": "LOS 4c: Calculate and interpret conditional probabilities using Bayes' formula",
+      "explanation": "Conditional probability P(A|B) is the probability of event A given that event B has already occurred, and it equals P(A∩B)/P(B). Bayes' formula reverses the conditioning: it allows you to update a prior probability P(A) to a posterior probability P(A|B) after observing new information B. This is particularly useful in investment analysis for updating return expectations when new economic data arrives.",
+      "key_points": [
+       "Bayes' formula: P(A|B) = P(B|A) × P(A) / P(B)",
+       "P(B) can be expanded using total probability: P(B) = P(B|A)P(A) + P(B|Ac)P(Ac)",
+       "Posterior probability = likelihood × prior / marginal probability of evidence",
+       "Multiplication rule: P(A∩B) = P(A|B) × P(B)",
+       "If A and B are independent: P(A|B) = P(A), so P(A∩B) = P(A) × P(B)"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hypothesis Testing",
+    "los_items": [
+     {
+      "los": "LOS 6a: Explain hypothesis testing and the process of testing hypotheses",
+      "explanation": "Hypothesis testing is a formal statistical procedure to assess whether sample data provide sufficient evidence to reject a maintained assumption (the null hypothesis) in favor of an alternative. The process begins by stating H₀ and Hₐ, choosing a significance level α, computing a test statistic from sample data, and comparing it to a critical value or p-value to make a reject/fail-to-reject decision. The significance level α represents the maximum acceptable probability of incorrectly rejecting a true null.",
+      "key_points": [
+       "H₀ (null hypothesis) typically contains the equality; Hₐ (alternative) contains the inequality",
+       "Significance level α = probability of Type I error (rejecting a true H₀)",
+       "Reject H₀ when |test statistic| > critical value, or when p-value < α",
+       "Fail to reject H₀ does not mean H₀ is true — only that evidence is insufficient",
+       "One-tailed tests examine one direction; two-tailed tests examine both directions (reject in either tail)"
+      ]
+     },
+     {
+      "los": "LOS 6b: Identify the appropriate test statistic and interpret results for a test of the population mean",
+      "explanation": "Testing a hypothesis about a population mean requires choosing between the z-statistic and t-statistic based on whether population variance is known and sample size. With known population variance, the z-test is used; with unknown variance (the common case), the t-test with n−1 degrees of freedom is appropriate. For large samples (n > 30), the t-distribution approximates the normal, so the distinction becomes less critical in practice.",
+      "key_points": [
+       "Z-test: use when σ² is known OR n is large (> 30) with σ² unknown by convention",
+       "T-test: use when σ² is unknown and n is small (≤ 30); degrees of freedom = n − 1",
+       "Test statistic for mean: z (or t) = (x̄ − μ₀) / (s / √n)",
+       "T-distribution is flatter and has heavier tails than normal; converges to normal as df increases",
+       "p-value = smallest α at which H₀ would be rejected; reject H₀ if p-value < chosen α"
+      ]
+     },
+     {
+      "los": "LOS 6c: Distinguish between Type I and Type II errors",
+      "explanation": "A Type I error occurs when a true null hypothesis is incorrectly rejected; its probability equals the significance level α, which is controlled by the researcher. A Type II error occurs when a false null hypothesis is not rejected; its probability is denoted β. The power of a test is 1 − β — the probability of correctly rejecting a false null. There is an inherent tradeoff: reducing α (fewer Type I errors) increases β (more Type II errors) for a fixed sample size.",
+      "key_points": [
+       "Type I error: rejecting a TRUE H₀; probability = α (significance level)",
+       "Type II error: failing to reject a FALSE H₀; probability = β",
+       "Power of test = 1 − β; higher power is better",
+       "Tradeoff: decreasing α increases β (for fixed n); increasing n reduces both errors simultaneously",
+       "In practice, α is set first (e.g., 5%), accepting the resulting β as a consequence"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Technical Analysis",
+    "los_items": []
+   }
+  ]
+ },
+ "Economics": {
+  "topics": [
+   {
+    "name": "Demand & Supply",
+    "los_items": [
+     {
+      "los": "LOS 8a: Distinguish among types of markets: goods, factor, and financial markets",
+      "explanation": "Markets are categorized by what is being exchanged. Goods markets involve the buying and selling of final products and services. Factor markets involve inputs to production such as labor, capital, and land. Financial markets facilitate the exchange of financial instruments like stocks, bonds, and currencies.",
+      "key_points": [
+       "Goods markets: consumers buy finished products from firms",
+       "Factor markets: firms buy inputs (labor, capital, land) — prices are wages, interest, rent",
+       "Financial markets: transfer of funds between savers and borrowers",
+       "Households supply factors and demand goods; firms supply goods and demand factors",
+       "All three market types interact in the circular flow of income model"
+      ]
+     },
+     {
+      "los": "LOS 8b: Explain the principles of demand and supply analysis and how prices are determined in competitive markets",
+      "explanation": "Demand reflects consumers' willingness and ability to buy a good at various prices — as price rises, quantity demanded falls (law of demand). Supply reflects producers' willingness to sell at various prices — as price rises, quantity supplied rises (law of supply). Equilibrium price and quantity are determined where the demand and supply curves intersect, clearing the market.",
+      "key_points": [
+       "Law of demand: inverse relationship between price and quantity demanded",
+       "Law of supply: positive relationship between price and quantity supplied",
+       "Equilibrium: Qd = Qs; price adjusts to eliminate surplus or shortage",
+       "A surplus (excess supply) causes price to fall; a shortage (excess demand) causes price to rise",
+       "Consumer surplus = area above price and below demand curve; producer surplus = area below price and above supply curve"
+      ]
+     },
+     {
+      "los": "LOS 8c: Describe the effects of a shift in demand or supply on equilibrium price and quantity",
+      "explanation": "A shift in a curve (as opposed to movement along it) is caused by a change in a non-price determinant. When demand increases (curve shifts right), both equilibrium price and quantity rise. When supply increases (curve shifts right), equilibrium price falls and quantity rises. Simultaneous shifts require analysis of relative magnitude to determine the net effect.",
+      "key_points": [
+       "Demand shifters: income, prices of substitutes/complements, tastes, expectations, number of buyers",
+       "Supply shifters: input costs, technology, prices of related goods, expectations, number of sellers",
+       "Increase in demand → higher P and higher Q",
+       "Increase in supply → lower P and higher Q",
+       "When both curves shift, one outcome (P or Q) is determinate and one is ambiguous without knowing relative magnitudes"
+      ]
+     },
+     {
+      "los": "LOS 9a: Calculate and interpret price, income, and cross-price elasticities of demand",
+      "explanation": "Elasticity measures the responsiveness of quantity demanded to changes in a given variable. Price elasticity of demand (PED) = %ΔQd / %ΔP; if |PED| > 1, demand is elastic; if < 1, it is inelastic. Income elasticity distinguishes normal goods (positive) from inferior goods (negative). Cross-price elasticity distinguishes substitutes (positive) from complements (negative).",
+      "key_points": [
+       "PED = %ΔQd / %ΔP (always negative; use absolute value for interpretation)",
+       "|PED| > 1: elastic (luxury, many substitutes); |PED| < 1: inelastic (necessities, few substitutes)",
+       "Income elasticity > 0: normal good; < 0: inferior good; > 1: luxury good",
+       "Cross-price elasticity > 0: substitutes; < 0: complements",
+       "Total revenue test: elastic demand → price cut increases revenue; inelastic → price cut decreases revenue"
+      ]
+     },
+     {
+      "los": "LOS 9b: Describe the demand for and supply of labor, and how wages are determined",
+      "explanation": "Labor demand is a derived demand — firms hire workers up to the point where the marginal revenue product of labor (MRPL) equals the wage rate. Labor supply reflects workers' trade-off between work and leisure; supply curves typically slope upward. The equilibrium wage is set where labor supply and demand intersect, and shifts in either curve change wages and employment levels.",
+      "key_points": [
+       "Firms demand labor up to the point: MRPL = Wage (profit-maximizing condition)",
+       "MRPL = marginal product of labor × marginal revenue",
+       "Labor demand shifts right when product price rises or labor productivity improves",
+       "Labor supply shifts from changes in population, immigration, participation rates, or preferences",
+       "Minimum wages set above equilibrium create unemployment (surplus of labor)"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Market Structures",
+    "los_items": [
+     {
+      "los": "LOS 10a: Describe the characteristics of perfect competition, monopolistic competition, oligopoly, and monopoly",
+      "explanation": "Market structures differ by number of firms, product differentiation, barriers to entry, and pricing power. Perfect competition has many firms, homogeneous products, and zero long-run economic profit. At the other extreme, monopoly features a single seller with high barriers and significant pricing power. Oligopoly and monopolistic competition fall in between, with varying degrees of interdependence and differentiation.",
+      "key_points": [
+       "Perfect competition: price taker, P = MC = minimum ATC in long run, zero economic profit",
+       "Monopolistic competition: differentiated products, easy entry, downward-sloping demand, zero LR economic profit",
+       "Oligopoly: few large firms, high barriers, strategic interdependence (game theory applies)",
+       "Monopoly: single seller, high barriers, P > MC, deadweight loss, positive economic profit",
+       "Only perfect competition achieves allocative efficiency (P = MC) and productive efficiency (P = min ATC)"
+      ]
+     },
+     {
+      "los": "LOS 10b: Explain price discrimination and its welfare effects",
+      "explanation": "Price discrimination occurs when a firm charges different prices to different customers for the same good, based on their willingness to pay. First-degree (perfect) price discrimination extracts all consumer surplus as producer surplus. Third-degree discrimination (most common) charges different prices to identifiable groups. Price discrimination increases output relative to simple monopoly, reducing but not eliminating deadweight loss.",
+      "key_points": [
+       "Requires: market power, ability to identify segments, and ability to prevent resale (arbitrage)",
+       "1st degree: unique price per unit — producer captures all surplus, no deadweight loss",
+       "2nd degree: price varies by quantity purchased (e.g., bulk discounts)",
+       "3rd degree: different prices to different groups (students, seniors) based on elasticity differences",
+       "Groups with more inelastic demand are charged higher prices; total output increases vs. single-price monopoly"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Macro: GDP & IS-LM",
+    "los_items": [
+     {
+      "los": "LOS 11a: Describe the components of GDP using the expenditure and income approaches",
+      "explanation": "GDP measures the total market value of all final goods and services produced within a country in a given period. The expenditure approach sums GDP = C + I + G + (X − M), where each component represents a spending category. The income approach sums all incomes earned in production (wages, rents, interest, profits). Both approaches yield the same GDP figure by the circular flow identity.",
+      "key_points": [
+       "Expenditure approach: GDP = C + I + G + (X − M); net exports = X − M",
+       "C = personal consumption; I = gross private investment (includes inventory changes); G = government spending (not transfers); X − M = net exports",
+       "Income approach: GDP = wages + rent + interest + profit + indirect taxes − subsidies",
+       "Nominal GDP uses current prices; Real GDP adjusts for price level changes using a base-year index",
+       "GDP deflator = (Nominal GDP / Real GDP) × 100; broader measure than CPI"
+      ]
+     },
+     {
+      "los": "LOS 11c: Describe the phases of the business cycle and their characteristics",
+      "explanation": "The business cycle describes recurring expansions and contractions in economic activity. The four phases are expansion (rising output, employment, and inflation), peak (maximum output), contraction/recession (falling output, rising unemployment), and trough (minimum output). Understanding cycle phases helps analysts forecast the impact on corporate earnings, interest rates, and asset prices.",
+      "key_points": [
+       "Expansion: GDP rising, unemployment falling, inflation rising, consumer confidence high",
+       "Peak: GDP at cyclical high, capacity constraints, inflation at cycle high",
+       "Contraction/recession: GDP falling for two consecutive quarters, unemployment rising",
+       "Trough: GDP at cyclical low, unemployment at cycle high, deflation risk",
+       "Leading indicators (e.g., stock prices, building permits) predict turning points; lagging indicators (e.g., unemployment rate) confirm them"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Monetary & Fiscal Policy",
+    "los_items": [
+     {
+      "los": "LOS 11b: Compare the monetary and fiscal policy tools available to governments",
+      "explanation": "Monetary policy is conducted by the central bank and primarily targets price stability and employment through controlling the money supply and interest rates. Fiscal policy is enacted by the government through changes in spending and taxation to influence aggregate demand. Both policies can be expansionary (to stimulate growth) or contractionary (to reduce inflation), but differ in speed, flexibility, and transmission mechanisms.",
+      "key_points": [
+       "Monetary tools: open market operations (most common), reserve requirements, discount/policy rate, quantitative easing",
+       "Expansionary monetary policy: buy securities / lower rates → increase money supply → lower borrowing costs → more investment and consumption",
+       "Fiscal tools: government spending changes and tax changes",
+       "Expansionary fiscal policy: increase G or cut taxes → increase aggregate demand (subject to crowding-out)",
+       "Fiscal policy lags (recognition, legislative, implementation) are typically longer than monetary policy lags; monetary policy acts faster but has uncertain transmission"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "International Trade",
+    "los_items": [
+     {
+      "los": "LOS 12a: Describe how exchange rates are quoted and calculate cross-exchange rates",
+      "explanation": "An exchange rate is the price of one currency in terms of another. The price currency is the one being quoted per unit of the base currency (e.g., USD/EUR means USD is the price currency and EUR is the base). A cross rate is an exchange rate derived from two other exchange rates when a direct quote is unavailable. Consistency in currency conventions is essential for accurate calculations.",
+      "key_points": [
+       "Exchange rate quote: price currency / base currency (the base is always '1 unit')",
+       "Direct quote (from domestic perspective): domestic currency per foreign currency unit",
+       "Indirect quote: foreign currency per domestic currency unit",
+       "Cross rate: A/C = (A/B) × (B/C) — multiply through ensuring the intermediate currency cancels",
+       "Appreciation of a currency means it buys more foreign currency; depreciation means it buys less"
+      ]
+     },
+     {
+      "los": "LOS 12b: Describe the carry trade and calculate its profit",
+      "explanation": "A carry trade involves borrowing in a low-interest-rate currency and investing the proceeds in a higher-interest-rate currency to earn the interest rate differential. The trade is profitable as long as the higher-yielding currency does not depreciate by more than the interest rate spread. Carry trades are subject to sudden, large losses when exchange rates move abruptly (crash risk).",
+      "key_points": [
+       "Strategy: borrow low-yield currency, convert to high-yield currency, invest, then repay",
+       "Profit ≈ interest rate differential − (depreciation of high-yield currency against low-yield currency)",
+       "If high-yield currency depreciates by more than the spread, the trade generates a loss",
+       "Carry trades violate uncovered interest rate parity in the short run (empirical puzzle)",
+       "Risk: sudden unwinding causes rapid appreciation of funding currency (carry crash)"
+      ]
+     },
+     {
+      "los": "LOS 12c: Explain absolute and relative purchasing power parity",
+      "explanation": "Purchasing power parity (PPP) is based on the law of one price — identical goods should cost the same in different countries when expressed in the same currency. Absolute PPP states that the exchange rate equals the ratio of domestic to foreign price levels. Relative PPP states that the percentage change in the exchange rate equals the inflation differential between countries; it is more useful in practice.",
+      "key_points": [
+       "Absolute PPP: S = P_domestic / P_foreign (exchange rate = ratio of price levels)",
+       "Relative PPP: %ΔS ≈ inflation_domestic − inflation_foreign",
+       "If domestic inflation > foreign inflation, domestic currency depreciates accordingly under relative PPP",
+       "PPP holds better over the long run; short-run deviations are common due to non-tradable goods and capital flows",
+       "The Big Mac Index is a popular informal test of absolute PPP"
+      ]
+     },
+     {
+      "los": "LOS 12d: Describe the factors that cause exchange rates to change",
+      "explanation": "Exchange rates fluctuate due to changes in macroeconomic fundamentals and market expectations. Higher relative inflation erodes a currency's value; higher relative interest rates attract capital inflows, appreciating the currency. Current account deficits (excess imports) create selling pressure on the domestic currency, while strong growth and favorable terms of trade support it.",
+      "key_points": [
+       "Higher domestic inflation → currency depreciation (relative PPP mechanism)",
+       "Higher domestic real interest rates → capital inflows → currency appreciation",
+       "Current account deficit: outflow of domestic currency to pay for imports → depreciation pressure",
+       "Strong domestic growth increases import demand, potentially weakening the currency",
+       "Political instability, risk aversion, and capital controls can also cause sharp exchange rate moves"
+      ]
+     },
+     {
+      "los": "LOS 13a: Describe the benefits and costs of international trade",
+      "explanation": "International trade allows countries to consume beyond their domestic production frontier by specializing in goods where they have a comparative advantage and trading for the rest. Benefits include lower consumer prices, greater variety, technology transfer, and economies of scale. Costs include displacement of domestic industries, structural unemployment in import-competing sectors, and potential over-reliance on foreign suppliers.",
+      "key_points": [
+       "Benefits: lower prices for consumers, greater product variety, economies of scale, technology and knowledge transfer",
+       "Costs: job losses in import-competing industries, adjustment costs, possible exploitation of low-wage workers",
+       "Trade creates net welfare gains but distributional effects — some groups lose even when the overall economy gains",
+       "Trade barriers (tariffs, quotas) protect specific industries but reduce overall economic efficiency",
+       "Tariffs raise domestic prices, generate government revenue, and create deadweight loss; quotas have similar effects but benefit quota holders instead of the government"
+      ]
+     },
+     {
+      "los": "LOS 13b: Distinguish between comparative and absolute advantage",
+      "explanation": "Absolute advantage means a country can produce a good using fewer resources than another country. Comparative advantage means a country can produce a good at a lower opportunity cost than another country. Trade is beneficial whenever comparative advantages differ, even if one country has an absolute advantage in all goods — this is the foundation of free trade theory.",
+      "key_points": [
+       "Absolute advantage: produces more output per unit of input (or same output with less input)",
+       "Comparative advantage: lower opportunity cost of production relative to the trading partner",
+       "A country should export goods in which it has a comparative advantage and import goods in which it has a comparative disadvantage",
+       "Even if one country is more efficient at everything, both countries gain from trade via comparative advantage",
+       "Opportunity cost is the key metric: compare the ratio of goods each country gives up to produce one more unit"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Financial Statement Analysis": {
+  "topics": [
+   {
+    "name": "Intro to FSA",
+    "los_items": [
+     {
+      "los": "LOS 21a: Describe the roles of financial reporting and financial statement analysis",
+      "explanation": "Financial reporting is the process by which companies communicate their financial position and performance to external parties through standardized statements. Financial statement analysis involves using those reports to evaluate a company's past performance, current condition, and future prospects. Analysts use FSA to make investment, credit, and business decisions. The goal is to transform raw financial data into actionable insights.",
+      "key_points": [
+       "Financial reporting serves preparers; financial statement analysis serves users (investors, creditors, analysts).",
+       "Primary users include equity investors, creditors, and management.",
+       "FSA is backward-looking (historical) but used for forward-looking decisions.",
+       "Analysts adjust reported figures for comparability across firms and periods.",
+       "Key outputs of FSA: assessment of profitability, liquidity, solvency, and efficiency."
+      ]
+     },
+     {
+      "los": "LOS 21b: Identify the financial statements and supplementary information provided in financial reports",
+      "explanation": "A complete financial report includes four core statements: the income statement, balance sheet, statement of cash flows, and statement of changes in equity. These are accompanied by footnotes and supplementary disclosures that provide critical context. The Management Discussion & Analysis (MD&A) offers management's perspective on results and risks. Auditor's reports and proxy statements are also part of the broader reporting package.",
+      "key_points": [
+       "Four core financial statements: income statement, balance sheet, cash flow statement, statement of changes in equity.",
+       "Footnotes are essential — they disclose accounting policies, estimates, and contingencies.",
+       "MD&A is unaudited but provides qualitative insight into results, risks, and liquidity.",
+       "Auditor's report provides an independent opinion on whether statements are fairly presented.",
+       "Supplementary schedules (e.g., segment data) enhance comparability and detail."
+      ]
+     },
+     {
+      "los": "LOS 22a: Describe the general features of financial statements under IFRS and US GAAP",
+      "explanation": "Both IFRS (International Financial Reporting Standards) and US GAAP require financial statements to present a true and fair view of a company's financial position. IFRS is principles-based and allows more judgment, while US GAAP is rules-based and more prescriptive. Both frameworks require consistency, accrual accounting, and the going concern assumption. Key differences exist in areas like inventory costing, asset revaluation, and revenue recognition.",
+      "key_points": [
+       "IFRS is principles-based; US GAAP is rules-based — IFRS allows more management judgment.",
+       "Both require accrual basis accounting and the going concern assumption.",
+       "IFRS prohibits LIFO inventory; US GAAP allows LIFO.",
+       "IFRS permits upward revaluation of PP&E and intangibles; US GAAP does not.",
+       "Convergence efforts have reduced but not eliminated differences between the two frameworks."
+      ]
+     },
+     {
+      "los": "LOS 22b: Describe useful attributes of financial reports, including understandability, timeliness, and comparability",
+      "explanation": "The IASB's conceptual framework identifies qualitative characteristics that make financial information useful. Fundamental characteristics are relevance (including materiality) and faithful representation. Enhancing characteristics include comparability, verifiability, timeliness, and understandability. These attributes help users make informed decisions from financial reports.",
+      "key_points": [
+       "Two fundamental qualitative characteristics: relevance and faithful representation.",
+       "Enhancing characteristics: comparability, verifiability, timeliness, understandability.",
+       "Faithful representation means complete, neutral, and free from error — not necessarily accurate.",
+       "Comparability requires consistent accounting policies across periods and firms.",
+       "Timeliness means information is available before it loses its capacity to influence decisions."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Income Statement",
+    "los_items": [
+     {
+      "los": "LOS 23a: Describe the components of the income statement and calculate comprehensive income",
+      "explanation": "The income statement reports revenues, expenses, gains, and losses over a reporting period, culminating in net income. Comprehensive income extends net income to include other comprehensive income (OCI) items — unrealized gains/losses on certain securities, foreign currency translation adjustments, and pension liability adjustments. EPS (basic and diluted) is reported on the face of the income statement for public companies. The multi-step format separates operating from non-operating items, which is more useful for analysis.",
+      "key_points": [
+       "Comprehensive income = Net income + Other Comprehensive Income (OCI).",
+       "OCI items bypass the income statement but affect equity directly.",
+       "Common OCI items: unrealized gains/losses on AFS securities, foreign currency translation, pension adjustments.",
+       "Basic EPS = (Net Income − Preferred Dividends) / Weighted Average Shares Outstanding.",
+       "Diluted EPS includes dilutive effects of options, warrants, and convertible securities — always ≤ basic EPS."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Balance Sheet",
+    "los_items": [
+     {
+      "los": "LOS 23b: Describe the components of the balance sheet and their relationships",
+      "explanation": "The balance sheet (statement of financial position) presents a company's assets, liabilities, and equity at a point in time, governed by the accounting equation: Assets = Liabilities + Equity. Assets are resources controlled by the entity expected to provide future economic benefits, while liabilities are present obligations. Equity represents the residual interest after deducting liabilities from assets. Items are classified as current (due within one year) or non-current.",
+      "key_points": [
+       "Fundamental equation: Assets = Liabilities + Equity — must always balance.",
+       "Current assets/liabilities: expected to be settled within one operating cycle or 12 months.",
+       "Common current assets: cash, receivables, inventory, prepaid expenses.",
+       "Equity components: common stock, additional paid-in capital, retained earnings, treasury stock, AOCI.",
+       "Book value of equity ≠ market value; analysts often adjust for off-balance-sheet items."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Cash Flow",
+    "los_items": [
+     {
+      "los": "LOS 23c: Describe the components of the statement of cash flows and their classification",
+      "explanation": "The cash flow statement reconciles the change in cash and cash equivalents over a period by classifying cash flows into three activities: operating, investing, and financing. Operating activities relate to the core business operations and can be reported using the direct or indirect method. Investing activities reflect capital expenditures and acquisitions. Financing activities include debt issuance/repayment and equity transactions.",
+      "key_points": [
+       "Three sections: Operating (CFO), Investing (CFI), Financing (CFF) — must know what goes where.",
+       "Indirect method starts with net income and adjusts for non-cash items and working capital changes.",
+       "Direct method shows actual cash receipts and payments — preferred by analysts but rarely used.",
+       "Under US GAAP, interest paid is CFO; under IFRS, it can be CFO or CFF.",
+       "Under US GAAP, dividends received is CFO; under IFRS, it can be CFO or CFI."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Financial Analysis",
+    "los_items": [
+     {
+      "los": "LOS 24a: Describe common financial ratios and their interpretation",
+      "explanation": "Financial ratios are calculated from financial statement data to evaluate different dimensions of a company's performance and health. The major categories are liquidity (ability to meet short-term obligations), solvency (long-term debt capacity), profitability (efficiency of profit generation), activity/efficiency (asset utilization), and valuation (market-based metrics). Ratios are most useful when compared to industry benchmarks, historical trends, or peers.",
+      "key_points": [
+       "Five ratio categories: liquidity, solvency, profitability, activity (efficiency), and valuation.",
+       "Ratios must be interpreted in context — a high current ratio may signal poor asset management.",
+       "Cross-sectional analysis compares ratios across firms; time-series analysis tracks trends over time.",
+       "Ratios can be distorted by accounting choices (e.g., LIFO vs. FIFO affects inventory and COGS ratios).",
+       "No single ratio tells the full story — use multiple ratios together for a comprehensive view."
+      ]
+     },
+     {
+      "los": "LOS 24b: Calculate and interpret activity, liquidity, solvency, profitability, and valuation ratios",
+      "explanation": "Liquidity ratios (current ratio, quick ratio) measure short-term solvency. Solvency ratios (debt-to-equity, interest coverage) assess long-term financial risk. Profitability ratios (ROE, ROA, net profit margin) gauge earnings efficiency. Activity ratios (asset turnover, inventory turnover, days sales outstanding) measure how effectively assets are used. These ratios together paint a complete picture of financial health.",
+      "key_points": [
+       "Current Ratio = Current Assets / Current Liabilities; Quick Ratio excludes inventory.",
+       "ROA = Net Income / Average Total Assets; ROE = Net Income / Average Equity.",
+       "Asset Turnover = Revenue / Average Total Assets — higher is better (more efficient use of assets).",
+       "Debt-to-Equity = Total Debt / Total Equity — higher signals more financial leverage and risk.",
+       "Interest Coverage = EBIT / Interest Expense — measures ability to service debt from operations."
+      ]
+     },
+     {
+      "los": "LOS 24c: Describe the DuPont analysis of return on equity",
+      "explanation": "DuPont analysis decomposes ROE into component drivers to identify the source of profitability. The classic 3-factor model breaks ROE into net profit margin, asset turnover, and the equity multiplier (financial leverage). The extended 5-factor model further separates the tax burden, interest burden, and EBIT margin. This framework allows analysts to diagnose whether ROE is driven by operational efficiency, asset utilization, or leverage.",
+      "key_points": [
+       "3-factor DuPont: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier.",
+       "Equity Multiplier = Total Assets / Total Equity — captures financial leverage.",
+       "5-factor DuPont: ROE = Tax Burden × Interest Burden × EBIT Margin × Asset Turnover × Equity Multiplier.",
+       "High ROE driven by high leverage is riskier than high ROE driven by strong margins.",
+       "DuPont is a high-frequency exam topic — memorize all components and their formulas."
+      ]
+     },
+     {
+      "los": "LOS 25a: Describe the effects of accounting choices on financial ratios",
+      "explanation": "Management's accounting choices — such as inventory costing method, depreciation method, and revenue recognition timing — can significantly affect reported financials and ratios. Analysts must understand these choices to make valid comparisons across firms. For example, LIFO in an inflationary environment results in higher COGS and lower net income, affecting profitability and inventory ratios. Adjusting for these differences is a key analytical skill.",
+      "key_points": [
+       "LIFO (rising prices) → higher COGS, lower net income, lower inventory on balance sheet vs. FIFO.",
+       "Accelerated depreciation → higher early expenses, lower net income, lower asset values.",
+       "Capitalizing vs. expensing costs: capitalizing boosts current income but increases assets and future depreciation.",
+       "Revenue recognition timing affects reported revenue and receivables — earlier recognition inflates current period metrics.",
+       "Analysts adjust reported numbers (e.g., using LIFO reserve) to achieve comparability."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Inventories",
+    "los_items": [
+     {
+      "los": "LOS 25b: Explain the FIFO, LIFO, and weighted-average cost methods",
+      "explanation": "Inventory costing methods determine how the cost of goods sold (COGS) and ending inventory are calculated. FIFO (First-In, First-Out) assumes the oldest inventory is sold first, resulting in lower COGS and higher ending inventory in rising price environments. LIFO (Last-In, First-Out) assumes the newest inventory is sold first — allowed under US GAAP but prohibited under IFRS. Weighted-average cost smooths out price fluctuations by averaging all inventory costs.",
+      "key_points": [
+       "IFRS prohibits LIFO; US GAAP allows all three methods — a critical exam distinction.",
+       "In rising prices: FIFO → lower COGS, higher net income, higher inventory; LIFO → opposite.",
+       "LIFO reserve = FIFO inventory − LIFO inventory; used to convert LIFO statements to FIFO basis.",
+       "Weighted-average cost: COGS per unit = Total Cost of Goods Available / Total Units Available.",
+       "LIFO liquidation occurs when inventory quantities decline, releasing older low-cost layers into COGS."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Long-Lived Assets",
+    "los_items": [
+     {
+      "los": "LOS 26a: Describe the treatment of long-lived assets under IFRS and US GAAP",
+      "explanation": "Long-lived (non-current) assets include property, plant & equipment (PP&E), intangible assets, and investment properties. Under IFRS, companies may use the cost model or revaluation model for PP&E and intangibles with finite lives; US GAAP only permits the cost model. Goodwill from business combinations is not amortized under either framework but must be tested for impairment annually. Research costs are expensed; development costs may be capitalized under IFRS.",
+      "key_points": [
+       "IFRS allows revaluation model (upward + downward adjustments); US GAAP only allows cost model (write-downs only).",
+       "Goodwill: not amortized under IFRS or US GAAP — subject to annual impairment testing.",
+       "IFRS capitalizes development costs when feasibility is established; US GAAP expenses all R&D.",
+       "Impairment under IFRS: recoverable amount = higher of fair value less costs to sell and value in use.",
+       "US GAAP impairment is a two-step test (recoverability then measurement); IFRS is a one-step test."
+      ]
+     },
+     {
+      "los": "LOS 26b: Calculate and interpret depreciation methods and their effects on financial statements",
+      "explanation": "Depreciation allocates the cost of a long-lived asset over its useful life. Common methods include straight-line (equal annual charges), declining balance (accelerated — higher early charges), and units-of-production (usage-based). The choice of depreciation method affects net income, asset carrying values, and financial ratios. Accelerated methods front-load expenses, resulting in lower early-period earnings and lower asset values.",
+      "key_points": [
+       "Straight-line: (Cost − Residual Value) / Useful Life — same charge each period.",
+       "Double-declining balance: 2 × (1 / Useful Life) × Book Value — ignores residual value until end.",
+       "Units-of-production: (Cost − Residual Value) × (Units Produced / Total Expected Units).",
+       "Accelerated depreciation → lower early net income, lower taxes (timing difference), higher later income.",
+       "Longer useful life or higher residual value assumptions → lower annual depreciation → higher income."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Income Taxes",
+    "los_items": [
+     {
+      "los": "LOS 27a: Describe income tax accounting and calculate income tax expense",
+      "explanation": "Income tax expense on the income statement is based on pre-tax accounting income, not taxable income. The difference between tax expense (based on accounting income) and taxes payable (based on taxable income) is recorded as a deferred tax asset or liability. Tax expense = taxes payable + change in deferred tax liability − change in deferred tax asset. Understanding this distinction is critical because taxable income can differ significantly from accounting income.",
+      "key_points": [
+       "Income tax expense ≠ taxes payable — the difference creates deferred tax assets/liabilities on the balance sheet.",
+       "Effective tax rate = Income Tax Expense / Pre-tax Income — may differ from statutory rate.",
+       "Deferred Tax Liability (DTL): taxes owed in the future — taxable income < accounting income currently.",
+       "Deferred Tax Asset (DTA): taxes paid now but recognized later — taxable income > accounting income currently.",
+       "Tax expense = Current tax expense + Deferred tax expense (change in net DTL)."
+      ]
+     },
+     {
+      "los": "LOS 27b: Distinguish between temporary and permanent differences in income tax",
+      "explanation": "Temporary differences arise when income or expenses are recognized in different periods for accounting versus tax purposes, creating deferred tax assets or liabilities that will reverse in the future. Permanent differences are items recognized for accounting purposes but never for tax (or vice versa), and they do not create deferred tax items. Examples of permanent differences include tax-exempt municipal bond interest and non-deductible penalties. Temporary differences are more analytically significant because they affect future cash taxes.",
+      "key_points": [
+       "Temporary differences reverse over time and create DTAs or DTLs on the balance sheet.",
+       "Permanent differences never reverse — they cause the effective tax rate to differ from the statutory rate.",
+       "Common temporary difference: accelerated depreciation for tax vs. straight-line for accounting → creates DTL.",
+       "DTA example: warranty expense recognized for accounting before deductible for tax purposes.",
+       "A valuation allowance reduces a DTA when it is 'more likely than not' that the benefit won't be realized."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Non-Current Liabilities",
+    "los_items": [
+     {
+      "los": "LOS 28a: Distinguish between operating and finance leases and their financial statement effects",
+      "explanation": "A finance lease (formerly capital lease) transfers substantially all risks and rewards of ownership to the lessee; the lessee recognizes both a right-of-use asset and a lease liability on the balance sheet. An operating lease was historically kept off-balance-sheet, but under current IFRS 16 and ASC 842, lessees must recognize a right-of-use asset and liability for most leases. Finance leases result in higher reported assets and liabilities, higher early-period expenses (front-loaded depreciation + interest), and lower early net income versus operating leases.",
+      "key_points": [
+       "Under current standards (IFRS 16 / ASC 842), virtually all leases are on-balance-sheet for lessees.",
+       "Finance lease: lessee records asset + liability; expense = depreciation + interest (front-loaded).",
+       "Operating lease: expense is straight-line rent expense; still creates ROU asset + lease liability under new rules.",
+       "Finance lease → higher assets, higher liabilities, higher D/E ratio, lower current ratio vs. operating lease.",
+       "Finance lease → lower operating income initially (interest is below EBIT line) but higher CFO (principal repayment is CFF)."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Corporate Issuers": {
+  "topics": [
+   {
+    "name": "Corporate Governance",
+    "los_items": [
+     {
+      "los": "LOS 17a: Describe the types of dividends and share repurchases and how they affect shareholders",
+      "explanation": "Companies return capital to shareholders through dividends (cash, stock, or special) and share repurchases. Cash dividends reduce assets and equity on the balance sheet, while stock dividends redistribute equity without changing total value. Share repurchases reduce shares outstanding, potentially increasing EPS and share price, and offer more tax flexibility than dividends.",
+      "key_points": [
+       "Cash dividend: reduces cash and retained earnings; share price drops by dividend amount on ex-dividend date",
+       "Stock dividend: increases shares outstanding but reduces price proportionally — no net wealth change",
+       "Share repurchase: treated as an alternative to cash dividends; reduces shares outstanding and can signal undervaluation",
+       "Repurchases offer tax advantage when capital gains rates are lower than dividend tax rates",
+       "Special dividends are one-time payments, often used when excess cash is non-recurring"
+      ]
+     },
+     {
+      "los": "LOS 17b: Compare dividend policies and explain their effect on shareholder value",
+      "explanation": "Dividend policy refers to how a firm decides the amount and timing of dividend payments. The three main policies are stable dividend policy, constant payout ratio, and residual dividend policy. Under M&M's dividend irrelevance theory, in perfect markets dividend policy does not affect firm value; in practice, signaling effects and investor preferences matter.",
+      "key_points": [
+       "Stable dividend policy: fixed or slowly growing dividend — preferred by income investors",
+       "Constant payout ratio: dividends vary with earnings — creates unpredictability",
+       "Residual dividend policy: pay dividends only after all positive-NPV projects are funded",
+       "M&M dividend irrelevance: in perfect markets, investors can create 'homemade dividends' by selling shares",
+       "Dividend signaling: increasing dividends signals management confidence; cutting dividends signals financial stress"
+      ]
+     },
+     {
+      "los": "LOS 20a: Describe the key elements of a business model",
+      "explanation": "A business model describes how a company creates, delivers, and captures value. Key elements include the value proposition (what problem is solved and for whom), the pricing model, the channel strategy, and the cost structure. Understanding a company's business model is essential for assessing its competitive advantage and sustainability.",
+      "key_points": [
+       "Value proposition: the product or service benefit that attracts customers",
+       "Revenue model: how the firm earns money (subscription, transaction, licensing, etc.)",
+       "Cost structure: fixed vs. variable costs determine operating leverage",
+       "Channel strategy: direct vs. indirect distribution affects margins and reach",
+       "Network effects and switching costs are key sources of durable competitive advantage"
+      ]
+     },
+     {
+      "los": "LOS 20b: Explain the roles of stakeholders and describe corporate governance mechanisms",
+      "explanation": "Corporate governance is the system of rules and practices by which a company is directed and controlled, balancing the interests of stakeholders such as shareholders, creditors, management, employees, and regulators. The principal-agent problem arises when managers (agents) act in their own interest rather than shareholders' (principals). Governance mechanisms are designed to align these interests.",
+      "key_points": [
+       "Principal-agent conflict: shareholders vs. management; bondholders vs. shareholders",
+       "Board of directors is the primary internal governance mechanism — independent directors are key",
+       "External mechanisms include auditors, regulators, activist investors, and takeover threats",
+       "Compensation structures (stock options, clawbacks) align management incentives with shareholders",
+       "ESG (Environmental, Social, Governance) factors are increasingly relevant to governance assessments"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Capital Budgeting",
+    "los_items": [
+     {
+      "los": "LOS 16a: Calculate and interpret the net present value (NPV) and IRR of capital projects",
+      "explanation": "NPV is the present value of all future cash flows minus the initial investment, discounted at the cost of capital. A positive NPV means the project adds value and should be accepted. IRR is the discount rate that sets NPV to zero; accept a project if IRR exceeds the required rate of return. NPV is the preferred method because it directly measures value creation.",
+      "key_points": [
+       "NPV > 0: accept the project; NPV < 0: reject; NPV = 0: indifferent",
+       "IRR rule: accept if IRR > required rate of return (hurdle rate)",
+       "NPV and IRR can conflict for mutually exclusive projects — always rely on NPV",
+       "IRR assumes reinvestment at the IRR rate; NPV assumes reinvestment at the cost of capital (more realistic)",
+       "Multiple IRRs can exist when cash flows change sign more than once (non-normal cash flows)"
+      ]
+     },
+     {
+      "los": "LOS 16b: Explain the factors affecting capital allocation decisions",
+      "explanation": "Capital allocation involves deciding how to deploy a firm's financial resources among competing projects. Key factors include the project's NPV, strategic fit, risk profile, resource constraints, and management's ability to execute. Capital rationing occurs when a firm has limited funds and must prioritize projects by profitability index.",
+      "key_points": [
+       "Profitability Index (PI) = PV of future cash flows / Initial investment — useful under capital rationing",
+       "Sunk costs are irrelevant; only incremental (marginal) cash flows matter",
+       "Opportunity costs must be included as a cost of the project",
+       "Externalities (cannibalization, synergies) affect incremental cash flow estimates",
+       "Real options (option to expand, abandon, delay) add value beyond standard NPV analysis"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Cost of Capital",
+    "los_items": [
+     {
+      "los": "LOS 14a: Describe the objective of capital structure and explain the factors that influence it",
+      "explanation": "Capital structure refers to the mix of debt and equity a firm uses to finance its assets. The objective is to minimize the weighted average cost of capital (WACC) and thereby maximize firm value. Key factors influencing capital structure include business risk, tax environment, financial flexibility, agency costs, and industry norms.",
+      "key_points": [
+       "Optimal capital structure minimizes WACC and maximizes firm value",
+       "Higher debt increases financial risk (volatility of earnings to equity holders) but provides tax shields",
+       "Business risk (operating risk) and financial risk are both components of total firm risk",
+       "Firms with stable, predictable cash flows can support higher debt levels",
+       "Agency costs of debt (asset substitution, underinvestment) increase cost of borrowing"
+      ]
+     },
+     {
+      "los": "LOS 14b: Explain the Modigliani-Miller propositions with and without taxes",
+      "explanation": "Modigliani and Miller (M&M) showed that in perfect capital markets (no taxes, no bankruptcy costs, no information asymmetry), capital structure is irrelevant to firm value — Proposition I. With taxes, debt creates a tax shield on interest payments, increasing firm value with leverage — Proposition I with taxes. Proposition II states that cost of equity rises with leverage to offset the cheaper cost of debt.",
+      "key_points": [
+       "M&M without taxes: firm value is independent of capital structure (capital structure irrelevance)",
+       "M&M with taxes: firm value increases with debt due to interest tax shield (VL = VU + t×D)",
+       "Proposition II: re = r0 + (r0 - rd) × (D/E); cost of equity rises linearly with leverage",
+       "With taxes only, optimal structure is 100% debt — unrealistic because of bankruptcy costs",
+       "Trade-off theory: optimal leverage balances tax shield benefits against financial distress costs"
+      ]
+     },
+     {
+      "los": "LOS 14c: Describe target capital structure and explain factors that affect it",
+      "explanation": "A target capital structure is the long-run optimal mix of debt, equity, and preferred stock that a firm aims to maintain. While firms may deviate in the short run due to market conditions or financing opportunities, they tend to revert toward the target over time. The target is influenced by the firm's tax rate, asset tangibility, profitability, and growth opportunities.",
+      "key_points": [
+       "Target capital structure is used in WACC calculation as the weights (wd, we, wp)",
+       "Use market values — not book values — for WACC weights when possible",
+       "Pecking order theory: firms prefer internal financing, then debt, then equity (least preferred)",
+       "High-growth firms tend to use less debt (preserve financial flexibility)",
+       "Asset-heavy industries tend to carry more debt (tangible collateral reduces lender risk)"
+      ]
+     },
+     {
+      "los": "LOS 15a: Calculate and interpret the weighted average cost of capital (WACC)",
+      "explanation": "WACC is the blended required rate of return for a firm, weighted by the proportion of each capital source. It represents the minimum return a project must earn to create value. WACC is used as the discount rate in NPV calculations and as a benchmark for investment decisions.",
+      "key_points": [
+       "WACC = wd×rd×(1−t) + we×re + wp×rp",
+       "Weights should be based on market values, not book values",
+       "Cost of equity is estimated using CAPM: re = rf + β×(rm − rf)",
+       "Cost of preferred stock: rp = Dp / P0 (no tax adjustment since preferred dividends are not tax-deductible)",
+       "A project's discount rate should match its own risk, not the firm's WACC, if risk differs"
+      ]
+     },
+     {
+      "los": "LOS 15b: Explain the effect of taxes on the cost of debt and cost of equity",
+      "explanation": "Interest on debt is tax-deductible, so the after-tax cost of debt is rd×(1−t), which is lower than the pre-tax rate. Dividends paid to equity holders are not tax-deductible, so the cost of equity has no tax adjustment. This tax asymmetry makes debt a cheaper source of financing and creates the interest tax shield.",
+      "key_points": [
+       "After-tax cost of debt = rd × (1 − marginal tax rate)",
+       "Cost of equity is unaffected by taxes at the corporate level — no deduction for dividends",
+       "Higher tax rates increase the tax shield benefit of debt, encouraging more leverage",
+       "Use marginal (not average) tax rate for WACC calculations",
+       "For new debt, use the yield to maturity (YTM) of existing debt as a proxy for rd"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Leverage",
+    "los_items": [
+     {
+      "los": "LOS 19a: Describe the types of leverage and calculate and interpret operating, financial, and total leverage",
+      "explanation": "Operating leverage measures sensitivity of operating income to changes in sales, arising from fixed operating costs. Financial leverage measures sensitivity of EPS to changes in operating income, arising from fixed financing costs (interest). Total leverage (combined) captures the overall sensitivity of EPS to sales changes.",
+      "key_points": [
+       "DOL = %ΔOperating Income / %ΔSales = (Sales − Variable Costs) / Operating Income",
+       "DFL = %ΔEPS / %ΔOperating Income = EBIT / (EBIT − Interest)",
+       "DTL = DOL × DFL = %ΔEPS / %ΔSales",
+       "Higher fixed costs → higher DOL → greater operating risk",
+       "Break-even quantity Q = Fixed Costs / (Price − Variable Cost per unit)"
+      ]
+     },
+     {
+      "los": "LOS 19b: Explain the relationship between leverage and the risk and return characteristics of a company",
+      "explanation": "Higher operating leverage magnifies both gains and losses from changes in revenue, increasing earnings volatility. Financial leverage similarly amplifies the effect of operating income changes on returns to equity holders. While leverage can enhance returns in good times, it increases the probability of financial distress in downturns.",
+      "key_points": [
+       "High DOL means a larger proportion of fixed costs — earnings are more volatile relative to sales",
+       "High DFL means a larger proportion of fixed financing costs — EPS is more volatile relative to EBIT",
+       "Leverage increases expected return to equity but also increases risk (beta)",
+       "Firms with high business risk (high DOL) typically use less financial leverage (low DFL) to manage total risk",
+       "Financial distress costs (direct: legal fees; indirect: lost customers/suppliers) limit optimal leverage"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Working Capital",
+    "los_items": [
+     {
+      "los": "LOS 18a: Describe working capital and calculate the cash conversion cycle",
+      "explanation": "Working capital is the difference between current assets and current liabilities and represents the short-term liquidity available to a firm. The cash conversion cycle (CCC) measures how long it takes a company to convert its investments in inventory and receivables into cash, net of the time it takes to pay suppliers. A shorter CCC indicates more efficient working capital management.",
+      "key_points": [
+       "Net Working Capital (NWC) = Current Assets − Current Liabilities",
+       "CCC = DSO + DOH − DPO",
+       "DSO (Days Sales Outstanding) = Accounts Receivable / (Revenue / 365) — time to collect receivables",
+       "DOH (Days of Inventory on Hand) = Inventory / (COGS / 365) — time inventory is held",
+       "DPO (Days Payable Outstanding) = Accounts Payable / (COGS / 365) — time to pay suppliers; longer is better"
+      ]
+     },
+     {
+      "los": "LOS 18b: Describe methods for managing a company's working capital",
+      "explanation": "Effective working capital management ensures the firm has sufficient liquidity while minimizing the cost of holding idle assets. Managers optimize receivables (credit policies), inventory (reorder points, JIT), payables (payment timing), and short-term financing. The goal is to shorten the CCC without damaging supplier or customer relationships.",
+      "key_points": [
+       "Receivables management: tighten credit terms to reduce DSO; offer discounts for early payment",
+       "Inventory management: JIT (Just-in-Time) reduces DOH but increases stockout risk",
+       "Payables management: delay payments to extend DPO without harming supplier relationships",
+       "Short-term financing options: bank lines of credit, commercial paper, factoring receivables",
+       "Excess cash should be invested in liquid, low-risk instruments (T-bills, money market funds)"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Equity Investments": {
+  "topics": [
+   {
+    "name": "Market Organization",
+    "los_items": [
+     {
+      "los": "LOS 30a: Describe the forms of market efficiency and market anomalies",
+      "explanation": "Market efficiency refers to how quickly and accurately prices reflect available information. The three forms are weak (prices reflect past trading data), semi-strong (prices reflect all public information), and strong (prices reflect all public and private information). Market anomalies are patterns that appear to contradict efficiency, such as the January effect, momentum, and value premiums.",
+      "key_points": [
+       "Weak form: technical analysis cannot generate excess returns; fundamental and insider analysis may still work",
+       "Semi-strong form: neither technical nor fundamental analysis yields consistent excess returns",
+       "Strong form: even insider information is already priced in — the most stringent form",
+       "Anomalies include calendar effects (January effect), size effect, value effect, and momentum",
+       "Behavioral finance explains anomalies through cognitive biases rather than irrational markets"
+      ]
+     },
+     {
+      "los": "LOS 30b: Explain the implications of each form of market efficiency",
+      "explanation": "Each form of market efficiency has direct implications for active portfolio management. Under weak-form efficiency, charting and technical strategies are futile. Under semi-strong efficiency, fundamental analysis cannot consistently add value. Under strong-form efficiency, no investor — including insiders — can consistently beat the market.",
+      "key_points": [
+       "Weak form implies passive investing beats technical trading on a risk-adjusted basis",
+       "Semi-strong implies actively managed funds cannot consistently outperform after fees",
+       "Strong form implies insider trading cannot generate abnormal returns — rarely held to be true in practice",
+       "Evidence largely supports weak and semi-strong forms; strong form is generally rejected",
+       "Implications for portfolio management: in efficient markets, diversification and cost minimization dominate"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Market Indices",
+    "los_items": [
+     {
+      "los": "LOS 29a: Describe the characteristics of equity markets and equity market indexes",
+      "explanation": "Equity markets can be classified as developed, emerging, or frontier based on economic development and market accessibility. Equity market indexes are constructed to represent the performance of a specific market, sector, or asset class. Indexes serve as benchmarks for portfolio managers and form the basis for index funds and ETFs.",
+      "key_points": [
+       "Markets classified by development level: developed (US, UK), emerging (Brazil, India), frontier (Vietnam, Nigeria)",
+       "Index constituents are selected by rules based on size, liquidity, or float-adjusted market cap",
+       "Rebalancing and reconstitution affect index composition and can cause price impacts",
+       "Broad market indexes (e.g., S&P 500, MSCI World) differ from sector or factor indexes",
+       "Float-adjusted market cap excludes closely held shares from index weight calculations"
+      ]
+     },
+     {
+      "los": "LOS 29b: Explain the uses of market indexes and the differences among weighting methods",
+      "explanation": "Market indexes are used as benchmarks, performance gauges, model portfolios for passive funds, and proxies for asset classes in asset allocation. The main weighting methods are price-weighted, market-cap-weighted, float-adjusted market-cap-weighted, equal-weighted, and fundamental-weighted, each with distinct biases and rebalancing needs.",
+      "key_points": [
+       "Price-weighted (e.g., DJIA): higher-priced stocks have greater influence; subject to distortion from stock splits",
+       "Market-cap-weighted (e.g., S&P 500): larger companies dominate; momentum bias built in",
+       "Equal-weighted: all stocks have same weight; requires frequent rebalancing; tilts toward small-cap",
+       "Fundamental-weighted: weights by earnings, dividends, or book value; value tilt relative to cap-weighted",
+       "Float-adjusted cap-weight is most common globally as it reflects investable shares only"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Equity Valuation",
+    "los_items": [
+     {
+      "los": "LOS 31a: Describe characteristics and uses of equity valuation models",
+      "explanation": "Equity valuation models estimate the intrinsic value of a stock to compare with its market price and identify mispricing. Models fall into three broad categories: present value (discounted cash flow) models, multiplier (price multiple) models, and asset-based models. Each model has assumptions and use cases that make it more or less appropriate depending on the company's characteristics.",
+      "key_points": [
+       "Intrinsic value is compared to market price: if intrinsic > market price, stock is undervalued (buy signal)",
+       "DCF models (DDM, FCFE, FCFF) are most theoretically sound but sensitive to input assumptions",
+       "Price multiple models (P/E, P/B, P/S, EV/EBITDA) are simpler and widely used for relative valuation",
+       "Asset-based models are most relevant for holding companies, financials, and firms in liquidation",
+       "No single model dominates; analysts often use multiple models for triangulation"
+      ]
+     },
+     {
+      "los": "LOS 31b: Estimate the intrinsic value of a common stock using the dividend discount model",
+      "explanation": "The dividend discount model (DDM) values a stock as the present value of all expected future dividends. The Gordon Growth Model assumes dividends grow at a constant rate forever: V0 = D1 / (r − g). Multistage DDM models accommodate periods of high or variable growth before transitioning to a stable long-run growth rate.",
+      "key_points": [
+       "Gordon Growth Model: V0 = D1 / (r − g); requires r > g and stable, dividend-paying company",
+       "D1 = D0 × (1 + g); always use next period's dividend in the numerator",
+       "H-Model handles declining growth: V0 = [D0 × (1 + gL) + D0 × H × (gS − gL)] / (r − gL)",
+       "Multistage DDM: explicitly forecast dividends for high-growth phase, then apply Gordon Growth terminal value",
+       "DDM is best suited for mature, dividend-paying companies with predictable payout policies"
+      ]
+     },
+     {
+      "los": "LOS 31c: Calculate and interpret the value of a common stock using price multiples",
+      "explanation": "Price multiples express the relationship between a stock's price and a fundamental value driver such as earnings, book value, sales, or cash flow. They are used for relative valuation by comparing a company's multiple to peers, its own historical range, or a benchmark index multiple. Each multiple has specific contexts where it is most informative.",
+      "key_points": [
+       "P/E = Price / EPS; most widely used; not meaningful for loss-making firms",
+       "P/B = Price / Book Value per Share; useful for financials; low P/B may signal distress or value",
+       "P/S = Price / Revenue per Share; useful when earnings are negative; not affected by leverage",
+       "EV/EBITDA = Enterprise Value / EBITDA; capital-structure neutral; preferred for comparing levered firms",
+       "Justified (intrinsic) P/E = (1 − b) / (r − g); links price multiples back to DDM fundamentals"
+      ]
+     },
+     {
+      "los": "LOS 32a: Calculate and interpret free cash flow to equity (FCFE) and free cash flow to firm (FCFF)",
+      "explanation": "Free cash flow measures the cash generated by a business available for distribution to capital providers after all operating and investment needs are met. FCFF is available to both debt and equity holders; FCFE is available only to equity holders after debt obligations are serviced. Both can be derived from the income statement and cash flow statement.",
+      "key_points": [
+       "FCFF = EBIT × (1 − t) + D&A − CapEx − ΔWCNOA; discounted at WACC to get firm value",
+       "FCFE = CFO − FCInv + Net Borrowing; discounted at required return on equity to get equity value",
+       "FCFE = FCFF − Interest × (1 − t) + Net Borrowing (alternative derivation)",
+       "Positive FCFE means firm generates cash beyond investment needs — can pay dividends or buy back stock",
+       "FCFF preferred when capital structure is changing or leverage is high; FCFE for stable-leverage firms"
+      ]
+     },
+     {
+      "los": "LOS 32b: Explain advantages and limitations of each equity valuation model",
+      "explanation": "Each valuation model has trade-offs between theoretical rigor, data requirements, and practical applicability. DCF models are theoretically grounded but highly sensitive to small changes in discount rate and growth assumptions. Relative valuation using multiples is quick and market-based but assumes comparable companies are fairly valued.",
+      "key_points": [
+       "DDM advantage: theoretically sound; limitation: only for dividend-paying stocks, sensitive to g and r inputs",
+       "FCFF/FCFE advantage: applicable to non-dividend payers; limitation: CapEx and working capital forecasts are uncertain",
+       "P/E advantage: widely understood; limitation: distorted by earnings manipulation, leverage, or negative EPS",
+       "EV/EBITDA advantage: capital-structure neutral, ignores D&A differences; limitation: ignores CapEx intensity",
+       "Asset-based models: objective for holding companies; limitation: book value may not reflect market value of assets"
+      ]
+     },
+     {
+      "los": "LOS 33a: Describe the elements that need to be covered in an equity research report",
+      "explanation": "An equity research report provides a comprehensive analysis of a company to support an investment recommendation. It synthesizes quantitative valuation work with qualitative assessments of the business, industry, and management to arrive at a price target and buy/hold/sell rating.",
+      "key_points": [
+       "Key sections: investment summary, business description, industry analysis, financial analysis, valuation, risks, recommendation",
+       "Investment recommendation must be supported by clearly stated assumptions and a price target",
+       "Risks section must cover both upside and downside scenarios that could cause actual results to differ",
+       "Financial projections (income statement, balance sheet, cash flow) underpin the valuation models",
+       "Disclosures of conflicts of interest (analyst ownership, banking relationships) are required for integrity"
+      ]
+     },
+     {
+      "los": "LOS 33b: Distinguish between company and industry analysis",
+      "explanation": "Industry analysis examines the competitive structure, growth prospects, and external factors affecting all firms in a sector, typically using frameworks like Porter's Five Forces or industry life cycle models. Company analysis then evaluates how a specific firm is positioned within that industry context, focusing on competitive advantages, financial performance, and management quality.",
+      "key_points": [
+       "Industry analysis uses Porter's Five Forces: rivalry, supplier power, buyer power, substitutes, new entrants",
+       "Industry life cycle stages: embryonic, growth, shakeout, mature, decline — each affects margins and reinvestment needs",
+       "Company analysis focuses on competitive advantage (moat), quality of earnings, and management track record",
+       "Top-down approach: economy → industry → company; bottom-up starts from individual company fundamentals",
+       "Industry classification systems (GICS, ICB, SIC) group firms for peer comparison in relative valuation"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Fixed Income": {
+  "topics": [
+   {
+    "name": "Fixed Income Basics",
+    "los_items": [
+     {
+      "los": "LOS 34a: Describe basic features of a fixed-income security",
+      "explanation": "A fixed-income security is a financial instrument where the issuer promises to make periodic coupon payments and repay the principal (face value) at maturity. Key features include the par value (typically $1,000), coupon rate (annual interest as a percentage of par), maturity date, and the currency of payment. Bonds can be structured with fixed or floating coupons, and some include embedded options such as calls or puts. Understanding these features is foundational for analyzing bond pricing and risk.",
+      "key_points": [
+       "Par value (face value) is typically $1,000 and is repaid at maturity",
+       "Coupon rate × par value = annual coupon payment; can be fixed or floating",
+       "Maturity determines the bond's tenor: short-term (<1yr), medium-term (1–10yr), long-term (>10yr)",
+       "Embedded options (callable, putable, convertible) alter cash flows and valuation",
+       "Currency of denomination affects risk, especially for cross-border investors"
+      ]
+     },
+     {
+      "los": "LOS 34b: Describe the content of a bond indenture",
+      "explanation": "A bond indenture is the legal contract between the bond issuer and bondholders, administered by a trustee. It specifies all terms of the bond including coupon structure, maturity, collateral, covenants, and events of default. Affirmative covenants require the issuer to take certain actions (e.g., maintain insurance), while negative covenants restrict behavior (e.g., limits on additional debt issuance). The indenture protects bondholders by establishing legal recourse if the issuer fails to meet its obligations.",
+      "key_points": [
+       "Indenture is a legally binding contract; trustee acts on behalf of bondholders",
+       "Affirmative covenants: actions the issuer must take (e.g., pay taxes, maintain assets)",
+       "Negative covenants: restrictions on issuer (e.g., no additional senior debt, dividend limits)",
+       "Collateral provisions describe assets pledged to secure the bond (secured vs. unsecured)",
+       "Events of default (missed payment, covenant violation) trigger bondholder protections"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "FI Valuation",
+    "los_items": [
+     {
+      "los": "LOS 35a: Describe yield measures for fixed-rate bonds, floating-rate notes, and money market instruments",
+      "explanation": "Yield measures quantify the return an investor earns on a bond. For fixed-rate bonds, the yield to maturity (YTM) is the most common measure, representing the IRR if held to maturity with coupons reinvested at YTM. Floating-rate notes use quoted margin vs. a reference rate (e.g., LIBOR/SOFR), and their effective spread measures value relative to par. Money market instruments (maturity ≤1 year) use discount rates or add-on rates expressed on a 360- or 365-day basis.",
+      "key_points": [
+       "YTM assumes reinvestment of coupons at YTM — a key limitation",
+       "Current yield = annual coupon / current price (ignores capital gain/loss)",
+       "Floating-rate note coupon resets periodically; quoted margin is fixed, discount margin adjusts for price",
+       "Money market: bank discount yield (360-day, on face value) vs. money market yield (360-day, on price)",
+       "Bond equivalent yield (BEY) annualizes semi-annual yields by multiplying by 2"
+      ]
+     },
+     {
+      "los": "LOS 35b: Calculate and interpret the full price, accrued interest, and flat price of a bond",
+      "explanation": "When a bond is traded between coupon dates, the buyer must compensate the seller for the interest accrued since the last coupon payment. The full price (dirty price) is the total amount paid and equals the flat price (clean price) plus accrued interest. Accrued interest = coupon × (days since last coupon / days in coupon period). Bond prices are typically quoted as flat prices, but settlement is at the full price.",
+      "key_points": [
+       "Full price (dirty price) = flat price (clean price) + accrued interest",
+       "Flat price is what is quoted in markets; full price is what is actually paid",
+       "Accrued interest = (coupon payment) × (t/T), where t = days since last coupon, T = days in period",
+       "Day count conventions: 30/360 for corporate/agency bonds; actual/actual for government bonds",
+       "On coupon dates, flat price = full price (accrued interest = 0)"
+      ]
+     },
+     {
+      "los": "LOS 36a: Calculate a bond's price given a market discount rate",
+      "explanation": "A bond's price is the present value of all its future cash flows (coupons and par) discounted at the market discount rate (required yield). For a semi-annual coupon bond: P = Σ [C/2 / (1 + r/2)^t] + [FV / (1 + r/2)^n], where n is the total number of periods. When the discount rate equals the coupon rate, the bond prices at par; when the discount rate exceeds the coupon rate, the bond trades at a discount (below par).",
+      "key_points": [
+       "P = Σ C/(1+r)^t + FV/(1+r)^n — sum of PV of coupons plus PV of par",
+       "Semi-annual convention: divide coupon and rate by 2, double the number of periods",
+       "Bond at par: coupon rate = market discount rate",
+       "Bond at discount: coupon rate < market discount rate (price < par)",
+       "Bond at premium: coupon rate > market discount rate (price > par)"
+      ]
+     },
+     {
+      "los": "LOS 36b: Identify the relationship among a bond's price, coupon rate, maturity, and market discount rate",
+      "explanation": "Bond prices and market discount rates move inversely — when rates rise, prices fall, and vice versa. The magnitude of this price sensitivity depends on coupon rate and maturity: lower coupon bonds and longer maturity bonds are more price-sensitive to rate changes. The pull-to-par effect means that as a bond approaches maturity, its price converges to face value regardless of the discount rate, because there are fewer future cash flows to discount.",
+      "key_points": [
+       "Inverse price-yield relationship: price falls when yields rise",
+       "Lower coupon → greater price sensitivity to yield changes (more duration)",
+       "Longer maturity → greater price sensitivity to yield changes",
+       "Price change is asymmetric: price rises more for a yield decrease than it falls for an equal yield increase (convexity)",
+       "Pull-to-par: premium/discount bonds converge to par as maturity approaches"
+      ]
+     },
+     {
+      "los": "LOS 37a: Calculate and interpret Macaulay duration, modified duration, and money duration of a bond",
+      "explanation": "Macaulay duration is the weighted average time to receipt of cash flows, where weights are the present values of each cash flow as a proportion of the bond's price. Modified duration (ModDur = MacDur / (1 + r/m)) estimates the percentage price change for a 1% change in yield. Money duration (dollar duration) converts this to an absolute dollar change: ΔP ≈ −ModDur × Δy × P. These measures are the primary tools for managing interest rate risk in fixed income portfolios.",
+      "key_points": [
+       "MacDur = Σ [t × PV(CFt)] / Price — weighted average time to cash flows (in years)",
+       "ModDur = MacDur / (1 + r/m); for annual compounding, ModDur = MacDur / (1 + r)",
+       "ΔP/P ≈ −ModDur × Δy (percentage price change approximation)",
+       "Money duration = ModDur × Full Price of bond (dollar sensitivity)",
+       "PVBP (DV01) = Money Duration × 0.0001 — price change for 1 basis point move"
+      ]
+     },
+     {
+      "los": "LOS 37b: Explain how a bond's maturity, coupon, and yield affect its interest rate risk",
+      "explanation": "Interest rate risk (price sensitivity to yield changes) increases with longer maturity and lower coupon rates, because a greater proportion of total cash flows is deferred into the future. Higher yields reduce duration because the present values of distant cash flows are discounted more heavily, reducing their weight in the duration calculation. Zero-coupon bonds have Macaulay duration equal to maturity, representing the maximum duration for a given maturity.",
+      "key_points": [
+       "Longer maturity → higher duration → greater interest rate risk",
+       "Lower coupon rate → higher duration (more weight on distant par payment)",
+       "Higher yield level → lower duration (distant CFs discounted more heavily)",
+       "Zero-coupon bond: MacDur = maturity (no intermediate coupon payments)",
+       "Callable bonds have lower effective duration than equivalent non-callable bonds"
+      ]
+     },
+     {
+      "los": "LOS 37c: Calculate and interpret convexity and explain its role in estimating price changes",
+      "explanation": "Convexity measures the curvature of the price-yield relationship; duration alone underestimates price increases and overestimates price decreases for a given yield change. A positive convexity adjustment is always favorable: the actual price change exceeds the duration-only estimate. The full price change formula is: ΔP/P ≈ −ModDur × Δy + ½ × Convexity × (Δy)². Bonds with greater convexity are more valuable, all else equal, because they have more upside and less downside.",
+      "key_points": [
+       "Convexity adjustment: ΔP/P ≈ −D×Δy + ½×C×(Δy)² (adds curvature correction to duration estimate)",
+       "Positive convexity: price rises more than duration predicts on yield drop; falls less on yield rise",
+       "Greater convexity is always desirable, ceteris paribus",
+       "Lower coupon and longer maturity bonds have higher convexity",
+       "Callable bonds can exhibit negative convexity at low yield levels (price is capped by call)"
+      ]
+     },
+     {
+      "los": "LOS 38a: Describe the term structure of interest rates and how it relates to bond yields",
+      "explanation": "The term structure of interest rates (yield curve) shows the relationship between bond yields and maturities for bonds of similar credit quality. Common shapes include normal (upward-sloping), inverted (downward-sloping), flat, and humped. Three major theories explain the yield curve shape: the pure expectations theory (forward rates reflect expected future spot rates), the liquidity preference theory (investors demand a premium for longer maturities), and the market segmentation theory (supply/demand in different maturity segments drives rates).",
+      "key_points": [
+       "Normal (upward-sloping) curve: long rates > short rates — most common shape",
+       "Inverted curve: short rates > long rates — often signals recession expectations",
+       "Pure expectations theory: long-term rates are geometric averages of expected future short-term rates",
+       "Liquidity preference theory: adds a liquidity premium to expectations, explaining normal upward slope",
+       "Market segmentation theory: different investor clienteles dominate different maturity segments"
+      ]
+     },
+     {
+      "los": "LOS 38b: Compare the spot rate, forward rate, and yield to maturity",
+      "explanation": "A spot rate is the yield on a zero-coupon bond for a specific maturity and represents the true discount rate for a cash flow at that future date. A forward rate is the interest rate agreed upon today for a loan that begins at a future date (e.g., the 1-year rate, 2 years from now). YTM is a single blended rate that equates the present value of all cash flows to the bond's price, and it equals the weighted average of the applicable spot rates. Bootstrapping extracts spot rates from a series of coupon bond prices.",
+      "key_points": [
+       "Spot rate: zero-coupon yield for a given maturity; used to price individual cash flows precisely",
+       "Forward rate f(j,k): rate on a loan starting j years from now for k years",
+       "Relationship: (1+S2)² = (1+S1)(1+f(1,1)) — no-arbitrage forward rate formula",
+       "YTM is a weighted average of spot rates — simpler but less precise than spot rate pricing",
+       "Par rate: coupon rate that prices a bond at par given current spot rates (used to build yield curves"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "MBS & ABS",
+    "los_items": [
+     {
+      "los": "LOS 40a: Describe covered bonds, asset-backed securities, and mortgage-backed securities",
+      "explanation": "Securitization pools financial assets (mortgages, auto loans, credit card receivables) and issues securities backed by those cash flows, transferring risk from originators to capital markets. Mortgage-backed securities (MBS) are backed by pools of mortgage loans; pass-through MBS simply pass principal and interest payments to investors. Asset-backed securities (ABS) use non-mortgage assets and often employ credit enhancement (tranching, overcollateralization). Covered bonds differ in that the assets remain on the issuer's balance sheet, providing dual recourse to both the issuer and the cover pool.",
+      "key_points": [
+       "Securitization: originators sell assets to an SPV which issues ABS/MBS to investors",
+       "Pass-through MBS: investors receive pro-rata share of all principal and interest cash flows",
+       "CMOs (collateralized mortgage obligations) create tranches with different prepayment priority",
+       "Covered bonds: assets stay on issuer's balance sheet — investor has recourse to issuer AND cover pool",
+       "Credit enhancement: tranching (senior/subordinate), overcollateralization, reserve accounts, guarantees"
+      ]
+     },
+     {
+      "los": "LOS 40b: Explain prepayment risk and how it affects MBS valuation",
+      "explanation": "Prepayment risk arises because mortgage borrowers can repay principal early (refinancing or selling the home), altering the timing and amount of cash flows to MBS investors. When interest rates fall, prepayments accelerate (contraction risk for discount MBS becomes less severe, but extension risk becomes relevant for premium MBS), and investors receive principal back sooner than expected and must reinvest at lower rates. Conversely, when rates rise, prepayments slow (extension risk), causing MBS to extend in duration exactly when investors least want it.",
+      "key_points": [
+       "Prepayment risk has two components: contraction risk (faster prepayments when rates fall) and extension risk (slower prepayments when rates rise)",
+       "Contraction risk: bond shortens in duration — investor gets principal back to reinvest at lower rates",
+       "Extension risk: bond extends in duration — investor locked into low-coupon bond as rates rise",
+       "Negative convexity: MBS prices are capped when rates fall (prepayments increase), unlike plain-vanilla bonds",
+       "PSA prepayment model is the benchmark for measuring and comparing MBS prepayment speeds"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Credit Analysis",
+    "los_items": [
+     {
+      "los": "LOS 39a: Describe credit risk and distinguish between default risk and recovery rate",
+      "explanation": "Credit risk is the risk of loss resulting from a borrower's failure to make promised payments. Default risk is the probability that the issuer will fail to make a scheduled coupon or principal payment. Recovery rate is the percentage of the bond's value that investors recover after a default, expressed as a percentage of face value. Expected loss = probability of default × (1 − recovery rate) × exposure. Credit spreads — the yield premium over a benchmark risk-free rate — compensate investors for bearing credit risk.",
+      "key_points": [
+       "Credit risk = default risk + loss severity (1 − recovery rate)",
+       "Expected loss = PD × LGD (loss given default = 1 − recovery rate)",
+       "Higher seniority in capital structure → higher recovery rate in bankruptcy",
+       "Credit spread = yield on risky bond − yield on benchmark risk-free bond (e.g., Treasury)",
+       "Credit ratings (investment grade: Baa3/BBB− and above; high yield: Ba1/BB+ and below)"
+      ]
+     },
+     {
+      "los": "LOS 39b: Explain the four Cs of credit analysis: capacity, collateral, covenants, character",
+      "explanation": "The four Cs framework provides a structured approach to evaluating an issuer's creditworthiness. Capacity refers to the issuer's ability to generate sufficient cash flows to service debt (analyzed through financial ratios like interest coverage and debt/EBITDA). Collateral assesses the quality and value of assets pledged as security. Covenants are the contractual terms in the indenture that protect bondholders by restricting issuer behavior. Character reflects management's integrity, track record, and commitment to honoring obligations.",
+      "key_points": [
+       "Capacity: cash flow generation ability — key ratios: EBITDA/interest, debt/EBITDA, free cash flow",
+       "Collateral: quality and liquidity of pledged assets; secured bonds have higher recovery rates",
+       "Covenants: affirmative (must do) and negative (must not do) obligations protecting bondholders",
+       "Character: management quality, governance, history of meeting obligations, accounting transparency",
+       "A fifth C sometimes added: Conditions — macroeconomic and industry environment affecting the borrower"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Derivatives": {
+  "topics": [
+   {
+    "name": "Derivative Markets",
+    "los_items": [
+     {
+      "los": "LOS 41a: Define a derivative and describe the basic features of derivative markets",
+      "explanation": "A derivative is a financial instrument whose value is derived from the performance of an underlying asset, rate, or index. Derivatives serve two primary purposes: risk management (hedging) and speculation. The underlying asset can be a stock, bond, currency, commodity, interest rate, or even another derivative. Key participants include hedgers, speculators, and arbitrageurs.",
+      "key_points": [
+       "A derivative's value depends entirely on the value of its underlying — it has no independent value.",
+       "Primary uses: hedging (reducing risk) and speculation (taking risk for profit).",
+       "Arbitrageurs exploit mispricings to earn risk-free profits, which also drives prices toward fair value.",
+       "Derivatives can be used to create synthetic positions — e.g., combining a forward and a bond to replicate a stock.",
+       "Counterparty risk (credit risk) is a key concern in derivative markets."
+      ]
+     },
+     {
+      "los": "LOS 41b: Distinguish between exchange-traded and over-the-counter derivatives",
+      "explanation": "Exchange-traded derivatives (ETDs) are standardized contracts traded on regulated exchanges, with a clearinghouse acting as the central counterparty to eliminate default risk. Over-the-counter (OTC) derivatives are privately negotiated between two parties and are customizable but carry counterparty (credit) risk. OTC markets are larger in notional value but less transparent than exchange markets.",
+      "key_points": [
+       "Exchange-traded: standardized terms, centrally cleared, virtually no counterparty risk, high liquidity.",
+       "OTC: customizable terms, bilateral contracts, subject to counterparty default risk.",
+       "The clearinghouse in ETD markets requires margin deposits and marks positions to market daily.",
+       "OTC markets are larger in total notional value; examples include most interest rate swaps and forwards.",
+       "Post-2008 reforms pushed more OTC derivatives toward central clearing to reduce systemic risk."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Forward & Futures",
+    "los_items": [
+     {
+      "los": "LOS 42a: Describe the characteristics of forward contracts and how they are priced",
+      "explanation": "A forward contract is a customized OTC agreement to buy or sell an asset at a specified price (the forward price) on a future date. No money changes hands at initiation; the contract has zero initial value by construction. The forward price is set so the contract is fairly valued at inception using the cost-of-carry model: F = S × (1 + r)^T adjusted for any benefits (dividends, convenience yield) or costs (storage) of holding the underlying.",
+      "key_points": [
+       "Forward contracts are OTC, customizable, and have counterparty risk — no daily settlement.",
+       "Forward price formula: F = S × (1 + r)^T − FV(Benefits) + FV(Costs).",
+       "The contract has zero value at initiation; value changes as the spot price moves.",
+       "The long party (buyer) profits if ST > F0; the short party profits if ST < F0.",
+       "Forward price ≠ expected future spot price; it reflects carry costs and benefits."
+      ]
+     },
+     {
+      "los": "LOS 42b: Calculate the payoff of a forward contract at expiration",
+      "explanation": "At expiration, the payoff of a forward contract is simply the difference between the spot price at expiration (ST) and the forward price agreed at initiation (F0). The long position pays F0 and receives the asset worth ST, so payoff = ST − F0. The short position has the mirror image payoff: F0 − ST. Forward payoffs are linear and symmetric.",
+      "key_points": [
+       "Long forward payoff = ST − F0 (positive if price rose, negative if price fell).",
+       "Short forward payoff = F0 − ST (mirror image of long).",
+       "Payoffs are linear — no optionality, no maximum or minimum bound.",
+       "The sum of long and short payoffs is always zero — forwards are zero-sum contracts.",
+       "Unlike options, the long forward can have a negative payoff (unlimited downside)."
+      ]
+     },
+     {
+      "los": "LOS 43a: Describe the characteristics of futures contracts and how they differ from forwards",
+      "explanation": "Futures contracts are standardized, exchange-traded agreements to buy or sell an asset at a set price on a future date. Unlike forwards, futures require an initial margin deposit and are marked to market daily, meaning gains and losses are settled in cash each day. This daily settlement eliminates the buildup of large counterparty exposures and reduces default risk.",
+      "key_points": [
+       "Futures are standardized and exchange-traded; forwards are customized and OTC.",
+       "Daily mark-to-market (variation margin) is the critical mechanical difference from forwards.",
+       "Initial margin is required; if the margin account falls below the maintenance margin, a margin call is issued.",
+       "Because of daily settlement, the futures price and forward price can differ when interest rates are correlated with the underlying asset price.",
+       "Futures can be closed by taking an offsetting position before expiration — most futures are cash-settled or closed, not physically delivered."
+      ]
+     },
+     {
+      "los": "LOS 43b: Explain how futures prices are determined using the cost-of-carry model",
+      "explanation": "The cost-of-carry model states that the futures price equals the spot price compounded at the risk-free rate, adjusted for the benefits and costs of holding the underlying asset. Benefits (dividends, coupon payments, convenience yield) reduce the futures price, while costs (storage, insurance) increase it. The net cost of carry is r + storage costs − income yield.",
+      "key_points": [
+       "Futures price: F = S × (1 + r)^T − FV(Benefits) + FV(Costs) — same structure as forward pricing.",
+       "Contango: futures price > spot price (normal when carry costs dominate).",
+       "Backwardation: futures price < spot price (common in commodities with high convenience yield).",
+       "Basis = spot price − futures price; basis risk arises when the basis changes unexpectedly.",
+       "Arbitrage enforces the cost-of-carry relationship: if futures are mispriced, arbitrageurs buy spot/sell futures (or vice versa) to earn a riskless profit."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Options & Swaps",
+    "los_items": [
+     {
+      "los": "LOS 44a: Define basic option types (calls and puts) and describe their characteristics",
+      "explanation": "A call option gives the buyer the right, but not the obligation, to buy the underlying asset at the strike price (X) on or before expiration. A put option gives the buyer the right to sell the underlying at X. The option buyer pays a premium upfront; the seller (writer) receives the premium and bears the obligation to perform if the buyer exercises. Options can be American (exercisable anytime) or European (exercisable only at expiration).",
+      "key_points": [
+       "Call buyer profits when ST > X + premium; put buyer profits when ST < X − premium.",
+       "The option buyer's maximum loss is the premium paid; gain is theoretically unlimited (calls) or capped (puts).",
+       "The option seller's maximum gain is the premium; loss is theoretically unlimited (short call) or large (short put).",
+       "Moneyness: in-the-money (ITM), at-the-money (ATM), out-of-the-money (OTM) — based on intrinsic value.",
+       "Intrinsic value: max(0, S − X) for calls; max(0, X − S) for puts. Time value = option price − intrinsic value."
+      ]
+     },
+     {
+      "los": "LOS 44b: Calculate the value at expiration of long and short call and put options",
+      "explanation": "At expiration, option time value disappears and the option is worth only its intrinsic value. A long call is worth max(0, ST − X) and a long put is worth max(0, X − ST). Short positions have payoffs that are the negatives of the corresponding long positions. Profit/loss includes the initial premium paid or received.",
+      "key_points": [
+       "Long call payoff at expiration: max(0, ST − X); profit = payoff − premium paid.",
+       "Long put payoff at expiration: max(0, X − ST); profit = payoff − premium paid.",
+       "Short call payoff: −max(0, ST − X); maximum profit = premium received.",
+       "Short put payoff: −max(0, X − ST); maximum profit = premium received.",
+       "At expiration, the option is either exercised (ITM) or expires worthless (OTM or ATM)."
+      ]
+     },
+     {
+      "los": "LOS 44c: Explain put-call parity and calculate the price of one option given the price of the other",
+      "explanation": "Put-call parity establishes a no-arbitrage relationship between the prices of European calls and puts with the same underlying, strike price, and expiration: C + PV(X) = P + S. This means a portfolio of a long call and a risk-free zero-coupon bond replicates a portfolio of a long put and the underlying stock. Any deviation from this relationship creates an arbitrage opportunity.",
+      "key_points": [
+       "Put-call parity formula: C + PV(X) = P + S, where PV(X) = X / (1 + r)^T.",
+       "Can be rearranged to find any one variable: e.g., P = C + PV(X) − S.",
+       "Applies strictly to European options on non-dividend-paying stocks.",
+       "Synthetic positions: a synthetic call = long put + long stock − PV(X); a synthetic put = long call − stock + PV(X).",
+       "This relationship is one of the most frequently tested topics — practice all four rearrangements."
+      ]
+     },
+     {
+      "los": "LOS 44d: Describe the factors that affect option prices and how they affect call and put values",
+      "explanation": "Six factors affect option prices: current stock price (S), strike price (X), time to expiration (T), risk-free rate (r), volatility (σ), and dividends. Higher volatility and more time to expiration increase both call and put values by increasing the probability of a favorable outcome. Calls and puts react differently to changes in S, X, r, and dividends.",
+      "key_points": [
+       "↑S → call value ↑, put value ↓ (delta effect).",
+       "↑X → call value ↓, put value ↑.",
+       "↑σ → both call and put values ↑ (volatility is always beneficial to option buyers).",
+       "↑T → both call and put values ↑ (more time = more opportunity for favorable moves).",
+       "↑r → call value ↑ (PV of strike falls), put value ↓; ↑dividends → call value ↓, put value ↑ (ex-dividend price drop)."
+      ]
+     },
+     {
+      "los": "LOS 45a: Describe the characteristics of swap contracts and calculate the net payment",
+      "explanation": "A swap is an OTC agreement in which two parties exchange a series of cash flows based on a notional principal amount over a specified period. The notional principal is not exchanged — it serves only as the basis for calculating payments. Only the net payment changes hands between the two parties on each settlement date.",
+      "key_points": [
+       "Swaps are OTC contracts — customizable terms, counterparty risk, no exchange trading (typically).",
+       "Notional principal is NOT exchanged; it is used only to calculate payment amounts.",
+       "Net payment = (fixed rate − floating rate) × notional principal × (days/360 or days/365).",
+       "The party that benefits depends on whether the floating rate rises above or below the fixed rate.",
+       "Swaps can be viewed as a series of forward contracts (FRAs for interest rate swaps)."
+      ]
+     },
+     {
+      "los": "LOS 45b: Explain interest rate swaps, currency swaps, and equity swaps",
+      "explanation": "In an interest rate swap, one party pays a fixed rate and receives a floating rate (or vice versa) on a notional principal in the same currency — useful for converting fixed-rate debt to floating or vice versa. In a currency swap, cash flows are in two different currencies and the notional principal is typically exchanged at inception and maturity. In an equity swap, one party pays a return based on an equity index or stock and receives a fixed or floating rate.",
+      "key_points": [
+       "Interest rate swap: fixed-rate payer benefits when floating rates rise above the fixed rate; floating-rate payer benefits when rates fall.",
+       "Currency swap: involves two currencies, exchange of notional at start and end, useful for accessing foreign capital markets.",
+       "Equity swap: one leg is tied to equity returns (which can be negative), the other to fixed/floating rate — used to gain or reduce equity exposure.",
+       "Net payment in interest rate swap: (fixed − LIBOR/SOFR) × notional × period fraction — always calculate net, not gross.",
+       "All three swap types share the same structure: periodic net payments, notional not exchanged (except currency swaps), OTC customization."
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Alternative Investments": {
+  "topics": [
+   {
+    "name": "Real Estate & PE",
+    "los_items": [
+     {
+      "los": "LOS 46a: Describe characteristics of alternative investments compared to traditional investments",
+      "explanation": "Alternative investments include asset classes such as private equity, hedge funds, real estate, commodities, and infrastructure — distinct from traditional stocks and bonds. They are generally characterized by lower liquidity, less regulatory oversight, higher fees, limited transparency, and returns that may exhibit low correlation with traditional assets. Many alternative investments are only accessible to institutional or accredited investors due to their complexity and minimum investment thresholds. Their illiquidity premium and unique risk exposures are central reasons investors include them in portfolios.",
+      "key_points": [
+       "Lower liquidity than traditional assets — investments may be locked up for years",
+       "Less regulatory oversight and transparency compared to public markets",
+       "Higher fees and complex structures (e.g., limited partnerships)",
+       "Returns often have low correlation with stocks and bonds, offering diversification",
+       "Typically restricted to institutional or accredited (qualified) investors"
+      ]
+     },
+     {
+      "los": "LOS 46b: Explain the potential benefits of adding alternative investments to a portfolio",
+      "explanation": "Adding alternative investments to a traditional portfolio can improve the efficient frontier by enhancing diversification, as alternatives often have low or negative correlation with equities and fixed income. This can reduce overall portfolio volatility without necessarily sacrificing expected return. Some alternatives offer access to illiquidity premiums — extra return compensating investors for holding assets that cannot be easily sold. Others provide inflation hedging benefits, particularly real assets like real estate and commodities.",
+      "key_points": [
+       "Diversification benefit: low correlation with traditional asset classes reduces portfolio risk",
+       "Access to illiquidity premium — compensation for accepting long lock-up periods",
+       "Potential for higher risk-adjusted returns compared to traditional-only portfolios",
+       "Inflation hedging: real assets (real estate, commodities) often move with inflation",
+       "Expands the efficient frontier, allowing better risk-return trade-offs"
+      ]
+     },
+     {
+      "los": "LOS 48a: Describe private equity strategies including venture capital, growth equity, and buyouts",
+      "explanation": "Private equity (PE) encompasses investing in companies not listed on public exchanges, with three primary strategies differentiated by company stage and risk. Venture capital (VC) targets early-stage startups with high growth potential but also high failure rates, often taking minority stakes. Growth equity invests in more mature companies seeking expansion capital without changing control. Leveraged buyouts (LBOs) acquire established companies using significant debt financing, aiming to improve operations and exit at a profit.",
+      "key_points": [
+       "Venture Capital: early-stage, high risk/return, minority stakes, portfolio approach (expect many failures)",
+       "Growth Equity: minority stake in established profitable firms seeking expansion capital",
+       "Leveraged Buyout (LBO): majority acquisition using substantial debt; targets stable cash flow businesses",
+       "Mezzanine financing: hybrid debt/equity used to bridge gaps in LBO capital structures",
+       "PE firms typically exit via IPO, strategic sale, or secondary buyout after 4–7 years"
+      ]
+     },
+     {
+      "los": "LOS 48b: Describe the life cycle of a private equity fund and explain performance metrics (TVPI, DPI, RVPI)",
+      "explanation": "A private equity fund follows a structured lifecycle: capital is committed during fundraising, deployed during the investment period (typically years 1–5), actively managed, and then exited during the harvesting period (years 5–10+). The vintage year — when the fund first draws capital — is important for benchmarking performance across PE funds. Performance is measured using multiples of invested capital rather than just IRR, giving LPs a sense of actual wealth creation. TVPI, DPI, and RVPI together provide a complete picture of fund performance at any point in time.",
+      "key_points": [
+       "TVPI (Total Value to Paid-In) = (Distributions + Residual Value) / Paid-In Capital — total return multiple",
+       "DPI (Distributions to Paid-In) = Cumulative Distributions / Paid-In Capital — realized return only",
+       "RVPI (Residual Value to Paid-In) = Residual NAV / Paid-In Capital — unrealized return only",
+       "TVPI = DPI + RVPI at any point in the fund's life",
+       "Vintage year benchmarking is essential since PE returns are heavily influenced by market conditions at fund inception"
+      ]
+     },
+     {
+      "los": "LOS 49a: Describe commercial real estate investments and valuation approaches",
+      "explanation": "Commercial real estate (CRE) includes income-producing properties such as office buildings, retail centers, industrial warehouses, and apartment complexes. Investors can access CRE directly (ownership) or indirectly via REITs, real estate limited partnerships, or mortgage-backed securities. Three primary valuation approaches exist: the income approach (based on expected cash flows), the sales comparison approach (based on comparable transactions), and the cost approach (replacement cost minus depreciation). The income approach is most commonly tested on the CFA exam.",
+      "key_points": [
+       "Three valuation approaches: income, sales comparison, and cost approach",
+       "Income approach: most common on exam — based on Net Operating Income (NOI) and cap rate",
+       "Sales comparison: uses recent comparable property sale prices adjusted for differences",
+       "Cost approach: estimates land value + depreciated replacement cost of improvements",
+       "CRE characteristics: illiquid, high transaction costs, local market dependent, inflation-hedging properties"
+      ]
+     },
+     {
+      "los": "LOS 49b: Calculate the capitalization rate and value of real estate using the income approach",
+      "explanation": "The income approach values real estate by capitalizing its Net Operating Income (NOI) using a market-derived capitalization rate. NOI is calculated as gross potential rental income minus vacancy and credit losses minus operating expenses (excluding financing costs and depreciation). The cap rate reflects the market's required return on the property type and location. Property Value = NOI / Cap Rate, and conversely, Cap Rate = NOI / Property Value.",
+      "key_points": [
+       "Cap Rate = NOI / Property Value; Property Value = NOI / Cap Rate",
+       "NOI = Gross Rental Income − Vacancy & Credit Losses − Operating Expenses (excludes mortgage payments and depreciation)",
+       "Higher cap rate → lower property value for a given NOI (reflects higher required return/more risk)",
+       "Cap rates are market-derived and vary by property type, location, and economic conditions",
+       "The income approach is most appropriate for income-producing properties with stable cash flows"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Hedge Funds & Commodities",
+    "los_items": [
+     {
+      "los": "LOS 47a: Describe hedge fund strategies and the typical structure of hedge funds",
+      "explanation": "Hedge funds are pooled investment vehicles that employ diverse, often sophisticated strategies to generate returns regardless of market direction. Common strategies include long/short equity (simultaneous long and short stock positions), global macro (bets on macroeconomic trends), event-driven (merger arbitrage, distressed securities), and relative value (exploiting price differentials between related instruments). Structurally, hedge funds are typically organized as limited partnerships, with the fund manager acting as the general partner (GP) and investors as limited partners (LPs). They face fewer regulatory restrictions than mutual funds, enabling use of leverage, derivatives, and short selling.",
+      "key_points": [
+       "Long/Short Equity: long undervalued and short overvalued stocks to reduce market exposure",
+       "Global Macro: top-down bets on currencies, interest rates, commodities based on macroeconomic views",
+       "Event-Driven: profit from corporate events — mergers (risk arbitrage), bankruptcies (distressed debt)",
+       "Relative Value: exploit pricing inefficiencies between related securities (e.g., convertible bond arbitrage)",
+       "Structure: limited partnership — GP manages the fund; LPs provide capital; lock-up periods common (1–3 years)"
+      ]
+     },
+     {
+      "los": "LOS 47b: Explain the fee structure of hedge funds and calculate fees under the 2-and-20 model",
+      "explanation": "Hedge funds typically charge a management fee (usually 2% of AUM annually) plus a performance/incentive fee (typically 20% of profits above a benchmark or high-water mark). The high-water mark provision ensures the manager only earns incentive fees on new profits — if the fund loses value, it must recover to its previous peak before incentive fees are charged again. Some funds also include a hurdle rate, meaning the fund must exceed a minimum return before any incentive fee is earned. These fees are a significant drag on investor net returns and are a frequent exam topic.",
+      "key_points": [
+       "2-and-20 model: 2% annual management fee on AUM + 20% incentive fee on profits",
+       "High-water mark: incentive fees only charged on gains above the previous highest NAV",
+       "Hurdle rate: minimum return (e.g., LIBOR or fixed %) that must be exceeded before incentive fee applies",
+       "Management fee is charged regardless of performance; incentive fee is performance-contingent",
+       "Fee calculation: Total Fee = Management Fee + (Incentive Fee % × profits above hurdle/HWM)"
+      ]
+     },
+     {
+      "los": "LOS 50a: Describe commodity investments and how commodity prices are determined",
+      "explanation": "Commodities are physical goods including energy (oil, natural gas), metals (gold, copper), and agricultural products (wheat, corn). Commodity prices are determined by supply and demand fundamentals — supply disruptions (geopolitical, weather) and demand shifts (economic growth, industrial use) drive price volatility. Investors gain commodity exposure via physical ownership, futures contracts, commodity-linked ETFs, or shares of commodity-producing companies. Commodities provide inflation hedging and diversification since their price drivers differ from those of financial assets.",
+      "key_points": [
+       "Three main commodity sectors: energy, metals (precious and industrial), and agricultural products",
+       "Prices driven by supply/demand fundamentals — weather, geopolitics, economic cycles",
+       "Investment routes: physical ownership, futures, ETFs, commodity producer equities",
+       "Commodity futures are the most common vehicle; spot prices ≠ futures prices due to carry costs",
+       "Inflation hedge: commodity prices often rise with inflation, unlike bonds which lose real value"
+      ]
+     },
+     {
+      "los": "LOS 50b: Explain the roll return and its significance for commodity futures investors",
+      "explanation": "Commodity futures investors do not typically take physical delivery; instead, they roll positions by selling expiring contracts and buying next-period contracts. The roll return (or roll yield) arises from this rolling process and can be positive or negative depending on the shape of the futures curve. When the futures curve is in backwardation (futures prices below spot), rolling generates a positive roll return as the investor sells high and buys low. Conversely, in contango (futures prices above spot), rolling generates a negative roll return, eroding overall returns.",
+      "key_points": [
+       "Roll return: profit or loss from rolling expiring futures contracts into later-dated contracts",
+       "Backwardation: futures price < spot price → positive roll return (buy cheap, sell at higher spot)",
+       "Contango: futures price > spot price → negative roll return (buy expensive, sell at lower spot)",
+       "Total commodity futures return = Spot price return + Roll return + Collateral return",
+       "Contango is common for storable commodities with high storage costs; backwardation often occurs during supply shortages"
+      ]
+     },
+     {
+      "los": "LOS 51a: Describe infrastructure investments and their risk-return characteristics",
+      "explanation": "Infrastructure investments involve financing or owning long-lived physical assets essential to the economy, such as toll roads, airports, utilities, pipelines, and hospitals. These assets are often characterized by monopolistic or quasi-monopolistic market positions, regulated revenues, stable and predictable cash flows, and long asset lives. Infrastructure provides inflation-linked returns (many contracts include CPI escalators), low correlation with traditional asset classes, and steady income distributions. However, risks include political/regulatory risk, construction risk (for greenfield projects), and illiquidity.",
+      "key_points": [
+       "Brownfield infrastructure: existing, operating assets — lower risk, stable cash flows (e.g., operating toll road)",
+       "Greenfield infrastructure: new construction projects — higher risk due to construction and ramp-up uncertainty",
+       "Key characteristics: long asset life, monopolistic position, regulated revenues, inflation-linked cash flows",
+       "Benefits: inflation hedge, low correlation with stocks/bonds, stable income, portfolio diversification",
+       "Key risks: regulatory/political risk, leverage risk, illiquidity, and demand risk for usage-based assets"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Portfolio Management": {
+  "topics": [
+   {
+    "name": "Portfolio Basics",
+    "los_items": [
+     {
+      "los": "LOS 52a: Describe the portfolio management process and components of an investment policy statement (IPS)",
+      "explanation": "The portfolio management process is a continuous cycle of planning, execution, and feedback that aligns a client's investments with their objectives. The Investment Policy Statement (IPS) is the foundation document that formalizes a client's goals, constraints, and guidelines for the manager. Key IPS components include return objectives, risk tolerance, time horizon, liquidity needs, tax considerations, legal constraints, and unique circumstances. A well-constructed IPS ensures the manager acts in the client's best interest and provides a benchmark for evaluating performance.",
+      "key_points": [
+       "IPS has two main sections: objectives (return and risk) and constraints (TTLLU: Time horizon, Taxes, Liquidity, Legal, Unique)",
+       "Return objective can be stated in absolute terms or relative to a benchmark",
+       "Risk tolerance is influenced by both ability to take risk (financial capacity) and willingness to take risk (psychological comfort)",
+       "The portfolio management process is iterative: plan → execute → feedback → revise",
+       "IPS is a living document that should be updated when client circumstances change"
+      ]
+     },
+     {
+      "los": "LOS 57a: Describe the components of a strategic asset allocation and tactical asset allocation",
+      "explanation": "Strategic asset allocation (SAA) is the long-term target mix of asset classes (e.g., 60% equity, 40% bonds) derived from the IPS objectives and constraints, reflecting the investor's long-run risk-return goals. Tactical asset allocation (TAA) involves short-term, deliberate deviations from the SAA to exploit perceived market mispricings or macroeconomic views. SAA drives the majority of portfolio return variability over time, while TAA is an active management overlay. Rebalancing periodically restores the portfolio back to its SAA targets.",
+      "key_points": [
+       "SAA is the primary determinant of long-run portfolio performance — studies show it explains ~90% of return variability",
+       "TAA is a short-term, active deviation from SAA based on market outlook — it adds risk and requires skill to add value",
+       "Rebalancing back to SAA targets is necessary because asset class drifts alter the risk profile",
+       "SAA is based on capital market expectations and optimizer inputs (expected returns, volatilities, correlations)",
+       "Both SAA and TAA must be consistent with the client's IPS"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Risk & Return",
+    "los_items": [
+     {
+      "los": "LOS 52b: Describe the components of risk and return and how risk is measured",
+      "explanation": "Total risk of an investment is composed of systematic risk (market risk, non-diversifiable) and unsystematic risk (firm-specific, diversifiable). Standard deviation measures total risk, while beta measures only systematic risk. In a well-diversified portfolio, unsystematic risk is eliminated, so only systematic risk is priced and rewarded by the market. Expected return must compensate investors for the level of systematic risk they bear.",
+      "key_points": [
+       "Total risk = Systematic risk + Unsystematic risk",
+       "Unsystematic risk is diversified away in a large portfolio; only systematic risk earns a risk premium",
+       "Standard deviation (σ) measures total risk; Beta (β) measures systematic risk",
+       "Risk-averse investors demand higher expected return for higher risk",
+       "Variance (σ²) and standard deviation (σ) are the primary statistical measures of investment risk"
+      ]
+     },
+     {
+      "los": "LOS 53a: Calculate and interpret the mean, variance, and covariance of a portfolio",
+      "explanation": "Portfolio expected return is the weighted average of individual asset expected returns: Rp = Σ wi × Ri. Portfolio variance is not simply the weighted average of individual variances — it also depends on the covariance (or correlation) between assets. For a two-asset portfolio: σ²p = w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ₁₂. Lower (or negative) correlation between assets reduces portfolio variance, which is the mathematical basis for diversification.",
+      "key_points": [
+       "Portfolio return is the weighted average of component returns: Rp = Σ wi × Ri",
+       "Portfolio variance depends on weights, individual variances, AND covariances between all pairs",
+       "Correlation ρ ranges from -1 to +1; lower ρ means greater diversification benefit",
+       "Covariance = ρ₁₂ × σ₁ × σ₂ (can be derived from correlation)",
+       "When ρ = -1, perfect negative correlation; maximum diversification benefit; when ρ = +1, no diversification benefit"
+      ]
+     },
+     {
+      "los": "LOS 54a: Describe the assumptions underlying the CAPM and explain its implications",
+      "explanation": "The Capital Asset Pricing Model (CAPM) is built on a set of simplifying assumptions about investors and markets. Key assumptions include: investors are rational and risk-averse, markets are frictionless (no taxes or transaction costs), all investors have the same one-period time horizon and homogeneous expectations about asset returns. These assumptions imply that all investors hold the same optimal risky portfolio — the market portfolio — and only systematic risk is priced.",
+      "key_points": [
+       "CAPM assumes investors are rational, risk-averse, and have homogeneous expectations",
+       "All investors hold the market portfolio as the optimal risky portfolio (same efficient frontier)",
+       "No taxes, no transaction costs, all assets are infinitely divisible and publicly traded",
+       "Investors can borrow and lend at the risk-free rate",
+       "Implication: only systematic (beta) risk is compensated — unsystematic risk earns no premium"
+      ]
+     },
+     {
+      "los": "LOS 54b: Calculate and interpret a security's beta and apply the CAPM to determine expected return",
+      "explanation": "Beta measures the sensitivity of a security's returns to market returns, calculated as β = Cov(Ri, Rm) / Var(Rm) = ρim × σi / σm. The CAPM states that a security's expected return equals the risk-free rate plus a risk premium proportional to its beta: E(Ri) = Rf + βi × [E(Rm) - Rf]. Beta of 1.0 means the security moves in line with the market; β > 1 means amplified market moves; β < 1 means dampened moves; β < 0 means inverse relationship.",
+      "key_points": [
+       "β = Cov(Ri, Rm) / Var(Rm) = ρim × (σi / σm)",
+       "CAPM: E(Ri) = Rf + βi × (E(Rm) - Rf) — the equity risk premium is scaled by beta",
+       "Market portfolio has β = 1.0; risk-free asset has β = 0",
+       "Securities above the SML are undervalued (expected return > required); below SML are overvalued",
+       "The market risk premium = E(Rm) - Rf; the security's risk premium = βi × [E(Rm) - Rf]"
+      ]
+     },
+     {
+      "los": "LOS 54c: Identify and explain limitations of the CAPM",
+      "explanation": "Despite its elegance, the CAPM has several well-documented limitations rooted in its unrealistic assumptions. The market portfolio is theoretically unobservable (the true market includes all risky assets globally), so proxies like the S&P 500 are used, introducing roll error. Empirical tests show that factors beyond beta — such as size, value, and momentum — explain return differences not captured by CAPM. Additionally, beta itself is estimated from historical data and is unstable over time.",
+      "key_points": [
+       "The true market portfolio is unobservable — proxies introduce benchmark error (Roll's critique)",
+       "Beta is estimated from historical data and is not stable over time",
+       "CAPM is a single-factor model; multi-factor models (Fama-French) better explain cross-sectional returns",
+       "Assumptions of no taxes, no transaction costs, and homogeneous expectations are unrealistic",
+       "Despite limitations, CAPM remains widely used as a baseline for estimating cost of equity and required returns"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Portfolio Construction",
+    "los_items": [
+     {
+      "los": "LOS 53b: Describe the efficient frontier and identify the optimal portfolio",
+      "explanation": "The efficient frontier is the set of portfolios that offer the highest expected return for each level of risk (or lowest risk for each level of return) — these are mean-variance optimal portfolios. Portfolios below the frontier are suboptimal (dominated), while portfolios above it are unattainable. The optimal portfolio for a specific investor is the point on the efficient frontier that is tangent to the investor's highest attainable indifference curve, reflecting their risk preferences.",
+      "key_points": [
+       "The efficient frontier is upward-sloping in return-risk (σ) space; only the upper portion is efficient",
+       "Minimum variance portfolio (MVP) is the leftmost point on the efficient frontier",
+       "Optimal portfolio = tangency point between investor's indifference curve and the efficient frontier",
+       "More risk-averse investors choose portfolios closer to the MVP (lower on the frontier)",
+       "Adding assets with low correlations to a portfolio expands the efficient frontier to the left (better risk-return tradeoff)"
+      ]
+     },
+     {
+      "los": "LOS 53c: Explain the capital allocation line and the capital market line",
+      "explanation": "The Capital Allocation Line (CAL) represents all risk-return combinations achievable by combining a risky portfolio with the risk-free asset; its slope is the Sharpe ratio of the chosen risky portfolio. When the risky portfolio is the market portfolio, the CAL becomes the Capital Market Line (CML). Under CAPM assumptions, all investors hold a combination of the risk-free asset and the market portfolio, so the CML dominates all individual CALs. Points above the risk-free rate on the CML involve lending/borrowing at Rf.",
+      "key_points": [
+       "CAL slope = (Rp - Rf) / σp = Sharpe ratio of the risky portfolio",
+       "CML = CAL using the market portfolio; it has the steepest possible slope (highest Sharpe ratio)",
+       "On the CML: E(Rp) = Rf + [(E(Rm) - Rf) / σm] × σp",
+       "Points to the right of the market portfolio on CML require borrowing at Rf (leveraged portfolio)",
+       "CML applies only to efficient (fully diversified) portfolios; SML applies to all assets and portfolios"
+      ]
+     },
+     {
+      "los": "LOS 55a: Calculate and interpret the Sharpe ratio, Treynor ratio, and Jensen's alpha",
+      "explanation": "These three measures evaluate risk-adjusted portfolio performance using different risk denominators. The Sharpe ratio uses total risk (σ), making it appropriate for investors with a single undiversified portfolio. The Treynor ratio uses beta (systematic risk), suitable when the portfolio is one of many in a diversified account. Jensen's alpha measures excess return above CAPM-predicted return, identifying true manager skill. All three should be used together for a complete performance picture.",
+      "key_points": [
+       "Sharpe = (Rp - Rf) / σp — uses total risk; best for standalone, undiversified portfolio",
+       "Treynor = (Rp - Rf) / βp — uses systematic risk; best for one portfolio among many (diversified)",
+       "Jensen's Alpha = Rp - [Rf + β(Rm - Rf)] — positive alpha indicates outperformance vs CAPM",
+       "Higher Sharpe/Treynor is better; positive Jensen's alpha is better",
+       "Information Ratio = Active Return / Tracking Error — measures consistency of active management"
+      ]
+     },
+     {
+      "los": "LOS 55b: Explain how to evaluate portfolio performance",
+      "explanation": "Portfolio performance evaluation requires assessing returns in the context of risk taken, benchmarks, and the manager's stated objectives. The process involves three components: performance measurement (calculating returns), performance attribution (explaining the sources of return — allocation vs. selection), and performance appraisal (judging whether returns were achieved through skill or luck). Benchmarks must be investable, specified in advance, and appropriate for the mandate.",
+      "key_points": [
+       "Performance evaluation has three steps: measurement → attribution → appraisal",
+       "A valid benchmark must be unambiguous, investable, measurable, appropriate, and specified in advance",
+       "Performance attribution separates returns into: asset allocation effect, security selection effect, and interaction effect",
+       "Manager skill is distinguished from luck using statistical significance tests over multiple periods",
+       "Risk-adjusted measures (Sharpe, Treynor, alpha) are essential — raw returns alone are insufficient"
+      ]
+     },
+     {
+      "los": "LOS 56a: Describe the major types of investor behavioral biases",
+      "explanation": "Behavioral finance identifies systematic, predictable deviations from rational decision-making that affect investor behavior. These biases lead investors to make suboptimal portfolio decisions that can harm long-term wealth accumulation. Major biases include overconfidence (overestimating one's abilities), loss aversion (losses feel worse than equivalent gains feel good), herding (following the crowd), and anchoring (over-relying on initial information). Recognizing these biases is the first step toward mitigating their effects.",
+      "key_points": [
+       "Overconfidence bias leads to excessive trading and under-diversification",
+       "Loss aversion causes investors to hold losers too long and sell winners too early (disposition effect)",
+       "Herding creates asset bubbles and crashes as investors follow the crowd rather than fundamentals",
+       "Anchoring causes investors to rely too heavily on initial prices or estimates when making decisions",
+       "Representativeness bias leads to over-weighting recent trends and extrapolating them into the future"
+      ]
+     },
+     {
+      "los": "LOS 56b: Distinguish between cognitive and emotional biases and explain their investment implications",
+      "explanation": "Cognitive biases stem from faulty reasoning, flawed information processing, or logical errors — they can often be corrected through education and better decision-making frameworks. Emotional biases arise from feelings and intuitions rather than logic — they are harder to overcome because they are tied to psychological comfort. Examples of cognitive biases include anchoring, framing, and availability. Emotional biases include loss aversion, overconfidence, and regret aversion. Advisors can adapt to emotional biases but should correct cognitive biases.",
+      "key_points": [
+       "Cognitive biases: errors in reasoning/memory — examples: anchoring, framing, availability, hindsight",
+       "Emotional biases: driven by feelings — examples: loss aversion, overconfidence, regret aversion, status quo",
+       "Cognitive biases are more correctable with education; emotional biases require behavioral adaptation",
+       "Loss aversion is the most tested emotional bias — losses are felt ~2x more intensely than equivalent gains",
+       "Investment implication: biases cause under-diversification, excessive trading, market timing errors, and performance drag"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
