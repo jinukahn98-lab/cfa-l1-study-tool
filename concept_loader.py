@@ -22,8 +22,18 @@ def _load_pdf_readings() -> dict:
     """Load full reading texts extracted from SchweserNotes PDFs."""
     try:
         import json
+        import re
         if PDF_READING_FILE.exists():
-            return json.loads(PDF_READING_FILE.read_text("utf-8"))
+            data = json.loads(PDF_READING_FILE.read_text("utf-8"))
+            # Clean reading texts: remove video markers, excess whitespace
+            for mod in data:
+                for r in data[mod].get("readings", []):
+                    text = r.get("text", "")
+                    text = re.sub(r'Video covering\s*\n\s*this content is\s*\n\s*available online\.?\s*', '', text)
+                    text = re.sub(r'\n{3,}', '\n\n', text)
+                    text = text.strip()
+                    r["text"] = text
+            return data
     except Exception:
         pass
     return {}
