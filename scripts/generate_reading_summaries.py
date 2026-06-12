@@ -80,17 +80,17 @@ def generate_reading_summary(module: str, reading: dict) -> Optional[dict]:
     title = reading.get("title", "Unknown")
     text = clean_text(reading.get("text", ""))
 
-    prompt = f"""You are a CFA Level 1 expert tutor creating a **Hangul (한글) study document** style summary.
+    prompt = f"""You are a CFA Level 1 expert tutor creating a Korean study document (한글 학습 자료).
+
+Write everything in **Korean (한글)**. Use English only for technical terms (e.g., "discount rate", "HPR") in parentheses.
 
 Format your response like a well-structured study guide:
 
-1. SUMMARY: 2-4 short paragraphs with key concepts explained clearly. Use **bold** for key terms.
-2. KEY POINTS: 6-8 specific, exam-focused bullet points. Each bullet must be a complete, actionable fact.
-3. KEY FORMULAS: If applicable, include a markdown table with Formula | Description | Example
-4. COMPARISON TABLE: If the reading compares concepts, include a markdown table (e.g., Concept A vs Concept B)
+1. SUMMARY: 2-4 short paragraphs in Korean. Use **bold** for key terms. Include markdown tables (| pipes) for comparisons, formulas, or categories.
+2. KEY POINTS: 6-8 specific, exam-focused bullet points in Korean.
+3. Include markdown tables where appropriate: 공식 비교표, 개념 비교표, 분류표 등
 
-Use bullet points (•) extensively within paragraphs too — avoid long prose paragraphs.
-Use markdown tables (with | pipes) for any comparisons, categories, or formulas.
+Use bullet points (•) extensively. Tables (| pipes) for any classifications or comparisons.
 
 Reading: {title}
 
@@ -100,20 +100,21 @@ Respond ONLY with this exact JSON structure:
 {{{{
   "reading_num": {rnum},
   "title": "{title}",
-  "summary": "Full study document text with **bold** terms, bullet points, markdown tables...",
+  "summary": "Full study document in Korean with **bold** terms, bullet points, markdown tables...",
   "key_points": [
-    "Specific exam-ready fact 1",
-    "Specific exam-ready fact 2",
+    "Exam-ready fact 1 in Korean",
+    "Exam-ready fact 2 in Korean",
     ...
   ]
 }}}}
 
-The summary can include markdown tables like:
-| Concept | Definition | Example |
-|---------|-----------|---------|
-| ... | ... | ... |
+Example table format in summary:
+| 개념 | 설명 | 예시 |
+|------|------|------|
+| 명목이자율 | ... | ... |
+| 실질이자율 | ... | ... |
 
-Make it LOOK like a real study guide — lots of bullets, tables, structured sections.
+Make it LOOK like a real Korean study guide (한글 요약집 스타일) — lots of bullets, tables, structured sections.
 Respond ONLY with raw JSON, no markdown fences."""
 
     print(f"  Calling Claude CLI for Reading {rnum}: {title[:50]}...", end=" ", flush=True)
