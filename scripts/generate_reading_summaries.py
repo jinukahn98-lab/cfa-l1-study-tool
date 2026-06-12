@@ -63,14 +63,20 @@ def save_output(data: dict):
 
 
 def reading_done(existing: dict, module: str, reading_num: int) -> bool:
-    """Check if a specific reading has already been summarized."""
+    """Check if a reading already has Korean content (skip if done)."""
+    import re
     mod_data = existing.get(module)
     if not mod_data:
         return False
     readings = mod_data.get("readings", [])
     for r in readings:
         if r.get("reading_num") == reading_num:
-            return True
+            summary = r.get("summary", "")
+            # Only skip if it has Korean characters (hangul)
+            if re.search(r'[\uac00-\ud7af]', summary):
+                return True
+            else:
+                return False  # Exists but English — redo
     return False
 
 
