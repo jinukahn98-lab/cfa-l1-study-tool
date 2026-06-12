@@ -2,6 +2,7 @@
 CFA Level 1 Study Tool — Streamlit app
 SchweserNotes 2022 기반 개념 정리 + 문제은행 + 진도 추적
 """
+import html as _html
 import streamlit as st
 import pandas as pd
 import re
@@ -10,6 +11,13 @@ from modules_l1 import module_names, topics_for_module, module_color, MODULE_COL
 from concept_loader import ConceptLoader
 from flashcard_generator import FlashcardGenerator
 import db
+
+def _md_inline(text: str) -> str:
+    """Escape HTML and convert **bold** markdown to <strong> for embedding in HTML blocks."""
+    text = _html.escape(str(text))
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    return text
+
 
 st.set_page_config(page_title="CFA Level 1 Study Tool", page_icon="📊", layout="wide")
 
@@ -586,31 +594,18 @@ with tab_concept:
                                             border-radius:6px; padding:8px 12px; margin-bottom:6px; min-height:48px;
                                             display:flex; align-items:center;">
                                     <span style="color:{mod_color}; font-size:0.78rem; font-weight:700; margin-right:6px;">•</span>
-                                    <span style="color:#334155; font-size:0.85rem; line-height:1.5;">{pt}</span>
+                                    <span style="color:#334155; font-size:0.85rem; line-height:1.5;">{_md_inline(pt)}</span>
                                 </div>
                                 """, unsafe_allow_html=True)
 
-            # Summary — markdown table 지원
+            # Summary — always render as markdown (supports ##headers, **bold**, tables, bullets)
             if summary_text:
-                paragraphs = [p.strip() for p in summary_text.split('\n') if p.strip()]
                 st.markdown(f"""
                 <div style="margin:14px 0 8px 0; border-bottom:2px solid {mod_color}; padding-bottom:4px;">
                     <span style="font-weight:700; color:#0a1628; font-size:0.95rem;">📝 상세 설명</span>
                 </div>
                 """, unsafe_allow_html=True)
-
-                # Detect markdown tables in summary and render accordingly
-                has_table = any('|' in p and p.strip().startswith('|') for p in paragraphs)
-                if has_table:
-                    # Render as raw markdown so tables work
-                    st.markdown(summary_text)
-                else:
-                    for i, para in enumerate(paragraphs):
-                        st.markdown(f"""
-                        <div style="color:#1e293b; font-size:0.9rem; line-height:1.8; margin-bottom:8px; padding-left:4px;">
-                            {para}
-                        </div>
-                        """, unsafe_allow_html=True)
+                st.markdown(summary_text)
 
             # Close card body
             st.markdown("</div></div>", unsafe_allow_html=True)
