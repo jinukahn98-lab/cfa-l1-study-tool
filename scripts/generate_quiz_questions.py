@@ -46,11 +46,13 @@ MODULE_BOOK = {  # module -> book number
 }
 
 
+WRAPPER = os.path.expanduser("~/.hermes/scripts/claude-wrapper.sh")
+
+
 def call_claude(prompt: str) -> str:
     result = subprocess.run(
-        ["claude", "-p", prompt, "--print"],
+        [WRAPPER, "-p", prompt, "--print"],
         capture_output=True, text=True, timeout=120,
-        env={**os.environ, "CLAUDE_HOME": os.path.expanduser("~/.claude")},
     )
     stderr = result.stderr.strip()
     if stderr and result.returncode != 0:

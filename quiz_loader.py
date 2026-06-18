@@ -36,7 +36,7 @@ class QuizLoader:
         for bk_str, book_data in self.raw.items():
             book_num = int(bk_str)
 
-            # Build answer map by topic name
+            # (legacy) Build answer map by topic name - for backward compat
             for topic_name, answers in book_data.get("answers", {}).items():
                 for qnum_str, ans_info in answers.items():
                     key = (book_num, topic_name, int(qnum_str))
@@ -49,6 +49,18 @@ class QuizLoader:
                 for q in questions:
                     q["book"] = book_num
                     q["reading_num"] = reading_num
+
+                    # Normalize options list → dict: ['A: text', ...] → {'A': 'text', ...}
+                    opts = q.get("options", [])
+                    if isinstance(opts, list):
+                        opts_dict = {}
+                        for opt_str in opts:
+                            if isinstance(opt_str, str) and len(opt_str) >= 3 and opt_str[1] == ':':
+                                opts_dict[opt_str[0].upper()] = opt_str[3:].strip()
+                            else:
+                                opts_dict[chr(65 + len(opts_dict))] = str(opt_str)
+                        q["options"] = opts_dict
+
                     q_topic = q.get("topic", "")
 
                     # Use topic field FIRST (data's own classification), fallback to reading number mapping
@@ -65,14 +77,7 @@ class QuizLoader:
                     q["fallback_module"] = module
                     q["fallback_topic"] = topic
 
-                    # Look up answer
-                    ans_key = (book_num, q.get("topic", ""), q["num"])
-                    direct_ans_key = (book_num, reading_num, q["num"])
-                    q["answer"] = (
-                        answer_map.get(ans_key, "") or
-                        answer_map.get(direct_ans_key, "") or
-                        "A"
-                    )
+                    q["answer"] = q.get("answer", "") or "A"
 
                     # Add to index
                     use_module = module or q.get("topic", "미분류")

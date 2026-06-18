@@ -153,7 +153,16 @@ def module_color(module: str) -> str:
 
 
 def get_module_for_reading(reading_num: int) -> tuple:
-    """return (module_name, topic_name) or (None, None)"""
+    """return (module_name, topic_name) or (None, None)
+    
+    Uses MODULE_BOOK_MAP (actual CFA reading numbers R1-R93).
+    Falls back to MODULES dict (internal 1-55 numbering) only as legacy fallback.
+    """
+    for mod_name, info in MODULE_BOOK_MAP.items():
+        start, end = info["readings"]
+        if start <= reading_num <= end:
+            return mod_name, mod_name
+    # Legacy fallback: MODULES dict (internal numbering 1-55)
     for mod_name, mod_data in MODULES.items():
         for topic_name, readings in mod_data["topics"].items():
             if reading_num in readings:

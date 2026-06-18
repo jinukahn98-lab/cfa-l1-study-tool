@@ -9,7 +9,6 @@ import re
 from quiz_loader import QuizLoader
 from modules_l1 import module_names, topics_for_module, module_color, MODULE_COLORS, MODULE_BOOK_MAP
 from concept_loader import ConceptLoader
-from flashcard_generator import FlashcardGenerator
 import db
 
 def _md_inline(text: str) -> str:
@@ -18,6 +17,22 @@ def _md_inline(text: str) -> str:
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     return text
 
+
+_LOS_ACTION_COLORS = {
+    "Calculate":   ("#1e40af", "#dbeafe"),
+    "Describe":    ("#065f46", "#d1fae5"),
+    "Explain":     ("#6d28d9", "#ede9fe"),
+    "Compare":     ("#b45309", "#fef3c7"),
+    "Interpret":   ("#1d4ed8", "#dbeafe"),
+    "Define":      ("#065f46", "#d1fae5"),
+    "Identify":    ("#1e40af", "#dbeafe"),
+    "Discuss":     ("#6d28d9", "#ede9fe"),
+    "Demonstrate": ("#6d28d9", "#ede9fe"),
+    "Evaluate":    ("#b45309", "#fef3c7"),
+    "Analyze":     ("#b45309", "#fef3c7"),
+    "Distinguish": ("#b45309", "#fef3c7"),
+    "Contrast":    ("#b45309", "#fef3c7"),
+}
 
 st.set_page_config(page_title="CFA Level 1 Study Tool", page_icon="📊", layout="wide")
 
@@ -285,7 +300,6 @@ st.markdown('<div class="title-sub">SchweserNotes 2022 기반 · 5권 PDF · 문
 st.divider()
 
 cl = ConceptLoader()
-fg = FlashcardGenerator()
 
 tab_quiz, tab_concept, tab_progress, tab_wrong = st.tabs(["📝 문제 풀이", "📖 개념 정리", "📈 진도 현황", "📕 오답 노트"])
 
@@ -380,7 +394,6 @@ with tab_quiz:
                 st.divider()
 
                 options = list(q.get("options", {}).values())
-                opt_keys = list(q.get("options", {}).keys())
 
                 already_answered = idx in st.session_state.answers
                 disabled = already_answered
@@ -680,22 +693,6 @@ with tab_concept:
     # STRUCTURED VIEW — topics with per-LOS cards (when structured_concepts.json exists)
     # ════════════════════════════════════════════════════════════════════════
     elif source == "structured" and topics:
-        _LOS_ACTION_COLORS = {
-            "Calculate": ("#1e40af", "#dbeafe"),
-            "Describe":  ("#065f46", "#d1fae5"),
-            "Explain":   ("#6d28d9", "#ede9fe"),
-            "Compare":   ("#b45309", "#fef3c7"),
-            "Interpret": ("#1d4ed8", "#dbeafe"),
-            "Define":    ("#065f46", "#d1fae5"),
-            "Identify":  ("#1e40af", "#dbeafe"),
-            "Discuss":   ("#6d28d9", "#ede9fe"),
-            "Demonstrate": ("#6d28d9", "#ede9fe"),
-            "Evaluate":  ("#b45309", "#fef3c7"),
-            "Analyze":   ("#b45309", "#fef3c7"),
-            "Distinguish": ("#b45309", "#fef3c7"),
-            "Contrast":  ("#b45309", "#fef3c7"),
-        }
-
         total_los = sum(len(t.get("los_items", [])) for t in topics)
         st.markdown(f"""
         <div style="color:#94a3b8; font-size:0.8rem; margin-bottom:12px;">
@@ -819,22 +816,6 @@ with tab_concept:
     # FALLBACK VIEW — flat LOS list (enhanced_concepts.json source)
     # ════════════════════════════════════════════════════════════════════════
     elif los_flat:
-        _LOS_ACTION_COLORS = {
-            "Calculate": ("#1e40af", "#dbeafe"),
-            "Describe":  ("#065f46", "#d1fae5"),
-            "Explain":   ("#6d28d9", "#ede9fe"),
-            "Compare":   ("#b45309", "#fef3c7"),
-            "Interpret": ("#1d4ed8", "#dbeafe"),
-            "Define":    ("#065f46", "#d1fae5"),
-            "Identify":  ("#1e40af", "#dbeafe"),
-            "Discuss":   ("#6d28d9", "#ede9fe"),
-            "Demonstrate": ("#6d28d9", "#ede9fe"),
-            "Evaluate":  ("#b45309", "#fef3c7"),
-            "Analyze":   ("#b45309", "#fef3c7"),
-            "Distinguish": ("#b45309", "#fef3c7"),
-            "Contrast":  ("#b45309", "#fef3c7"),
-        }
-
         st.markdown(f"""
         <div style="background:#fef9c3; border:1px solid #fde047; border-radius:8px;
                     padding:8px 14px; margin-bottom:16px; font-size:0.82rem; color:#713f12;">
